@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -9,10 +9,11 @@
 top_radius = 60.0
 bottom_radius = 60.0
 
+[sub_resource type="BoxShape" id=3]
+
 [node name="Main" type="Spatial"]
 
 [node name="Piso" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Piso"]
 transform = Transform( 60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0 )
@@ -23,11 +24,15 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61921, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00444031, 3.7595, -0.0202312 )
 script = ExtResource( 2 )
 
 [node name="TargetPlayer" type="Spatial" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 15 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Player"]
+transform = Transform( 0.7, 0, 0, 0, 0.1, 0, 0, 0, 2, -0.0475261, 0.233111, -2.57698 )
+shape = SubResource( 3 )
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 10, 30 )
