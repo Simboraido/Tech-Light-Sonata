@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/Enemigo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/Isometric Floor - Brick 1 - 256x128.png" type="Texture" id=4]
 
 [sub_resource type="CylinderShape" id=1]
 
@@ -9,10 +10,12 @@
 top_radius = 60.0
 bottom_radius = 60.0
 
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+
 [node name="Main" type="Spatial"]
 
 [node name="Piso" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Piso"]
 transform = Transform( 60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0 )
@@ -20,18 +23,10 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Piso"]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 3 )
+
+[node name="Enemigo" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61921, 0 )
-script = ExtResource( 2 )
-
-[node name="TargetPlayer" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 15 )
-
-[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 10, 30 )
-fov = 90.0
-target = NodePath("../Player/TargetPlayer")
-speed = 3.0
-enabled = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 30 )
