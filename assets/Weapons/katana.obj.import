@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/katana.obj-f1c933a16e64c7f43407f69a205ee3f3.mesh"
+path="res://.import/Katana.obj-aa3228ff4dfd49518106154f95287a92.mesh"
 
 [deps]
 
-files=[ "res://.import/katana.obj-f1c933a16e64c7f43407f69a205ee3f3.mesh" ]
+files=[ "res://.import/Katana.obj-aa3228ff4dfd49518106154f95287a92.mesh" ]
 
-source_file="res://assets/Weapons/katana.obj"
-dest_files=[ "res://.import/katana.obj-f1c933a16e64c7f43407f69a205ee3f3.mesh", "res://.import/katana.obj-f1c933a16e64c7f43407f69a205ee3f3.mesh" ]
+source_file="res://assets/Weapons/Katana.obj"
+dest_files=[ "res://.import/Katana.obj-aa3228ff4dfd49518106154f95287a92.mesh", "res://.import/Katana.obj-aa3228ff4dfd49518106154f95287a92.mesh" ]
 
 [params]
 
