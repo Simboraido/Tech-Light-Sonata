@@ -15,7 +15,9 @@ func _ready():
 	t_sig = beatmap.notes[indiceNota].time
 	largoCancion = musica.stream.get_length()
 	t_0 = OS.get_ticks_msec()
+	yield(get_tree().create_timer(0.03),"timeout")
 	musica.play()
+	musika = true
 	
 func _process(delta):
 	t_actual = musica.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency() # ajustar latencia
@@ -30,6 +32,7 @@ func _unhandled_input(event): # procedencia de las cosas interfaz > controles
 		if abs(t_actual - t_sig) < tiempGracia:
 			Globales.enritmo = true
 			print("SI")
+			$sonido.play()
 		else:
 			Globales.enritmo = false
 			print("NO")
