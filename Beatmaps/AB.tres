@@ -1,0 +1,56 @@
+[gd_resource type="Resource" load_steps=11 format=2]
+
+[ext_resource path="res://CustomResources/Note.gd" type="Script" id=1]
+[ext_resource path="res://CustomResources/NoteArray.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+time = 0.75
+duration = 0.125
+color = 1
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+time = 1.75
+duration = 0.125
+color = 1
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+time = 2.375
+duration = 0.125
+color = 1
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 1 )
+time = 3.5
+duration = 0.125
+color = 1
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+time = 4.95652
+duration = 0.130435
+color = 1
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 1 )
+time = 6.0
+duration = 0.130435
+color = 1
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+time = 6.65217
+duration = 0.130435
+color = 1
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 1 )
+time = 7.82609
+duration = 0.130435
+color = 1
+
+[resource]
+script = ExtResource( 2 )
+notes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ]

@@ -8,11 +8,49 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "LevelNotes",
+"language": "GDScript",
+"path": "res://CustomResources/LevelNotes.gd"
+}, {
+"base": "Resource",
+"class": "Note",
+"language": "GDScript",
+"path": "res://CustomResources/Note.gd"
+}, {
+"base": "Resource",
+"class": "NoteArray",
+"language": "GDScript",
+"path": "res://CustomResources/NoteArray.gd"
+}, {
+"base": "Resource",
+"class": "Project",
+"language": "GDScript",
+"path": "res://CustomResources/Project.gd"
+}, {
+"base": "Resource",
+"class": "SongTrack",
+"language": "GDScript",
+"path": "res://CustomResources/SongTrack.gd"
+} ]
+_global_script_class_icons={
+"LevelNotes": "",
+"Note": "",
+"NoteArray": "",
+"Project": "",
+"SongTrack": ""
+}
+
 [application]
 
 config/name="Taller De Los Jueguitos"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globales="*res://scripts/globales.gd"
 
 [input]
 
