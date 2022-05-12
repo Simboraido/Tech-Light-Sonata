@@ -25,6 +25,7 @@ transform = Transform( 60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Piso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116857, -0.232185, 0.0806985 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
