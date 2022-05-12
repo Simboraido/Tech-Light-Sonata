@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mario_rpg.mp3-f9ef4f00bfe6c6e546baac8175833032.mp3str"
+
+[deps]
+
+source_file="res://musica/mario_rpg.mp3"
+dest_files=[ "res://.import/mario_rpg.mp3-f9ef4f00bfe6c6e546baac8175833032.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
