@@ -4,8 +4,8 @@
 [ext_resource path="res://scripts/Node.gd" type="Script" id=2]
 [ext_resource path="res://assets/Enemigo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/Isometric Floor - Brick 1 - 256x128.png" type="Texture" id=4]
-[ext_resource path="res://musica/AB.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Beatmaps/AB.tres" type="Resource" id=6]
+[ext_resource path="res://musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Beatmaps/beat_map.tres" type="Resource" id=6]
 [ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=7]
 
 [sub_resource type="CylinderShape" id=1]
@@ -35,7 +35,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource( 2 )
-bpm = 100
+bpm = 90
 beatmap = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]

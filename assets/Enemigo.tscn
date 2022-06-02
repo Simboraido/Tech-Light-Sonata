@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Enemigo.gd" type="Script" id=1]
+[ext_resource path="res://scripts/cambio_color_enemigo.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 2.5
@@ -9,7 +10,7 @@ height = 0.7
 [sub_resource type="CapsuleMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.996078, 0.0980392, 0.0980392, 1 )
+albedo_color = Color( 0.552941, 0.776471, 0.384314, 1 )
 
 [node name="Enemigo" type="KinematicBody"]
 collision_layer = 3
@@ -23,3 +24,4 @@ shape = SubResource( 1 )
 transform = Transform( 3, 0, 0, 0, -1.31134e-07, -2, 0, 3, -8.74228e-08, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+script = ExtResource( 2 )

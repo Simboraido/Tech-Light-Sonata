@@ -1,10 +1,13 @@
 extends KinematicBody
 
 export var rapidez = 3
-export var vida = 10
+export var vida = 100
 
 func take_damage():
-	vida-=1
+	if Globales.enritmo:
+		vida-=2
+	else:
+		vida-=1
 	print(vida)
 
 func _physics_process(delta):
