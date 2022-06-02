@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/MeshInstance.gd" type="Script" id=1]
 [ext_resource path="res://Beatmaps/AB.tres" type="Resource" id=2]
 [ext_resource path="res://musica/AB.ogg" type="AudioStream" id=3]
 [ext_resource path="res://scripts/Node.gd" type="Script" id=4]
+[ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.250745
@@ -57,3 +58,6 @@ beatmap = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
 stream = ExtResource( 3 )
+
+[node name="sonido" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 5 )
