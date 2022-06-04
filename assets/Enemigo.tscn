@@ -10,7 +10,6 @@ height = 0.7
 [sub_resource type="CapsuleMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.552941, 0.776471, 0.384314, 1 )
 
 [node name="Enemigo" type="KinematicBody"]
 collision_layer = 3
