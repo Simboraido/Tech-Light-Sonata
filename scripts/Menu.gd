@@ -2,6 +2,9 @@ extends MarginContainer
 
 var seleccionando = 0
 
+func _ready():
+	$AudioStreamPlayer.play()
+
 func _input(event):
 	if Input.is_action_pressed("abajo"):
 		seleccionando += 1
@@ -13,9 +16,11 @@ func _input(event):
 	if Input.is_action_just_pressed("ataque"):
 		if seleccionando == 1:
 			#yield($AnimationPlayer, "animation_finished")
+			$Sonido.play()
 			_on_start_pressed()
 		if seleccionando == 2:
 			#yield($AnimationPlater, "animation_finished")
+			$Sonido.play()
 			_on_exit_pressed()
 	# Pararse en una opción
 	if seleccionando == 1:
