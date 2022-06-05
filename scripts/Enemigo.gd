@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var rapidez = 3
-export var vida = 100
+export var vida = 20
 
 func take_damage():
 	if Globales.enritmo:
@@ -12,4 +12,5 @@ func take_damage():
 
 func _physics_process(delta):
 	#move_and_slide(Vector3(1,0,0) * rapidez, Vector3.UP)
-	pass
+	if vida <= 0:
+		get_tree().change_scene("res://scenes/Final.tscn")

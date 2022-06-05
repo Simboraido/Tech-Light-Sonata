@@ -17,6 +17,9 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("abajo"):
 		Katana.rect_position.y += 30
+	if event.is_action_pressed("arriba"):
+		Katana.rect_position.y -= 30
+		
 func _on_start_pressed():
 	get_tree().change_scene("res://scenes/Main.tscn")
 	
