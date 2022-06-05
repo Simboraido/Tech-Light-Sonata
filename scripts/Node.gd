@@ -30,6 +30,8 @@ func _unhandled_input(event): # procedencia de las cosas interfaz > controles
 	if event.is_action_pressed("ataque"):
 		if abs(t_actual - t_sig) < tiempGracia:
 			Globales.enritmo = true
+			Globales.combo += 1
 			$sonido.play()
 		else:
 			Globales.enritmo = false
+			Globales.combo = 0
