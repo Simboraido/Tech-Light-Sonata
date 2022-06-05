@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Taller De Los Jueguitos"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
