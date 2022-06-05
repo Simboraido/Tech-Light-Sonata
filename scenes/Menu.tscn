@@ -1,16 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/jase-bloor-oCZHIa1D4EU-unsplash.png" type="Texture" id=1]
 [ext_resource path="res://resources/katana.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Menu.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://resources/tema1.tres" type="Theme" id=5]
 [ext_resource path="res://musica/Beethoven Virus.mp3" type="AudioStream" id=6]
 [ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=7]
-
-[sub_resource type="DynamicFont" id=1]
-size = 45
-font_data = ExtResource( 4 )
+[ext_resource path="res://default_env.tres" type="Environment" id=8]
 
 [sub_resource type="Animation" id=2]
 resource_name = "FadeIn"
@@ -39,6 +36,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("katana:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -66,53 +75,118 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("katana:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("katana:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1.2, 1.2, 1.2, 1 ) ]
+}
 
-[node name="MarginContainer" type="MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 5 )
+[sub_resource type="Animation" id=7]
+resource_name = "parpadeo"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Start:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ) ]
+}
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1.2, 1.2, 1.2, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Start:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Menu" type="Control"]
+margin_right = 1021.0
+margin_bottom = 600.0
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
+margin_left = 3.0
+margin_right = 1021.0
 margin_bottom = 600.0
 texture = ExtResource( 1 )
 expand = true
-
-[node name="Label" type="Label" parent="."]
-margin_left = 338.0
-margin_top = 245.0
-margin_right = 686.0
-margin_bottom = 354.0
-size_flags_horizontal = 4
-custom_fonts/font = SubResource( 1 )
-text = "Tech Light
-Sonata"
-align = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_top = 546.0
-margin_right = 72.0
-margin_bottom = 600.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="Start" type="Button" parent="VBoxContainer"]
-margin_right = 72.0
-margin_bottom = 25.0
-focus_neighbour_top = NodePath("../Exit")
-text = "Start"
-
-[node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 29.0
-margin_right = 72.0
-margin_bottom = 54.0
-focus_neighbour_bottom = NodePath("../Start")
-text = "Exit"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 2 )
-anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -120,11 +194,75 @@ stream = ExtResource( 6 )
 [node name="Sonido" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[node name="katana" type="TextureRect" parent="."]
-margin_top = 390.0
-margin_right = 720.0
-margin_bottom = 600.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+theme = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+anims/FadeIn = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/parpadeo = SubResource( 7 )
+
+[node name="Label" type="Label" parent="MarginContainer"]
+self_modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_left = 298.0
+margin_top = 219.0
+margin_right = 683.0
+margin_bottom = 340.0
+size_flags_horizontal = 4
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Tech Light
+Sonata"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+self_modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_top = 486.0
+margin_right = 115.0
+margin_bottom = 560.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
+alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_right = 115.0
+margin_bottom = 35.0
+focus_neighbour_top = NodePath("../Exit")
+text = "Start"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 115.0
+margin_bottom = 74.0
+focus_neighbour_bottom = NodePath("../Start")
+text = "Exit"
+
+[node name="katana" type="Sprite" parent="MarginContainer"]
+position = Vector2( 102, 562 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
+offset = Vector2( 360, 0 )
 flip_h = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 8 )
+
+[node name="AP2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/parpadeo = SubResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Coliseo_con_color.obj-be82e53589fb1591b7459b657d5187fa.mesh"
+
+[deps]
+
+files=[ "res://.import/Coliseo_con_color.obj-be82e53589fb1591b7459b657d5187fa.mesh" ]
+
+source_file="res://assets/Coliseo_con_color.obj"
+dest_files=[ "res://.import/Coliseo_con_color.obj-be82e53589fb1591b7459b657d5187fa.mesh", "res://.import/Coliseo_con_color.obj-be82e53589fb1591b7459b657d5187fa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

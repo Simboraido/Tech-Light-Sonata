@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var rapidez = 3
-export var vida = 20
+export var vida = 50
 
 func take_damage():
 	if Globales.enritmo:

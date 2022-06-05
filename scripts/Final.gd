@@ -1,7 +1,5 @@
 extends MarginContainer
 
-
-
-func _ready():
-	if Input.is_key_pressed(16777217):
+func _input(event):
+	if event.is_action_pressed("reset"):
 		get_tree().change_scene("res://scenes/Menu.tscn")

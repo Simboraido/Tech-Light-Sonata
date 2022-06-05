@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Final.gd" type="Script" id=2]
 
 [sub_resource type="Theme" id=1]
 
@@ -16,6 +17,7 @@ default_font = SubResource( 3 )
 margin_right = 1023.0
 margin_bottom = 599.0
 theme = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_right = 1023.0

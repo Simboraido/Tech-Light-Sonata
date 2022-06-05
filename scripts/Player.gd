@@ -23,14 +23,23 @@ var attacking = false
 
 var counter = 0
 
+# fix camara
+export (float) var dist_max_camara
+export (float) var dist_min_camara
+export (float) var dist_corte
+export (float) var dist_limite
 
 func _ready():
 	$TargetPlayer/hitbox_ataque/CollisionShape.disabled = true
 
 func _physics_process(delta):			# delta es 1/60 seg.
 	counter +=1
+	# fixed camara
+	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)	#distancia al jefe
+	rotarCamara.translation.z = dist_max_camara-clamp((distCentro-dist_corte)/(dist_limite-dist_corte), 0, 1)*(dist_max_camara-dist_min_camara)
+	
 	var puntoMirar = jefe.global_transform.origin		# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
-	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo
+	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
 	targetCamera.look_at(puntoMirar, Vector3.UP)
 	var input = Vector3(Input.get_axis("izquierda","derecha"),0,Input.get_axis("arriba","abajo"))			# recibe los inputs de movimineto 
 	velocidad = input.normalized()*rapidez+Vector3(0,rapidezY,0)	# velocidad es el vector input normalizado por la rapidez más el vector de salto
