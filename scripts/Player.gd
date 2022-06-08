@@ -50,10 +50,12 @@ func _physics_process(delta):			# delta es 1/60 seg.
 			rapidezY = salto				# salta
 
 	if Input.is_action_just_pressed("dash"):
-		if dash == dash_cooldown and (not dashing):
+		if dash == dash_cooldown and (not dashing) and Globales.enritmo:
 			rapidez = 60
 			dash = 0
 			dashing = true
+		else:
+			dash = 0
 	if dash < dash_cooldown:
 		dash+=1
 		if dash == dash_duration:
