@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Dying Backwards.fbx-3062db5f1926698893953ceba25cf02e.scn"
+path="res://.import/Great Sword Strafe.fbx-a63cd06c2385bfe0571048ee13f688c0.scn"
 
 [deps]
 
-source_file="res://assets/Characters/Makoto/Dying Backwards.fbx"
-dest_files=[ "res://.import/Dying Backwards.fbx-3062db5f1926698893953ceba25cf02e.scn" ]
+source_file="res://assets/Characters/Makoto/animaciones_makoto/Great Sword Strafe.fbx"
+dest_files=[ "res://.import/Great Sword Strafe.fbx-a63cd06c2385bfe0571048ee13f688c0.scn" ]
 
 [params]
 

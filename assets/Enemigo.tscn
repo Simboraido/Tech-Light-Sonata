@@ -1,17 +1,13 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://scripts/Enemigo.gd" type="Script" id=1]
 [ext_resource path="res://assets/Characters/First Enemy animations/First_Enemy.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 2.5
-height = 0.7
+radius = 4.0
+height = 6.0
 
 [sub_resource type="SpatialMaterial" id=3]
-
-[sub_resource type="AnimationNodeStateMachine" id=86]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=87]
 
 [sub_resource type="ArrayMesh" id=88]
 blend_shape_mode = 0
@@ -3165,11 +3161,9 @@ tracks/45/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0120439, -0.0100491, 0.00119012
 [node name="Enemigo" type="KinematicBody"]
 collision_layer = 3
 script = ExtResource( 1 )
-rapidez = null
-vida = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 7, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -3611,12 +3605,8 @@ material/431 = null
 material/432 = null
 material/433 = null
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 86 )
-parameters/playback = SubResource( 87 )
-
 [node name="RootNode" type="Spatial" parent="."]
-transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
+transform = Transform( 1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="RootNode"]
 bones/0/name = "mixamorigRightShoulder"

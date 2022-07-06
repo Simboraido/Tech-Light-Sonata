@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Walk (1).fbx-e75e0e60aeeaba67ceac7058af3a2496.scn"
+path="res://.import/Great Sword Walk.fbx-34359921fb6346b8a551c9dea8dfb681.scn"
 
 [deps]
 
-source_file="res://assets/Characters/Makoto/Great Sword Walk (1).fbx"
-dest_files=[ "res://.import/Great Sword Walk (1).fbx-e75e0e60aeeaba67ceac7058af3a2496.scn" ]
+source_file="res://assets/Characters/Makoto/animaciones_makoto/Great Sword Walk.fbx"
+dest_files=[ "res://.import/Great Sword Walk.fbx-34359921fb6346b8a551c9dea8dfb681.scn" ]
 
 [params]
 

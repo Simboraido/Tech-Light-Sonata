@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Run.fbx-6b3e8cfe8febb0a3bd1ec9be9491097f.scn"
+path="res://.import/Great Sword Slash (2).fbx-c809f6f2b11c6da03c1d7601b69f7c68.scn"
 
 [deps]
 
-source_file="res://assets/Characters/Makoto/Run.fbx"
-dest_files=[ "res://.import/Run.fbx-6b3e8cfe8febb0a3bd1ec9be9491097f.scn" ]
+source_file="res://assets/Characters/Makoto/riggeo_old/Great Sword Slash (2).fbx"
+dest_files=[ "res://.import/Great Sword Slash (2).fbx-c809f6f2b11c6da03c1d7601b69f7c68.scn" ]
 
 [params]
 

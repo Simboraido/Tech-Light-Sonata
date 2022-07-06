@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Slash (1).fbx-996e2d0fbb8ab2190ee628ec60a6915f.scn"
+path="res://.import/Great Sword Kick.fbx-15bcc6bb41880a170c793a547b5f2508.scn"
 
 [deps]
 
-source_file="res://assets/Characters/Makoto/Great Sword Slash (1).fbx"
-dest_files=[ "res://.import/Great Sword Slash (1).fbx-996e2d0fbb8ab2190ee628ec60a6915f.scn" ]
+source_file="res://assets/Characters/Makoto/animaciones_makoto/Great Sword Kick.fbx"
+dest_files=[ "res://.import/Great Sword Kick.fbx-15bcc6bb41880a170c793a547b5f2508.scn" ]
 
 [params]
 

@@ -24,18 +24,20 @@ data = PoolVector3Array( 0, -1, -1, 0.1951, 1, -0.9808, 0, 1, -1, 0, -1, -1, 0.1
 [node name="Main" type="Spatial"]
 
 [node name="Piso" type="StaticBody" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape" type="CollisionShape" parent="Piso"]
 transform = Transform( 60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Piso"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.603902, 0.260743, -0.492231 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Enemigo" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource( 2 )

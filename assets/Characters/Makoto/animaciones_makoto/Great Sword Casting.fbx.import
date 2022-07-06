@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Slash (2).fbx-8ea18889020c38f7b0cc593f57118354.scn"
+path="res://.import/Great Sword Casting.fbx-93dd9653f83a7f9cc6f49778568dd5fa.scn"
 
 [deps]
 
-source_file="res://assets/Characters/Makoto/Great Sword Slash (2).fbx"
-dest_files=[ "res://.import/Great Sword Slash (2).fbx-8ea18889020c38f7b0cc593f57118354.scn" ]
+source_file="res://assets/Characters/Makoto/animaciones_makoto/Great Sword Casting.fbx"
+dest_files=[ "res://.import/Great Sword Casting.fbx-93dd9653f83a7f9cc6f49778568dd5fa.scn" ]
 
 [params]
 

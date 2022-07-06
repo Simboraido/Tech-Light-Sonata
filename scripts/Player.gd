@@ -1,8 +1,8 @@
 extends KinematicBody
 
-var velocidad = Vector3(0,0,0) 			# vector velocidad, inicialmente en 0,0,0                           # se crea el vector velocidad del personaje
-export var rapidez = 15                                   # rapidez del personaje
-var rapidezY = 0										  # rapidez inicial en Y
+
+export var rapidezW = 15								  # rapidez normal
+export var rapidezD = 60								  # rapidez de dasheo
 export var salto = 60                                     # valor de magnitud del salto
 export var gravedad = 200                                 # valor de magnitude de la gravedad
 onready var jefe = get_parent().get_node("Enemigo")       # se obtiene el nodo "Enemigo"
@@ -10,17 +10,20 @@ onready var targetCamera = $TargetPlayer				  # se obtiene el nodo "TargetPlayer
 onready var mesh = $TargetPlayer/MeshInstance	  # se obtiene el nodo "Player"
 export var offsetC = Vector3(0,6,15)			  		  # offset entre la cámara y el jugador 
 onready var rotarCamara = $TargetPlayer/Camera 			  # se obtiene el nodo "Camera"
+var rapidez = rapidezW                                   # rapidez del personaje
+var velocidad = Vector3(0,0,0) 			# vector velocidad, inicialmente en 0,0,0                           # se crea el vector velocidad del personaje
+var rapidezY = 0										  # rapidez inicial en Y
 
 # dash
 export var dash_cooldown = 30							# frames de cooldown al hacer dash
 export var dash_duration = 15 							# duración del dash
-var dash = dash_cooldown                                # dash cooldown contador
+var dashc = dash_cooldown                               # dash cooldown contador (si está en ele máximo está "cargado")
+var dashE = 0											# dashE contador (si llega a el valor máximo, deja de dashear) 
 var dashing = false										# booleano que dice si dahsea o no
 
 # ataque
 var attack = 1
 var attacking = false
-
 var counter = 0
 
 # fix camara
@@ -34,6 +37,7 @@ func _ready():
 
 func _physics_process(delta):			# delta es 1/60 seg.
 	counter +=1
+	
 	# fixed camara
 	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)	#distancia al jefe
 	rotarCamara.translation.z = dist_max_camara-clamp((distCentro-dist_corte)/(dist_limite-dist_corte), 0, 1)*(dist_max_camara-dist_min_camara)
@@ -49,18 +53,16 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		if is_on_floor():			# si está en el piso salta, si no, no hace nada
 			rapidezY = salto				# salta
 
-	if Input.is_action_just_pressed("dash"):
-		if dash == dash_cooldown and (not dashing) and Globales.enritmo:
-			rapidez = 60
-			dash = 0
-			dashing = true
-		else:
-			dash = 0
-	if dash < dash_cooldown:
-		dash+=1
-		if dash == dash_duration:
-			rapidez = 15
-			dashing = false
+
+	if not dashing and dashc < dash_cooldown:
+		dashc+=1
+	if dashing and dashE < dash_duration:
+		dashE+=1
+	if dashE == dash_duration:
+		rapidez = rapidezW
+		dashing = false
+		dashE = 0
+		
 
 	if attack < 1:
 		attack += 1
@@ -72,6 +74,19 @@ func _physics_process(delta):			# delta es 1/60 seg.
 	velocidad = velocidad.rotated(Vector3.UP,targetCamera.rotation.y)
 	velocidad = move_and_slide(velocidad,Vector3.UP)
 	
+
+
+	
 	
 func _on_hitbox_ataque_body_entered(body):  
 	body.take_damage()
+	
+func _input(event):
+	if event.is_action_pressed("dash"):
+		if dashc == dash_cooldown and Globales.enritmo:
+			rapidez = rapidezD
+			dashing = true
+		dashc = 0
+
+
+		
