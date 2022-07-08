@@ -1,5 +1,10 @@
 extends KinematicBody
 
+# vidaMax y vida
+export (int) var vidaMax = 200
+var vida = vidaMax
+
+export (float) var eps = 0.1
 
 export var rapidezW = 15								  # rapidez normal
 export var rapidezD = 60								  # rapidez de dasheo
@@ -7,12 +12,31 @@ export var salto = 60                                     # valor de magnitud de
 export var gravedad = 200                                 # valor de magnitude de la gravedad
 onready var jefe = get_parent().get_node("Enemigo")       # se obtiene el nodo "Enemigo"
 onready var targetCamera = $TargetPlayer				  # se obtiene el nodo "TargetPlayer"
-onready var mesh = $TargetPlayer/MeshInstance	  # se obtiene el nodo "Player"
+onready var mesh = $TargetPlayer/MeshInstance	  		  # se obtiene el nodo "Player"
 export var offsetC = Vector3(0,6,15)			  		  # offset entre la cámara y el jugador 
 onready var rotarCamara = $TargetPlayer/Camera 			  # se obtiene el nodo "Camera"
-var rapidez = rapidezW                                   # rapidez del personaje
+var rapidez = rapidezW                                    # rapidez del personaje
 var velocidad = Vector3(0,0,0) 			# vector velocidad, inicialmente en 0,0,0                           # se crea el vector velocidad del personaje
 var rapidezY = 0										  # rapidez inicial en Y
+
+# duracion del buffer
+export (int) var timerAtq
+
+# si estamos caminando hacia adelante
+var adelante = false
+# si estamos atacando
+var atacando = false
+# si puede atacar
+var puede_atacar = true
+var combo = 0
+var arr_ataques = ["slash_left", "slash_right", "kick", "finisher"]
+# si te estan pegando
+var pegando = false
+
+# maquina de estado del animation tree
+onready var Animacion = $TargetPlayer/RootNode/AnimationPlayer/AnimationTree.get("parameters/playback")
+# advance condition
+onready var anim_tree = $TargetPlayer/RootNode/AnimationPlayer/AnimationTree
 
 # dash
 export var dash_cooldown = 30							# frames de cooldown al hacer dash
@@ -46,6 +70,7 @@ func _physics_process(delta):			# delta es 1/60 seg.
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
 	targetCamera.look_at(puntoMirar, Vector3.UP)
 	var input = Vector3(Input.get_axis("izquierda","derecha"),0,Input.get_axis("arriba","abajo"))			# recibe los inputs de movimineto 
+	adelante = input.z != 0
 	velocidad = input.normalized()*rapidez+Vector3(0,rapidezY,0)	# velocidad es el vector input normalizado por la rapidez más el vector de salto
 	if not is_on_floor():			# si no está en el piso
 		rapidezY -= gravedad*delta			# se aplica la gravedad
@@ -53,6 +78,9 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		if is_on_floor():			# si está en el piso salta, si no, no hace nada
 			rapidezY = salto				# salta
 
+	if timerAtq > 0:
+		timerAtq -= 1
+		anim_tree["parameters/conditions/transition_combo"] = timerAtq > 0 and combo < 4
 
 	if not dashing and dashc < dash_cooldown:
 		dashc+=1
@@ -74,10 +102,38 @@ func _physics_process(delta):			# delta es 1/60 seg.
 	velocidad = velocidad.rotated(Vector3.UP,targetCamera.rotation.y)
 	velocidad = move_and_slide(velocidad,Vector3.UP)
 	
+	# Logica de transiciones
+	if pegando:
+		return
+	if atacando:
+#		if timerAtq > 0:
+#			combo += 1
+#		else:
+#			combo = 4
+		if combo < 4:
+			Animacion.travel(arr_ataques[combo])
+#		else:
+#			Animacion.travel("idle")
+#			combo = 0
+#			timerAtq = 0
+	else:
+		if velocidad.y > 0:
+			Animacion.travel("jump")
+		if !is_on_floor() and velocidad.y < 0:
+			Animacion.travel("caida")
+		# para correr
+		if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
+			if dashing:
+				Animacion.travel("dash")
+			elif adelante:
+				Animacion.travel("walk") 
+			else:
+				Animacion.travel("strafe")
+		else:
+			Animacion.travel("idle")
 
 
-	
-	
+
 func _on_hitbox_ataque_body_entered(body):  
 	body.take_damage()
 	
@@ -88,5 +144,18 @@ func _input(event):
 			dashing = true
 		dashc = 0
 
+	if event.is_action_pressed("ataque"):
+#		if !Globales.enritmo:
+#			combo = 0
+		if !puede_atacar:
+			return
+		if atacando or !is_on_floor():
+			timerAtq = 120
+		else:
+			atacando = true
+#			timerAtq = 120
+#			Animacion.travel(arr_ataques[0])
+#			combo = 0
 
-		
+func take_damage(danno):
+	vida -= danno

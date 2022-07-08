@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Casting.fbx-132d09b3a60c19dd1458300ab9e2e598.scn"
+path="res://.import/Great Sword Casting.fbx-822334f126ec39946684d5f8eefecd9e.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Great Sword Casting.fbx"
-dest_files=[ "res://.import/Great Sword Casting.fbx-132d09b3a60c19dd1458300ab9e2e598.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Great Sword Casting.fbx"
+dest_files=[ "res://.import/Great Sword Casting.fbx-822334f126ec39946684d5f8eefecd9e.scn" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export(float) var rapidez = 2
+export(float) var rapidez = 0
 
 export var vida = 400
 onready var malla = $MeshInstance

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Walk.fbx-94b4b4b6562323f7d51b22793b42bf5c.scn"
+path="res://.import/Great Sword Walk.fbx-09e6dad0fb53beacd5cb940c9036eae7.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Great Sword Walk.fbx"
-dest_files=[ "res://.import/Great Sword Walk.fbx-94b4b4b6562323f7d51b22793b42bf5c.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Great Sword Walk.fbx"
+dest_files=[ "res://.import/Great Sword Walk.fbx-09e6dad0fb53beacd5cb940c9036eae7.scn" ]
 
 [params]
 

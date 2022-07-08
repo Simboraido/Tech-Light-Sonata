@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Sword And Shield Death.fbx-962d5a1919ad6d8b4ce4aff3abaea4b5.scn"
+path="res://.import/Sword And Shield Death.fbx-36b4964ca4184ff0b892b4048a53a8d4.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Sword And Shield Death.fbx"
-dest_files=[ "res://.import/Sword And Shield Death.fbx-962d5a1919ad6d8b4ce4aff3abaea4b5.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Sword And Shield Death.fbx"
+dest_files=[ "res://.import/Sword And Shield Death.fbx-36b4964ca4184ff0b892b4048a53a8d4.scn" ]
 
 [params]
 

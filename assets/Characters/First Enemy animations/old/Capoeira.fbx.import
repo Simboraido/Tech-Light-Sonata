@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Capoeira.fbx-69a63a6d58ebcb19fea614f6f4811528.scn"
+path="res://.import/Capoeira.fbx-ac15c97fa75a48fd91303642632f95c2.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Capoeira.fbx"
-dest_files=[ "res://.import/Capoeira.fbx-69a63a6d58ebcb19fea614f6f4811528.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Capoeira.fbx"
+dest_files=[ "res://.import/Capoeira.fbx-ac15c97fa75a48fd91303642632f95c2.scn" ]
 
 [params]
 

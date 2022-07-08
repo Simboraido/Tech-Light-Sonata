@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Slash.fbx-71309cb07dbfd12993ad2cc1bef9d8e5.scn"
+path="res://.import/Great Sword Slash.fbx-b918356cd4dac6f170490eede61b7b67.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Great Sword Slash.fbx"
-dest_files=[ "res://.import/Great Sword Slash.fbx-71309cb07dbfd12993ad2cc1bef9d8e5.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Great Sword Slash.fbx"
+dest_files=[ "res://.import/Great Sword Slash.fbx-b918356cd4dac6f170490eede61b7b67.scn" ]
 
 [params]
 

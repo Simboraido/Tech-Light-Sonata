@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Strut Walking.fbx-f79f9fc5414e1d1f3b0acfcb9bba5e2d.scn"
+path="res://.import/Strut Walking.fbx-a4fa7c5cc3c9019f3cebcd02f03f2492.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Strut Walking.fbx"
-dest_files=[ "res://.import/Strut Walking.fbx-f79f9fc5414e1d1f3b0acfcb9bba5e2d.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Strut Walking.fbx"
+dest_files=[ "res://.import/Strut Walking.fbx-a4fa7c5cc3c9019f3cebcd02f03f2492.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Idle.fbx-81d18438b6d54dc4885d76845ecce0a7.scn"
+path="res://.import/Great Sword Idle.fbx-6e25914ecc2b7310505a12a8432dcc97.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Great Sword Idle.fbx"
-dest_files=[ "res://.import/Great Sword Idle.fbx-81d18438b6d54dc4885d76845ecce0a7.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Great Sword Idle.fbx"
+dest_files=[ "res://.import/Great Sword Idle.fbx-6e25914ecc2b7310505a12a8432dcc97.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Falling Back Death.fbx-dfb7a987fdcdf6d8babe4bd68c4741d6.scn"
+path="res://.import/Falling Back Death.fbx-6ca5e7c46c77937e66ad28e4a72f0a29.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Falling Back Death.fbx"
-dest_files=[ "res://.import/Falling Back Death.fbx-dfb7a987fdcdf6d8babe4bd68c4741d6.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Falling Back Death.fbx"
+dest_files=[ "res://.import/Falling Back Death.fbx-6ca5e7c46c77937e66ad28e4a72f0a29.scn" ]
 
 [params]
 

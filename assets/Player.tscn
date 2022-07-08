@@ -1,8 +1,9 @@
-[gd_scene load_steps=190 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape" id=1]
+height = 3.0
 
 [sub_resource type="BoxShape" id=4]
 
@@ -1250,6 +1251,207 @@ bind/4/name = "mixamorigHips"
 bind/4/bone = -1
 bind/4/pose = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85163e-05, -0.00937099, -0.000228726 )
 
+[sub_resource type="Animation" id=192]
+resource_name = "caida"
+length = 0.1
+step = 0.01
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Skeleton:mixamorigHips")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 9.70938e-05, 0.00200286, -0.000586691, 0.120731, -0.252987, 0.0142195, 0.959802, 1, 1, 1, 0.04, 1, -2.25353e-05, 0.00171286, -0.000479887, 0.138316, -0.243972, 0.0300539, 0.959397, 1, 1, 1, 0.07, 1, -0.000116717, 0.00137298, -0.000304044, 0.145478, -0.226011, 0.0388989, 0.962415, 1, 1, 1, 0.1, 1, -0.000167884, 0.000949571, -2.45948e-05, 0.130178, -0.200463, 0.0368131, 0.970316, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Skeleton:mixamorigSpine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.290348, 0.0619504, -0.0554387, 0.953303, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.268508, 0.0770111, -0.0775911, 0.957054, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.232283, 0.0857136, -0.0907806, 0.964602, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.203249, 0.0803872, -0.0878776, 0.971857, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Skeleton:mixamorigSpine1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.101541, 0.000917605, -0.0150814, 0.994717, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.087026, -0.00231256, -0.00394162, 0.996196, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.0698926, -0.00681782, 0.00798006, 0.997499, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.047009, -0.0111366, 0.0198939, 0.998634, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Skeleton:mixamorigSpine2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.101405, 0.0108329, -0.0125897, 0.994707, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.0862737, 0.0102615, -0.00345358, 0.996213, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.068292, 0.00969112, 0.00761383, 0.997589, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0441808, 0.00929682, 0.0188533, 0.998802, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("Skeleton:mixamorigNeck")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.276533, 0.115109, -0.041652, 0.953176, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.276202, 0.114667, -0.0416807, 0.953324, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.257338, 0.109596, -0.0422228, 0.959157, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.218716, 0.100913, -0.0444192, 0.96954, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("Skeleton:mixamorigHead")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.170268, 0.0243884, -0.0153524, 0.984976, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.151969, 0.0143356, -0.0175099, 0.988126, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.133541, 0.00743639, -0.0151798, 0.990899, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.12301, 0.00499832, -0.00883859, 0.992354, 1, 1, 1 )
+tracks/6/type = "transform"
+tracks/6/path = NodePath("Skeleton:mixamorigLeftShoulder")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.0649151, 0.124713, 0.15304, 0.978167, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.0649152, 0.124713, 0.15304, 0.978167, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.0666956, 0.124513, 0.151973, 0.97824, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.0771571, 0.123259, 0.145689, 0.978585, 1, 1, 1 )
+tracks/7/type = "transform"
+tracks/7/path = NodePath("Skeleton:mixamorigLeftArm")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0743779, -0.295366, 0.366068, 0.87933, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.177596, -0.263974, 0.318336, 0.892995, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.327757, -0.213258, 0.255121, 0.884313, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.498211, -0.149523, 0.197014, 0.831032, 1, 1, 1 )
+tracks/8/type = "transform"
+tracks/8/path = NodePath("Skeleton:mixamorigLeftForeArm")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.242888, 0.1273, 0.752799, 0.598409, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.264098, 0.139538, 0.719562, 0.626906, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.261981, 0.109169, 0.653868, 0.701359, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.206376, 0.0429379, 0.572109, 0.792626, 1, 1, 1 )
+tracks/9/type = "transform"
+tracks/9/path = NodePath("Skeleton:mixamorigLeftHand")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.344404, -0.584888, 0.0892882, 0.728917, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.286025, -0.522958, 0.149426, 0.788908, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.167437, -0.404352, 0.204625, 0.875553, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.0217094, -0.264427, 0.229122, 0.936542, 1, 1, 1 )
+tracks/10/type = "transform"
+tracks/10/path = NodePath("Skeleton:mixamorigLeftHandIndex1")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.221464, 0.0152052, 0.293283, 0.929896, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.221464, 0.0152052, 0.293283, 0.929896, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.221464, 0.0152052, 0.293283, 0.929896, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.221464, 0.0152052, 0.293283, 0.929896, 1, 1, 1 )
+tracks/11/type = "transform"
+tracks/11/path = NodePath("Skeleton:mixamorigLeftHandIndex2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.452768, 0.0519077, 0.0700605, 0.887354, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.452768, 0.0519077, 0.0700605, 0.887354, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.452768, 0.0519077, 0.0700605, 0.887354, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.452768, 0.0519077, 0.0700605, 0.887354, 1, 1, 1 )
+tracks/12/type = "transform"
+tracks/12/path = NodePath("Skeleton:mixamorigLeftHandIndex3")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.649547, 0.249535, 0.463006, 0.549042, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.649547, 0.249535, 0.463006, 0.549042, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.649547, 0.249535, 0.463006, 0.549042, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.649547, 0.249535, 0.463006, 0.549042, 1, 1, 1 )
+tracks/13/type = "transform"
+tracks/13/path = NodePath("Skeleton:mixamorigRightShoulder")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.157968, -0.167345, -0.213628, 0.949423, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.157968, -0.167345, -0.213627, 0.949423, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.159756, -0.166907, -0.212624, 0.949427, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.170243, -0.164255, -0.206725, 0.949369, 1, 1, 1 )
+tracks/14/type = "transform"
+tracks/14/path = NodePath("Skeleton:mixamorigRightArm")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.243509, 0.25176, -0.342739, 0.871694, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.316601, 0.225774, -0.306582, 0.868791, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.394682, 0.197363, -0.274945, 0.854213, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.479997, 0.166341, -0.253024, 0.823354, 1, 1, 1 )
+tracks/15/type = "transform"
+tracks/15/path = NodePath("Skeleton:mixamorigRightForeArm")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.00196009, -0.241351, 0.849165, -0.46975, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.0307588, 0.171607, -0.840372, 0.513206, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.0662564, 0.101408, -0.798006, 0.59035, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.106372, 0.0430235, -0.72879, 0.675055, 1, 1, 1 )
+tracks/16/type = "transform"
+tracks/16/path = NodePath("Skeleton:mixamorigRightHand")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.166553, 0.0778005, 0.180056, 0.966327, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.209838, 0.108247, 0.101441, 0.966416, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.239388, 0.151009, 0.00480227, 0.959097, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.249144, 0.181611, -0.084218, 0.947551, 1, 1, 1 )
+tracks/17/type = "transform"
+tracks/17/path = NodePath("Skeleton:mixamorigRightHandIndex1")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.0800162, -0.160427, -0.0256285, 0.983465, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.0800162, -0.160427, -0.0256285, 0.983465, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.0800162, -0.160427, -0.0256285, 0.983465, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.0800162, -0.160427, -0.0256285, 0.983465, 1, 1, 1 )
+tracks/18/type = "transform"
+tracks/18/path = NodePath("Skeleton:mixamorigRightHandIndex2")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.566059, -0.0806832, -0.213143, 0.792235, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.566059, -0.0806832, -0.213143, 0.792235, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.566059, -0.0806832, -0.213143, 0.792235, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.566059, -0.0806832, -0.213143, 0.792235, 1, 1, 1 )
+tracks/19/type = "transform"
+tracks/19/path = NodePath("Skeleton:mixamorigRightHandIndex3")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.171693, 0.0476775, -0.180753, 0.967252, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.171693, 0.0476775, -0.180753, 0.967252, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.171693, 0.0476775, -0.180753, 0.967252, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.171693, 0.0476775, -0.180753, 0.967252, 1, 1, 1 )
+tracks/20/type = "transform"
+tracks/20/path = NodePath("Skeleton:mixamorigLeftUpLeg")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.657962, -0.300126, 0.260561, 0.639624, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.602499, -0.306246, 0.217242, 0.704283, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.530715, -0.27683, 0.166784, 0.783511, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.437603, -0.265203, 0.100861, 0.853228, 1, 1, 1 )
+tracks/21/type = "transform"
+tracks/21/path = NodePath("Skeleton:mixamorigLeftLeg")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.792457, 0.0371043, -0.0990737, 0.600683, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.700627, 0.057011, -0.115436, 0.701816, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.586504, 0.0543087, -0.0911761, 0.802964, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.46864, 0.0668032, -0.056624, 0.879038, 1, 1, 1 )
+tracks/22/type = "transform"
+tracks/22/path = NodePath("Skeleton:mixamorigLeftFoot")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.353321, 0.0040445, -0.0159824, 0.935357, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.269251, 0.0114318, 0.0109311, 0.96294, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.163835, 0.0130784, 0.0200254, 0.986198, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0846203, 0.0116807, 0.00628782, 0.996325, 1, 1, 1 )
+tracks/23/type = "transform"
+tracks/23/path = NodePath("Skeleton:mixamorigLeftToeBase")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.114424, 0.0354148, -0.0438102, 0.991834, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.123943, 0.0604211, -0.0369828, 0.989757, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.127807, 0.0625742, -0.0231381, 0.989553, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.113605, 0.0604504, -0.0180884, 0.99152, 1, 1, 1 )
+tracks/24/type = "transform"
+tracks/24/path = NodePath("Skeleton:mixamorigRightUpLeg")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.558397, 0.0681948, -0.156662, 0.811787, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.487725, 0.0774663, -0.142723, 0.85776, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.414821, 0.0962907, -0.1316, 0.895172, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.312772, 0.130372, -0.122933, 0.932772, 1, 1, 1 )
+tracks/25/type = "transform"
+tracks/25/path = NodePath("Skeleton:mixamorigRightLeg")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.737273, -0.0364903, 0.231958, 0.633477, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.621308, -0.0340312, 0.165416, 0.765151, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.516379, -0.0229672, 0.116751, 0.848053, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.407499, -0.0134463, 0.0811062, 0.909498, 1, 1, 1 )
+tracks/26/type = "transform"
+tracks/26/path = NodePath("Skeleton:mixamorigRightFoot")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.266019, -0.0103777, -0.0462771, 0.9628, 1, 1, 1, 0.04, 1, 0, 0, 0, 0.262341, -0.0326638, -0.0404019, 0.963576, 1, 1, 1, 0.07, 1, 0, 0, 0, 0.210336, -0.0303961, -0.019257, 0.976967, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.12769, -0.0107426, 0.00710116, 0.991731, 1, 1, 1 )
+tracks/27/type = "transform"
+tracks/27/path = NodePath("Skeleton:mixamorigRightToeBase")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.0762307, -0.0213296, -0.0500875, 0.995603, 1, 1, 1, 0.04, 1, 0, 0, 0, -0.0652692, -0.0415319, -0.0546018, 0.995507, 1, 1, 1, 0.07, 1, 0, 0, 0, -0.0520791, -0.0344384, -0.0489929, 0.996846, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.0349265, -0.0240531, -0.0339816, 0.998522, 1, 1, 1 )
+
 [sub_resource type="Animation" id=100]
 resource_name = "dash"
 length = 0.001
@@ -2252,6 +2454,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0135732, -0.00761032, -0.002242
 
 [sub_resource type="Animation" id=93]
 resource_name = "idle"
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -2452,6 +2655,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0119701, -0.00704262, 0.0061842
 [sub_resource type="Animation" id=94]
 resource_name = "jump"
 length = 0.9
+step = 0.01
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -3053,6 +3257,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.00263385, -0.0577583, -0.008799
 [sub_resource type="Animation" id=124]
 resource_name = "strafe"
 length = 1.36667
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -3253,6 +3458,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.012135, 0.00920776, 0.00118868
 [sub_resource type="Animation" id=97]
 resource_name = "run"
 length = 0.6
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -3853,6 +4059,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.048754, -0.0242174, 0.0293529, 
 [sub_resource type="Animation" id=101]
 resource_name = "walk"
 length = 1.36667
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -4050,6 +4257,9 @@ tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0212595, -0.00731579, 0.010763, 0.999689, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0.0243619, -0.00615146, 0.0117777, 0.999615, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.0225293, -0.00322873, 0.0148112, 0.999631, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0250847, -0.00198685, 0.0164096, 0.999549, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.0281956, -0.00216342, 0.015842, 0.999475, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.0289237, -0.00311408, 0.0144258, 0.999473, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.0265042, -0.00447923, 0.0106688, 0.999582, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.02297, -0.00556074, 0.00591749, 0.999703, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.0194691, -0.00405947, 0.000694282, 0.999802, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.0197602, -0.00180576, -0.00217244, 0.999801, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.0307543, 0.00361912, -0.00219285, 0.999518, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.0582493, 0.0214879, 0.00613733, 0.998052, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.111707, 0.0492393, 0.0346098, 0.991917, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.170596, 0.103904, 0.0801231, 0.976566, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.15379, 0.137477, 0.0972868, 0.973645, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.0856412, 0.0881533, 0.0716233, 0.989831, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.0247341, 0.0224666, 0.0294187, 0.999009, 1, 1, 1, 0.566667, 1, 0, 0, 0, -0.0139046, -0.01773, 0.00451552, 0.999736, 1, 1, 1, 0.6, 1, 0, 0, 0, -0.0166712, -0.0224355, 0.00674234, 0.999587, 1, 1, 1, 0.633333, 1, 0, 0, 0, -0.0257325, -0.0144156, 0.00737632, 0.999538, 1, 1, 1, 0.666667, 1, 0, 0, 0, -0.0175487, -0.00469951, 0.00496751, 0.999823, 1, 1, 1, 0.7, 1, 0, 0, 0, -0.00225449, -0.00257396, 0.00215697, 0.999992, 1, 1, 1, 0.733333, 1, 0, 0, 0, -0.00324621, -0.0036284, 0.00105024, 0.999988, 1, 1, 1, 0.766667, 1, 0, 0, 0, 0.0020527, 0.00117124, 0.00165774, 0.999996, 1, 1, 1, 0.8, 1, 0, 0, 0, 0.0114922, 0.00722594, 0.00315771, 0.999903, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0.0169346, 0.00403606, 0.00584583, 0.999831, 1, 1, 1, 0.866667, 1, 0, 0, 0, 0.0237816, -0.0016566, 0.00966169, 0.999669, 1, 1, 1, 0.9, 1, 0, 0, 0, 0.0261792, -0.0249631, 0.0122811, 0.99927, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.033041, -0.0337262, 0.0169176, 0.998742, 1, 1, 1, 0.966667, 1, 0, 0, 0, 0.0305169, -0.0293493, 0.0143257, 0.999001, 1, 1, 1, 1, 1, 0, 0, 0, 0.0310888, -0.0146245, 0.00304683, 0.999405, 1, 1, 1, 1.03333, 1, 0, 0, 0, 0.0445131, -0.0229386, -0.00400291, 0.998737, 1, 1, 1, 1.06667, 1, 0, 0, 0, 0.0456189, -0.0307871, -0.00834176, 0.99845, 1, 1, 1, 1.1, 1, 0, 0, 0, 0.037412, -0.0240309, -0.00773546, 0.998981, 1, 1, 1, 1.13333, 1, 0, 0, 0, 0.0323579, -0.0165733, -0.00604365, 0.999321, 1, 1, 1, 1.16667, 1, 0, 0, 0, 0.0282405, -0.0106483, -0.00426498, 0.999535, 1, 1, 1, 1.2, 1, 0, 0, 0, 0.0269905, -0.0101381, -0.00132447, 0.999583, 1, 1, 1, 1.23333, 1, 0, 0, 0, 0.0259151, -0.00998195, 0.00126015, 0.999614, 1, 1, 1, 1.26667, 1, 0, 0, 0, 0.0248056, -0.00902589, 0.00291203, 0.999647, 1, 1, 1, 1.3, 1, 0, 0, 0, 0.0223752, -0.00970829, 0.00574368, 0.999686, 1, 1, 1, 1.33333, 1, 0, 0, 0, 0.0218247, -0.00963528, 0.00799653, 0.999683, 1, 1, 1 )
 
+[sub_resource type="AnimationNodeAnimation" id=193]
+animation = "Caida"
+
 [sub_resource type="AnimationNodeAnimation" id=125]
 animation = "dash"
 
@@ -4071,9 +4281,6 @@ animation = "jump"
 [sub_resource type="AnimationNodeAnimation" id=107]
 animation = "kick"
 
-[sub_resource type="AnimationNodeAnimation" id=108]
-animation = "run"
-
 [sub_resource type="AnimationNodeAnimation" id=109]
 animation = "slash_left"
 
@@ -4088,170 +4295,49 @@ animation = "walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=113]
 switch_mode = 2
+auto_advance = true
+advance_condition = "transition_combo"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=114]
 switch_mode = 2
+auto_advance = true
+advance_condition = "transition_combo"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=115]
 switch_mode = 2
+auto_advance = true
+advance_condition = "transition_combo"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=126]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=127]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=128]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=129]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=130]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=131]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=132]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=133]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=134]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=135]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=136]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=137]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=138]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=139]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=140]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=141]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=142]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=143]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=144]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=145]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=146]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=147]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=148]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=149]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=150]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=151]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=152]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=153]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=154]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=155]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=156]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=157]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=158]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=159]
 switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=160]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=161]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=162]
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=163]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=164]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=165]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=166]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=167]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=168]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=169]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=170]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=171]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=172]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=173]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=174]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=175]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=176]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=177]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=178]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=179]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=180]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=181]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=182]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=183]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=184]
 switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=185]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=186]
-switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=187]
 
@@ -4263,39 +4349,44 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=191]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=192]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=193]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=194]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=195]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=196]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=197]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=198]
+
 [sub_resource type="AnimationNodeStateMachine" id=122]
+states/Caida/node = SubResource( 193 )
+states/Caida/position = Vector2( 613, 6 )
 states/dash/node = SubResource( 125 )
-states/dash/position = Vector2( 472, 475 )
+states/dash/position = Vector2( 226, 472 )
 states/death/node = SubResource( 102 )
-states/death/position = Vector2( 1050, -43 )
+states/death/position = Vector2( 1133, 195 )
 states/finisher/node = SubResource( 103 )
-states/finisher/position = Vector2( 1562, 372 )
+states/finisher/position = Vector2( 613, 195 )
 states/hit/node = SubResource( 104 )
-states/hit/position = Vector2( 1278, 65 )
+states/hit/position = Vector2( 1133, 304 )
 states/idle/node = SubResource( 105 )
-states/idle/position = Vector2( 105, 485 )
+states/idle/position = Vector2( 226, 310 )
 states/jump/node = SubResource( 106 )
-states/jump/position = Vector2( 610, 163 )
+states/jump/position = Vector2( 404, 6 )
 states/kick/node = SubResource( 107 )
-states/kick/position = Vector2( 1333, 372 )
-states/run/node = SubResource( 108 )
-states/run/position = Vector2( -289, 105 )
+states/kick/position = Vector2( 613, 299 )
 states/slash_left/node = SubResource( 109 )
-states/slash_left/position = Vector2( 1151, 372 )
+states/slash_left/position = Vector2( 613, 389 )
 states/slash_right/node = SubResource( 110 )
-states/slash_right/position = Vector2( 945, 372 )
+states/slash_right/position = Vector2( 613, 472 )
 states/strafe/node = SubResource( 111 )
-states/strafe/position = Vector2( 282, 6 )
+states/strafe/position = Vector2( 226, 6 )
 states/walk/node = SubResource( 112 )
-states/walk/position = Vector2( -31, 163 )
-transitions = [ "slash_right", "slash_left", SubResource( 113 ), "slash_left", "kick", SubResource( 114 ), "kick", "finisher", SubResource( 115 ), "idle", "walk", SubResource( 126 ), "idle", "strafe", SubResource( 127 ), "idle", "jump", SubResource( 128 ), "idle", "dash", SubResource( 129 ), "walk", "idle", SubResource( 130 ), "walk", "strafe", SubResource( 131 ), "strafe", "walk", SubResource( 132 ), "walk", "jump", SubResource( 133 ), "jump", "walk", SubResource( 134 ), "walk", "dash", SubResource( 135 ), "dash", "walk", SubResource( 136 ), "strafe", "jump", SubResource( 137 ), "jump", "strafe", SubResource( 138 ), "strafe", "dash", SubResource( 139 ), "dash", "strafe", SubResource( 140 ), "jump", "idle", SubResource( 141 ), "dash", "jump", SubResource( 142 ), "jump", "dash", SubResource( 143 ), "dash", "idle", SubResource( 144 ), "strafe", "idle", SubResource( 145 ), "strafe", "hit", SubResource( 146 ), "strafe", "death", SubResource( 147 ), "jump", "death", SubResource( 148 ), "jump", "hit", SubResource( 149 ), "dash", "death", SubResource( 150 ), "dash", "hit", SubResource( 151 ), "idle", "death", SubResource( 152 ), "idle", "hit", SubResource( 153 ), "walk", "death", SubResource( 154 ), "walk", "hit", SubResource( 155 ), "hit", "strafe", SubResource( 156 ), "hit", "jump", SubResource( 157 ), "hit", "dash", SubResource( 158 ), "hit", "idle", SubResource( 159 ), "hit", "walk", SubResource( 160 ), "walk", "slash_right", SubResource( 161 ), "strafe", "slash_right", SubResource( 162 ), "idle", "slash_right", SubResource( 163 ), "jump", "slash_right", SubResource( 164 ), "dash", "slash_right", SubResource( 165 ), "slash_right", "dash", SubResource( 166 ), "slash_right", "idle", SubResource( 167 ), "slash_right", "walk", SubResource( 168 ), "slash_right", "strafe", SubResource( 169 ), "slash_right", "jump", SubResource( 170 ), "slash_left", "jump", SubResource( 171 ), "slash_left", "strafe", SubResource( 172 ), "slash_left", "dash", SubResource( 173 ), "slash_left", "idle", SubResource( 174 ), "slash_left", "walk", SubResource( 175 ), "kick", "jump", SubResource( 176 ), "kick", "dash", SubResource( 177 ), "kick", "strafe", SubResource( 178 ), "kick", "idle", SubResource( 179 ), "kick", "walk", SubResource( 180 ), "finisher", "jump", SubResource( 181 ), "finisher", "dash", SubResource( 182 ), "finisher", "strafe", SubResource( 183 ), "finisher", "idle", SubResource( 184 ), "finisher", "walk", SubResource( 185 ), "hit", "slash_right", SubResource( 186 ), "slash_right", "hit", SubResource( 187 ), "slash_left", "hit", SubResource( 188 ), "kick", "hit", SubResource( 189 ), "finisher", "hit", SubResource( 190 ), "slash_right", "death", SubResource( 191 ), "slash_left", "death", SubResource( 192 ), "kick", "death", SubResource( 193 ), "finisher", "death", SubResource( 194 ) ]
-graph_offset = Vector2( -340.496, -103.467 )
+states/walk/position = Vector2( -56, 310 )
+transitions = [ "slash_right", "slash_left", SubResource( 113 ), "slash_left", "kick", SubResource( 114 ), "kick", "finisher", SubResource( 115 ), "idle", "walk", SubResource( 126 ), "idle", "strafe", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "walk", "idle", SubResource( 130 ), "strafe", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "idle", "slash_right", SubResource( 163 ), "slash_right", "idle", SubResource( 167 ), "slash_left", "idle", SubResource( 174 ), "kick", "idle", SubResource( 179 ), "finisher", "idle", SubResource( 184 ), "slash_right", "hit", SubResource( 187 ), "slash_left", "hit", SubResource( 188 ), "kick", "hit", SubResource( 189 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "Caida", "idle", SubResource( 194 ), "idle", "Caida", SubResource( 195 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "Caida", SubResource( 198 ) ]
+start_node = "idle"
+graph_offset = Vector2( -16.4822, 123.61 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
@@ -4307,7 +4398,7 @@ dist_corte = 15.0
 dist_limite = 22.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, 0 )
 shape = SubResource( 1 )
 
 [node name="TargetPlayer" type="Spatial" parent="."]
@@ -4328,6 +4419,7 @@ shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/hitbox_ataque"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+visible = false
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -4339,7 +4431,7 @@ skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
 [node name="RootNode" type="Spatial" parent="TargetPlayer"]
-transform = Transform( -100, 0, -8.74228e-06, 0, 100, 0, 8.74228e-06, 0, -100, 0, 0, 0 )
+transform = Transform( -300, 0, -4.52987e-05, 0, 300, 0, 4.52987e-05, 0, -300, 0, 0, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="TargetPlayer/RootNode"]
 bones/0/name = "mixamorigHips"
@@ -4857,6 +4949,7 @@ transform = Transform( 0.991095, 0.130335, -0.0272492, -0.133153, 0.97012, -0.20
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000267593, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TargetPlayer/RootNode"]
+anims/caida = SubResource( 192 )
 anims/dash = SubResource( 100 )
 anims/death = SubResource( 90 )
 anims/death1 = SubResource( 91 )
@@ -4877,6 +4970,8 @@ anims/walk = SubResource( 101 )
 [node name="AnimationTree" type="AnimationTree" parent="TargetPlayer/RootNode/AnimationPlayer"]
 tree_root = SubResource( 122 )
 anim_player = NodePath("..")
+active = true
 parameters/playback = SubResource( 123 )
+parameters/conditions/transition_combo = false
 
 [connection signal="body_entered" from="TargetPlayer/hitbox_ataque" to="." method="_on_hitbox_ataque_body_entered"]

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Great Sword Run.fbx-561f8ddfa9381c58e83fd81ff8b3daff.scn"
+path="res://.import/Great Sword Run.fbx-7160aff7e7da4213d2f5fcac1e7a9f4f.scn"
 
 [deps]
 
-source_file="res://assets/Characters/First Enemy animations/Great Sword Run.fbx"
-dest_files=[ "res://.import/Great Sword Run.fbx-561f8ddfa9381c58e83fd81ff8b3daff.scn" ]
+source_file="res://assets/Characters/First Enemy animations/old/Great Sword Run.fbx"
+dest_files=[ "res://.import/Great Sword Run.fbx-7160aff7e7da4213d2f5fcac1e7a9f4f.scn" ]
 
 [params]
 
