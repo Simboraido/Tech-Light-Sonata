@@ -25,11 +25,11 @@ export (int) var timerAtq
 # si estamos caminando hacia adelante
 var adelante = false
 # si estamos atacando
-var atacando = false
+export (bool) var atacando = false
 # si puede atacar
 var puede_atacar = true
 var combo = 0
-var arr_ataques = ["slash_left", "slash_right", "kick", "finisher"]
+var arr_ataques = ["slash_right", "slash_left", "kick", "finisher"]
 # si te estan pegando
 var pegando = false
 
@@ -37,9 +37,10 @@ var pegando = false
 onready var Animacion = $TargetPlayer/RootNode/AnimationPlayer/AnimationTree.get("parameters/playback")
 # advance condition
 onready var anim_tree = $TargetPlayer/RootNode/AnimationPlayer/AnimationTree
+onready var colision_ref = $TargetPlayer/hitbox_ataque/CollisionShape
 
 # dash
-export var dash_cooldown = 30							# frames de cooldown al hacer dash
+export var dash_cooldown = 20							# frames de cooldown al hacer dash
 export var dash_duration = 15 							# duración del dash
 var dashc = dash_cooldown                               # dash cooldown contador (si está en ele máximo está "cargado")
 var dashE = 0											# dashE contador (si llega a el valor máximo, deja de dashear) 
@@ -47,8 +48,8 @@ var dashing = false										# booleano que dice si dahsea o no
 
 # ataque
 var attack = 1
-var attacking = false
 var counter = 0
+export (int) var atck_cooldown = 20
 
 # fix camara
 export (float) var dist_max_camara
@@ -57,7 +58,8 @@ export (float) var dist_corte
 export (float) var dist_limite
 
 func _ready():
-	$TargetPlayer/hitbox_ataque/CollisionShape.disabled = true
+	colision_ref.disabled = true
+	atacando = false
 
 func _physics_process(delta):			# delta es 1/60 seg.
 	counter +=1
@@ -80,7 +82,9 @@ func _physics_process(delta):			# delta es 1/60 seg.
 
 	if timerAtq > 0:
 		timerAtq -= 1
-		anim_tree["parameters/conditions/transition_combo"] = timerAtq > 0 and combo < 4
+		anim_tree["parameters/conditions/transition_combo"] = timerAtq > 0 and combo < 4 
+		anim_tree["parameters/conditions/no_sgte_atck"] = not (timerAtq > 0 and combo < 4) 
+	print(anim_tree["parameters/conditions/transition_combo"])
 
 	if not dashing and dashc < dash_cooldown:
 		dashc+=1
@@ -92,12 +96,14 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		dashE = 0
 		
 
-	if attack < 1:
-		attack += 1
-		$TargetPlayer/hitbox_ataque/CollisionShape.disabled = true			
-	if Input.is_action_just_pressed("ataque"):
-			$TargetPlayer/hitbox_ataque/CollisionShape.disabled = false
-			attack = 0
+#	if attack < 1:
+#		attack += 1
+#		$TargetPlayer/hitbox_ataque/CollisionShape.disabled = true			
+#	if Input.is_action_just_pressed("ataque"):
+#			$TargetPlayer/hitbox_ataque/CollisionShape.disabled = false
+#			attack = 0
+	
+	colision_ref.disabled = not atacando
 
 	velocidad = velocidad.rotated(Vector3.UP,targetCamera.rotation.y)
 	velocidad = move_and_slide(velocidad,Vector3.UP)
@@ -110,13 +116,15 @@ func _physics_process(delta):			# delta es 1/60 seg.
 #			combo += 1
 #		else:
 #			combo = 4
-		if combo < 4:
-			Animacion.travel(arr_ataques[combo])
+#		if combo < 4:
+#			Animacion.travel(arr_ataques[combo])
 #		else:
 #			Animacion.travel("idle")
 #			combo = 0
 #			timerAtq = 0
+		pass
 	else:
+#		print("mov")
 		if velocidad.y > 0:
 			Animacion.travel("jump")
 		if !is_on_floor() and velocidad.y < 0:
@@ -131,6 +139,7 @@ func _physics_process(delta):			# delta es 1/60 seg.
 				Animacion.travel("strafe")
 		else:
 			Animacion.travel("idle")
+
 
 
 
@@ -150,12 +159,14 @@ func _input(event):
 		if !puede_atacar:
 			return
 		if atacando or !is_on_floor():
-			timerAtq = 120
+			timerAtq = atck_cooldown
 		else:
 			atacando = true
 #			timerAtq = 120
-#			Animacion.travel(arr_ataques[0])
-#			combo = 0
+			Animacion.travel(arr_ataques[0])
+			combo = 1
+			anim_tree["parameters/conditions/transition_combo"] = false
+			anim_tree["parameters/conditions/no_sgte_atck"] = true
 
 func take_damage(danno):
 	vida -= danno

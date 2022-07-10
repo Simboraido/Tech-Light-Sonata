@@ -68,3 +68,10 @@ visible = false
 [node name="CollisionShape" type="CollisionShape" parent="Paredes"]
 transform = Transform( 60.9955, 0, 0, 0, 15, 0, 0, 0, 60.9955, 0, 13, 0 )
 shape = SubResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.132605, -0.64719, 0.750707, 0.0816045, 0.747695, 0.659009, -0.987804, 0.148649, -0.0463343, 90.913, 78.9244, 0 )
+light_color = Color( 0.741176, 0.317647, 0.843137, 1 )
+shadow_enabled = true
+
+[node name="SpotLight" type="SpotLight" parent="."]
