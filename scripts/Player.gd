@@ -77,7 +77,8 @@ func _physics_process(delta):			# delta es 1/60 seg.
 	if not is_on_floor():			# si no está en el piso
 		rapidezY -= gravedad*delta			# se aplica la gravedad
 	if Input.is_action_pressed("salto"):	# si se apreta la tecla de salto
-		if is_on_floor():			# si está en el piso salta, si no, no hace nada
+		if is_on_floor():					# si está en el piso salta, si no, no hace nada
+#			take_damage(1)					# para probar
 			rapidezY = salto				# salta
 
 	if timerAtq > 0:

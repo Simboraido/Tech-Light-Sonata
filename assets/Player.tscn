@@ -4331,8 +4331,8 @@ tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0212595, -0.00731579, 0.010763, 0.999689, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0.0243619, -0.00615146, 0.0117777, 0.999615, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.0225293, -0.00322873, 0.0148112, 0.999631, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0250847, -0.00198685, 0.0164096, 0.999549, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.0281956, -0.00216342, 0.015842, 0.999475, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.0289237, -0.00311408, 0.0144258, 0.999473, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.0265042, -0.00447923, 0.0106688, 0.999582, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.02297, -0.00556074, 0.00591749, 0.999703, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.0194691, -0.00405947, 0.000694282, 0.999802, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.0197602, -0.00180576, -0.00217244, 0.999801, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.0307543, 0.00361912, -0.00219285, 0.999518, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.0582493, 0.0214879, 0.00613733, 0.998052, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.111707, 0.0492393, 0.0346098, 0.991917, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.170596, 0.103904, 0.0801231, 0.976566, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.15379, 0.137477, 0.0972868, 0.973645, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.0856412, 0.0881533, 0.0716233, 0.989831, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.0247341, 0.0224666, 0.0294187, 0.999009, 1, 1, 1, 0.566667, 1, 0, 0, 0, -0.0139046, -0.01773, 0.00451552, 0.999736, 1, 1, 1, 0.6, 1, 0, 0, 0, -0.0166712, -0.0224355, 0.00674234, 0.999587, 1, 1, 1, 0.633333, 1, 0, 0, 0, -0.0257325, -0.0144156, 0.00737632, 0.999538, 1, 1, 1, 0.666667, 1, 0, 0, 0, -0.0175487, -0.00469951, 0.00496751, 0.999823, 1, 1, 1, 0.7, 1, 0, 0, 0, -0.00225449, -0.00257396, 0.00215697, 0.999992, 1, 1, 1, 0.733333, 1, 0, 0, 0, -0.00324621, -0.0036284, 0.00105024, 0.999988, 1, 1, 1, 0.766667, 1, 0, 0, 0, 0.0020527, 0.00117124, 0.00165774, 0.999996, 1, 1, 1, 0.8, 1, 0, 0, 0, 0.0114922, 0.00722594, 0.00315771, 0.999903, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0.0169346, 0.00403606, 0.00584583, 0.999831, 1, 1, 1, 0.866667, 1, 0, 0, 0, 0.0237816, -0.0016566, 0.00966169, 0.999669, 1, 1, 1, 0.9, 1, 0, 0, 0, 0.0261792, -0.0249631, 0.0122811, 0.99927, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.033041, -0.0337262, 0.0169176, 0.998742, 1, 1, 1, 0.966667, 1, 0, 0, 0, 0.0305169, -0.0293493, 0.0143257, 0.999001, 1, 1, 1, 1, 1, 0, 0, 0, 0.0310888, -0.0146245, 0.00304683, 0.999405, 1, 1, 1, 1.03333, 1, 0, 0, 0, 0.0445131, -0.0229386, -0.00400291, 0.998737, 1, 1, 1, 1.06667, 1, 0, 0, 0, 0.0456189, -0.0307871, -0.00834176, 0.99845, 1, 1, 1, 1.1, 1, 0, 0, 0, 0.037412, -0.0240309, -0.00773546, 0.998981, 1, 1, 1, 1.13333, 1, 0, 0, 0, 0.0323579, -0.0165733, -0.00604365, 0.999321, 1, 1, 1, 1.16667, 1, 0, 0, 0, 0.0282405, -0.0106483, -0.00426498, 0.999535, 1, 1, 1, 1.2, 1, 0, 0, 0, 0.0269905, -0.0101381, -0.00132447, 0.999583, 1, 1, 1, 1.23333, 1, 0, 0, 0, 0.0259151, -0.00998195, 0.00126015, 0.999614, 1, 1, 1, 1.26667, 1, 0, 0, 0, 0.0248056, -0.00902589, 0.00291203, 0.999647, 1, 1, 1, 1.3, 1, 0, 0, 0, 0.0223752, -0.00970829, 0.00574368, 0.999686, 1, 1, 1, 1.33333, 1, 0, 0, 0, 0.0218247, -0.00963528, 0.00799653, 0.999683, 1, 1, 1 )
 
-[sub_resource type="AnimationNodeAnimation" id=193]
-animation = "Caida"
+[sub_resource type="AnimationNodeAnimation" id=201]
+animation = "caida"
 
 [sub_resource type="AnimationNodeAnimation" id=125]
 animation = "dash"
@@ -4427,19 +4427,19 @@ priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=191]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=194]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=195]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=196]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=197]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=198]
+[sub_resource type="AnimationNodeStateMachineTransition" id=202]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=203]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=204]
 
 [sub_resource type="AnimationNodeStateMachine" id=122]
-states/Caida/node = SubResource( 193 )
-states/Caida/position = Vector2( 613, 6 )
+states/caida/node = SubResource( 201 )
+states/caida/position = Vector2( 613, 6 )
 states/dash/node = SubResource( 125 )
 states/dash/position = Vector2( 226, 472 )
 states/death/node = SubResource( 102 )
@@ -4451,7 +4451,7 @@ states/hit/position = Vector2( 1133, 321 )
 states/idle/node = SubResource( 105 )
 states/idle/position = Vector2( 226, 310 )
 states/jump/node = SubResource( 106 )
-states/jump/position = Vector2( 404, 6 )
+states/jump/position = Vector2( 407, 6 )
 states/kick/node = SubResource( 107 )
 states/kick/position = Vector2( 613, 299 )
 states/slash_left/node = SubResource( 109 )
@@ -4462,9 +4462,9 @@ states/strafe/node = SubResource( 111 )
 states/strafe/position = Vector2( 226, 6 )
 states/walk/node = SubResource( 112 )
 states/walk/position = Vector2( -56, 310 )
-transitions = [ "slash_right", "slash_left", SubResource( 113 ), "slash_left", "kick", SubResource( 114 ), "kick", "finisher", SubResource( 115 ), "idle", "walk", SubResource( 126 ), "idle", "strafe", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "walk", "idle", SubResource( 130 ), "strafe", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "idle", "slash_right", SubResource( 163 ), "slash_right", "idle", SubResource( 167 ), "slash_left", "idle", SubResource( 174 ), "kick", "idle", SubResource( 179 ), "finisher", "idle", SubResource( 184 ), "slash_right", "hit", SubResource( 187 ), "slash_left", "hit", SubResource( 188 ), "kick", "hit", SubResource( 189 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "Caida", "idle", SubResource( 194 ), "idle", "Caida", SubResource( 195 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "Caida", SubResource( 198 ) ]
+transitions = [ "slash_right", "slash_left", SubResource( 113 ), "slash_left", "kick", SubResource( 114 ), "kick", "finisher", SubResource( 115 ), "idle", "walk", SubResource( 126 ), "idle", "strafe", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "walk", "idle", SubResource( 130 ), "strafe", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "idle", "slash_right", SubResource( 163 ), "slash_right", "idle", SubResource( 167 ), "slash_left", "idle", SubResource( 174 ), "kick", "idle", SubResource( 179 ), "finisher", "idle", SubResource( 184 ), "slash_right", "hit", SubResource( 187 ), "slash_left", "hit", SubResource( 188 ), "kick", "hit", SubResource( 189 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "caida", SubResource( 202 ), "caida", "idle", SubResource( 203 ), "idle", "caida", SubResource( 204 ) ]
 start_node = "idle"
-graph_offset = Vector2( -86.4822, -49.39 )
+graph_offset = Vector2( -93.4822, 18.61 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
@@ -4680,7 +4680,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.267578, 0.466429, 0.843118, 0.886669, -0.223283, 0.404924, 0.377122, 0.855915, -0.353823, -0.001317, 0.00857563, 0.0038792 )
+transform = Transform( -0.278835, 0.536008, 0.796836, 0.870432, -0.209477, 0.445497, 0.405709, 0.817812, -0.40815, -0.00107029, 0.00838302, 0.00418176 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
