@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/katana.png" type="Texture" id=1]
 [ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=2]
@@ -9,7 +9,7 @@
 resource_name = "FadeIn"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/path = NodePath("VBoxContainer2/VBoxContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Label:modulate")
+tracks/1/path = NodePath("VBoxContainer2/Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -48,7 +48,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/path = NodePath("VBoxContainer2/VBoxContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Label:modulate")
+tracks/1/path = NodePath("VBoxContainer2/Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -96,7 +96,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Label:self_modulate")
+tracks/4/path = NodePath("VBoxContainer2/Label:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -137,27 +137,26 @@ tracks/1/keys = {
 "values": [ Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ), Color( 1.15, 1.15, 1.15, 1 ), Color( 1.2, 1.2, 1.2, 1 ) ]
 }
 
-[sub_resource type="Theme" id=4]
-
-[sub_resource type="DynamicFont" id=5]
-size = 50
-outline_size = 1
+[sub_resource type="DynamicFont" id=4]
+size = 60
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="Pause" type="Control"]
 pause_mode = 2
-margin_left = 450.0
-margin_top = 200.0
-margin_right = 490.0
-margin_bottom = 240.0
-script = ExtResource( 4 )
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 167.0
-margin_bottom = 73.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="MarginContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
@@ -165,34 +164,41 @@ anims/FadeIn = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/parpadeo = SubResource( 3 )
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 397.0
+margin_top = 141.0
+margin_right = 627.0
+margin_bottom = 458.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
 self_modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 8.0
-margin_top = 27.0
-margin_right = 199.0
-margin_bottom = 86.0
+margin_right = 230.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 4
-theme = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Pause"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 self_modulate = Color( 1.2, 1.2, 1.2, 1 )
+margin_top = 204.0
 margin_right = 207.0
+margin_bottom = 317.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 alignment = 1
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_right = 207.0
 margin_bottom = 35.0
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Main_menu")
 text = "Resume"
 
-[node name="Main_menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Main_menu" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 39.0
 margin_right = 207.0
 margin_bottom = 74.0
@@ -200,7 +206,7 @@ focus_neighbour_top = NodePath("../Resume")
 focus_neighbour_bottom = NodePath("../Exit")
 text = "Main menu"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 78.0
 margin_right = 207.0
 margin_bottom = 113.0
@@ -215,5 +221,9 @@ texture = ExtResource( 1 )
 offset = Vector2( 360, 0 )
 flip_h = true
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/Resume" to="." method="_on_Resume_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/Main_menu" to="." method="_on_Main_menu_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Main_menu" to="." method="_on_Main_menu_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
