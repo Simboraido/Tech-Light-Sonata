@@ -104,13 +104,6 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		dashing = false
 		dashE = 0
 		
-
-#	if attack < 1:
-#		attack += 1
-#		$TargetPlayer/hitbox_ataque/CollisionShape.disabled = true			
-#	if Input.is_action_just_pressed("ataque"):
-#			$TargetPlayer/hitbox_ataque/CollisionShape.disabled = false
-#			attack = 0
 	
 	colision_ref.disabled = not atacando
 
