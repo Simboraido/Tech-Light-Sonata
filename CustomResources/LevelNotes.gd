@@ -7,7 +7,7 @@ export (int) var bpm
 export (Vector2) var signature
 
 var notes = []
-const levelnote = preload("res://Scenes/LevelNote.tscn")
+const levelnote = preload("res://CustomResources/LevelNotes.gd")
 
 func serialize():
 	var serialized_notes = []
