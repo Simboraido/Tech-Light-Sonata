@@ -24,12 +24,18 @@ export (int) var timerAtq
 
 # si estamos caminando hacia adelante
 var adelante = false
+# si estamos caminando hacia atrás
+var atras = false
+# si estamos caminado hacia la derecha
+var derecha = false
+# si estamos caminado hcia la izquierda
+var izquierda = false
 # si estamos atacando
 export (bool) var atacando = false
 # si puede atacar
 var puede_atacar = true
 var combo = 0
-var arr_ataques = ["slash_right", "slash_left", "kick", "finisher"]
+var arr_ataques = ["new_slash_right", "new_slash_left", "new_kick", "finisher"]
 # si te estan pegando
 var pegando = false
 
@@ -49,7 +55,7 @@ var dashing = false										# booleano que dice si dahsea o no
 # ataque
 var attack = 1
 var counter = 0
-export (int) var atck_cooldown = 20
+export (int) var atck_cooldown = 15
 
 # fix camara
 export (float) var dist_max_camara
@@ -72,7 +78,9 @@ func _physics_process(delta):			# delta es 1/60 seg.
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
 	targetCamera.look_at(puntoMirar, Vector3.UP)
 	var input = Vector3(Input.get_axis("izquierda","derecha"),0,Input.get_axis("arriba","abajo"))			# recibe los inputs de movimineto 
-	adelante = input.z != 0
+	adelante = input.z < 0
+	atras = input.z > 0  
+	derecha = input.x > 0 and !adelante
 	velocidad = input.normalized()*rapidez+Vector3(0,rapidezY,0)	# velocidad es el vector input normalizado por la rapidez más el vector de salto
 	if not is_on_floor():			# si no está en el piso
 		rapidezY -= gravedad*delta			# se aplica la gravedad
@@ -135,9 +143,13 @@ func _physics_process(delta):			# delta es 1/60 seg.
 			if dashing:
 				Animacion.travel("dash")
 			elif adelante:
-				Animacion.travel("walk") 
+				Animacion.travel("new_walk_foward") 
+			elif atras:
+				Animacion.travel("new_walk_backward")
+			elif derecha:
+				Animacion.travel("new_strafe_right")
 			else:
-				Animacion.travel("strafe")
+				Animacion.travel("new_strafe_left")
 		else:
 			Animacion.travel("idle")
 
@@ -155,8 +167,8 @@ func _input(event):
 		dashc = 0
 
 	if event.is_action_pressed("ataque"):
-#		if !Globales.enritmo:
-#			combo = 0
+		if !Globales.enritmo:
+			combo = 0
 		if !puede_atacar:
 			return
 		if atacando or !is_on_floor():
