@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=2]
+[gd_scene load_steps=172 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://color_makoto/azul.tres" type="Material" id=2]
@@ -6692,6 +6692,26 @@ graph_offset = Vector2( -201.482, -22.39 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
+[sub_resource type="Curve" id=238]
+min_value = 0.4
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.717045 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=239]
+curve = SubResource( 238 )
+
+[sub_resource type="ParticlesMaterial" id=240]
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+initial_velocity = 1.0
+scale_curve = SubResource( 239 )
+color = Color( 0, 0.952941, 1, 1 )
+
+[sub_resource type="SphereMesh" id=241]
+radius = 0.25
+height = 0.5
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 dist_max_camara = 15.0
@@ -6904,7 +6924,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.268356, 0.484916, 0.832372, 0.883166, -0.22123, 0.413613, 0.384713, 0.846118, -0.368894, -0.00112348, 0.00853122, 0.00403806 )
+transform = Transform( -0.268544, 0.470324, 0.840643, 0.887118, -0.21933, 0.406101, 0.375377, 0.854804, -0.358334, -0.00129289, 0.0085815, 0.00390529 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
@@ -7301,5 +7321,15 @@ active = true
 parameters/playback = SubResource( 123 )
 parameters/conditions/no_sgte_atck = false
 parameters/conditions/transition_combo = false
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4, 0 )
+emitting = false
+amount = 15
+lifetime = 1.25
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 240 )
+draw_pass_1 = SubResource( 241 )
 
 [connection signal="body_entered" from="TargetPlayer/hitbox_ataque" to="." method="_on_hitbox_ataque_body_entered"]

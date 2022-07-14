@@ -19,6 +19,8 @@ var rapidez = rapidezW                                    # rapidez del personaj
 var velocidad = Vector3(0,0,0) 			# vector velocidad, inicialmente en 0,0,0                           # se crea el vector velocidad del personaje
 var rapidezY = 0										  # rapidez inicial en Y
 
+onready var dash_particles = $Particles
+
 # duracion del buffer
 export (int) var timerAtq
 
@@ -134,6 +136,7 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		# para correr
 		if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
 			if dashing:
+				dash_particles.emitting = true
 				Animacion.travel("dash")
 			elif adelante:
 				Animacion.travel("new_walk_foward") 
@@ -145,8 +148,6 @@ func _physics_process(delta):			# delta es 1/60 seg.
 				Animacion.travel("new_strafe_left")
 		else:
 			Animacion.travel("idle")
-
-
 
 
 func _on_hitbox_ataque_body_entered(body):  
