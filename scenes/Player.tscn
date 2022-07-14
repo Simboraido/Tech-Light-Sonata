@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=2]
+[gd_scene load_steps=173 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://color_makoto/azul.tres" type="Material" id=2]
@@ -6694,7 +6694,7 @@ graph_offset = Vector2( -201.482, -22.39 )
 
 [sub_resource type="Curve" id=238]
 min_value = 0.4
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.717045 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.599773 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=239]
 curve = SubResource( 238 )
@@ -6708,7 +6708,16 @@ initial_velocity = 1.0
 scale_curve = SubResource( 239 )
 color = Color( 0, 0.952941, 1, 1 )
 
+[sub_resource type="SpatialMaterial" id=242]
+albedo_color = Color( 0, 0.984314, 1, 1 )
+emission_enabled = true
+emission = Color( 0, 0.92549, 1, 1 )
+emission_energy = 2.5
+emission_operator = 0
+emission_on_uv2 = false
+
 [sub_resource type="SphereMesh" id=241]
+material = SubResource( 242 )
 radius = 0.25
 height = 0.5
 
@@ -6924,7 +6933,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.268544, 0.470324, 0.840643, 0.887118, -0.21933, 0.406101, 0.375377, 0.854804, -0.358334, -0.00129289, 0.0085815, 0.00390529 )
+transform = Transform( -0.274077, 0.467659, 0.840344, 0.886355, -0.216227, 0.409415, 0.373171, 0.857054, -0.35525, -0.00129062, 0.0085755, 0.00388134 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
@@ -7326,9 +7335,10 @@ parameters/conditions/transition_combo = false
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4, 0 )
 emitting = false
 amount = 15
-lifetime = 1.25
+lifetime = 0.75
 one_shot = true
-explosiveness = 0.5
+explosiveness = 0.75
+local_coords = false
 process_material = SubResource( 240 )
 draw_pass_1 = SubResource( 241 )
 
