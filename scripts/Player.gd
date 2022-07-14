@@ -95,7 +95,7 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		timerAtq -= 1
 		anim_tree["parameters/conditions/transition_combo"] = timerAtq > 0 and combo < 4 
 		anim_tree["parameters/conditions/no_sgte_atck"] = not (timerAtq > 0 and combo < 4) 
-	print(anim_tree["parameters/conditions/transition_combo"])
+#	print(anim_tree["parameters/conditions/transition_combo"])
 
 	if not dashing and dashc < dash_cooldown:
 		dashc+=1
@@ -107,7 +107,7 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		dashE = 0
 		
 	
-	colision_ref.disabled = not atacando
+#	colision_ref.disabled = not atacando
 
 	velocidad = velocidad.rotated(Vector3.UP,targetCamera.rotation.y)
 	velocidad = move_and_slide(velocidad,Vector3.UP)

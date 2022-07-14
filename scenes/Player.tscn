@@ -21,6 +21,7 @@ glow_intensity = 2.0
 glow_bloom = 1.0
 
 [sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.5, 1.5, 1.945 )
 
 [sub_resource type="CubeMesh" id=5]
 
@@ -3103,6 +3104,18 @@ tracks/28/keys = {
 "update": 1,
 "values": [ true, true ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("../hitbox_ataque/CollisionShape:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
 
 [sub_resource type="Animation" id=209]
 resource_name = "new_death"
@@ -3503,6 +3516,30 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.00267995, 0.0181574, 0.0149939, 0.999719, 1, 1, 1, 0.0333333, 1, 0, 0, 0, -0.0157838, 0.0270391, 0.0199255, 0.999311, 1, 1, 1, 0.0666667, 1, 0, 0, 0, -0.0228278, 0.0577973, 0.0436109, 0.997114, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0654356, 0.121156, 0.0834969, 0.986949, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.168756, 0.1879, 0.129446, 0.958884, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.245957, 0.262905, 0.165829, 0.918089, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.225398, 0.361825, 0.144927, 0.892903, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.202519, 0.412052, 0.119035, 0.880358, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.190053, 0.433668, 0.0999725, 0.87511, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.193521, 0.438316, 0.0924096, 0.872863, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.195479, 0.437629, 0.0918186, 0.872834, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.193498, 0.432419, 0.0989521, 0.875089, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.191735, 0.427962, 0.105059, 0.876954, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.191691, 0.427776, 0.105253, 0.877031, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.19171, 0.427765, 0.105227, 0.877036, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.191721, 0.427757, 0.105211, 0.877039, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.191724, 0.427753, 0.105205, 0.877041, 1, 1, 1, 0.566667, 1, 0, 0, 0, 0.191722, 0.427752, 0.105205, 0.877042, 1, 1, 1, 0.6, 1, 0, 0, 0, 0.191716, 0.427752, 0.10521, 0.877043, 1, 1, 1, 0.633333, 1, 0, 0, 0, 0.191707, 0.427753, 0.105219, 0.877043, 1, 1, 1, 0.666667, 1, 0, 0, 0, 0.191696, 0.427753, 0.105228, 0.877044, 1, 1, 1, 0.7, 1, 0, 0, 0, 0.191686, 0.427759, 0.105242, 0.877042, 1, 1, 1, 0.733333, 1, 0, 0, 0, 0.191676, 0.42777, 0.10526, 0.877037, 1, 1, 1, 0.766667, 1, 0, 0, 0, 0.19167, 0.427783, 0.105276, 0.87703, 1, 1, 1, 0.8, 1, 0, 0, 0, 0.191668, 0.427793, 0.105288, 0.877024, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0.204564, 0.429717, 0.106604, 0.873002, 1, 1, 1, 0.866667, 1, 0, 0, 0, 0.250607, 0.431461, 0.113088, 0.859214, 1, 1, 1, 0.9, 1, 0, 0, 0, 0.28163, 0.411467, 0.12692, 0.857479, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.289499, 0.359549, 0.1142, 0.879701, 1, 1, 1, 0.966667, 1, 0, 0, 0, 0.294145, 0.242019, 0.0862399, 0.92058, 1, 1, 1, 1, 1, 0, 0, 0, 0.26375, 0.120468, 0.0614388, 0.955065, 1, 1, 1, 1.03333, 1, 0, 0, 0, 0.184833, 0.0604409, 0.0347321, 0.980295, 1, 1, 1, 1.06667, 1, 0, 0, 0, 0.107738, 0.0252073, 0.0199721, 0.993659, 1, 1, 1, 1.1, 1, 0, 0, 0, 0.0515107, 0.00386379, 0.0114313, 0.9986, 1, 1, 1, 1.13333, 1, 0, 0, 0, 0.0166441, -0.00596373, 0.00689334, 0.99982, 1, 1, 1, 1.16667, 1, 0, 0, 0, 0.0119208, -0.00703917, 0.00630822, 0.999884, 1, 1, 1, 1.2, 1, 0, 0, 0, 0.011921, -0.00703928, 0.00630839, 0.999884, 1, 1, 1, 1.23333, 1, 0, 0, 0, 0.0119208, -0.00703948, 0.00630857, 0.999884, 1, 1, 1, 1.26667, 1, 0, 0, 0, 0.0119207, -0.00703929, 0.00630837, 0.999884, 1, 1, 1 )
+tracks/28/type = "value"
+tracks/28/path = NodePath("../..:atacando")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("../hitbox_ataque/CollisionShape:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.2, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
 
 [sub_resource type="Animation" id=210]
 resource_name = "new_hit"
@@ -4303,10 +4340,23 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.110864, 0.00439945, -0.00105797, 0.993825, 1, 1, 1, 0.0333333, 1, 0, 0, 0, -0.0298382, -0.0208875, -0.0045854, 0.999326, 1, 1, 1, 0.0666667, 1, 0, 0, 0, -0.0167596, -0.0183434, -0.00471231, 0.99968, 1, 1, 1, 0.1, 1, 0, 0, 0, -0.0127722, -0.0174055, -0.004783, 0.999756, 1, 1, 1, 0.133333, 1, 0, 0, 0, -0.00968377, -0.0166073, -0.00460338, 0.999805, 1, 1, 1, 0.166667, 1, 0, 0, 0, -0.00695911, -0.0158106, -0.00425198, 0.999842, 1, 1, 1, 0.2, 1, 0, 0, 0, -0.00454492, -0.0150059, -0.00376113, 0.99987, 1, 1, 1, 0.233333, 1, 0, 0, 0, -0.00237736, -0.0142507, -0.00309374, 0.999891, 1, 1, 1, 0.266667, 1, 0, 0, 0, -0.000407677, -0.0135094, -0.00230608, 0.999906, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.00141925, -0.0127767, -0.00142391, 0.999916, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.00315679, -0.0120469, -0.000473364, 0.999922, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.0048593, -0.0113145, 0.0005204, 0.999924, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.00657999, -0.0105741, 0.001532, 0.999921, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.00818179, -0.00985259, 0.00253074, 0.999915, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.00927681, -0.00922102, 0.00348014, 0.999908, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.0103188, -0.00860241, 0.00436397, 0.9999, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.0111875, -0.00802132, 0.00515281, 0.999892, 1, 1, 1 )
+tracks/28/type = "value"
+tracks/28/path = NodePath("../..:atacando")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [sub_resource type="Animation" id=212]
 resource_name = "new_slash_left"
 length = 0.7
+step = 0.05
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -4503,6 +4553,30 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0759365, 0.138861, -0.00302589, 0.987392, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0.0775955, 0.144106, 0.0171101, 0.986367, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.087752, 0.132965, 0.0118001, 0.987158, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0971712, 0.136339, 0.0269093, 0.985518, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.107753, 0.122404, 0.0606522, 0.984748, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.106815, 0.103465, 0.0684383, 0.98651, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.0276006, 0.0778201, 0.032807, 0.996045, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.0551804, 0.0783281, 0.0437623, 0.994437, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.0629999, 0.0446524, 0.00730197, 0.996987, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.0189605, 0.00651604, 0.000449138, 0.999799, 1, 1, 1, 0.333333, 1, 0, 0, 0, -0.0274984, -0.0239405, 0.0179114, 0.999175, 1, 1, 1, 0.366667, 1, 0, 0, 0, -0.0340065, 0.0199465, 0.0456657, 0.998179, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.0506252, 0.0176449, 0.00368591, 0.998555, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.0224782, 0.0187298, -0.0147593, 0.999463, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.0113395, 0.00161239, 0.028078, 0.99954, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.00697697, -0.010462, 0.0237578, 0.999639, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.00684803, -0.00539677, -0.000896158, 0.999962, 1, 1, 1 )
+tracks/28/type = "value"
+tracks/28/path = NodePath("../..:atacando")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("../hitbox_ataque/CollisionShape:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
 
 [sub_resource type="Animation" id=213]
 resource_name = "new_slash_right"
@@ -4703,6 +4777,30 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0931963, 0.0572746, 0.0638901, 0.991944, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0.110196, 0.107103, 0.0927891, 0.983756, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.107907, 0.107184, 0.0966276, 0.983631, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0976083, 0.107439, 0.0914956, 0.985169, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.108796, 0.108729, 0.087163, 0.984248, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.118823, 0.108567, 0.0812635, 0.983611, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.119609, 0.110912, 0.0697858, 0.984135, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.127801, 0.100177, 0.0649761, 0.984586, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.129592, 0.0981229, 0.0585135, 0.984964, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.118636, 0.0947599, 0.0595876, 0.986608, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.0967548, 0.0870574, 0.052578, 0.990099, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.0690736, 0.0875957, 0.0332646, 0.993202, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.0760378, 0.0832504, 0.0328334, 0.993081, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.0797931, 0.0638588, 0.0415297, 0.993897, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.0743848, 0.0521936, 0.0487151, 0.994671, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.0629271, 0.0404381, 0.0418454, 0.99632, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.0474377, 0.0261001, 0.0307, 0.998061, 1, 1, 1 )
+tracks/28/type = "value"
+tracks/28/path = NodePath("../..:atacando")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("../hitbox_ataque/CollisionShape:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
 
 [sub_resource type="Animation" id=214]
 resource_name = "new_strafe_left"
@@ -6545,7 +6643,7 @@ animation = "dash"
 animation = "death"
 
 [sub_resource type="AnimationNodeAnimation" id=103]
-animation = "finisher"
+animation = "new_finisher"
 
 [sub_resource type="AnimationNodeAnimation" id=104]
 animation = "hit"
@@ -6557,13 +6655,13 @@ animation = "idle"
 animation = "jump"
 
 [sub_resource type="AnimationNodeAnimation" id=227]
-animation = "kick"
+animation = "new_kick"
 
 [sub_resource type="AnimationNodeAnimation" id=222]
-animation = "slash_left"
+animation = "new_slash_left"
 
 [sub_resource type="AnimationNodeAnimation" id=217]
-animation = "slash_right"
+animation = "new_slash_right"
 
 [sub_resource type="AnimationNodeAnimation" id=235]
 animation = "new_strafe_left"
@@ -6688,7 +6786,7 @@ states/new_walk_foward/node = SubResource( 112 )
 states/new_walk_foward/position = Vector2( -58, 247 )
 transitions = [ "idle", "new_walk_foward", SubResource( 126 ), "idle", "new_strafe_right", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "new_walk_foward", "idle", SubResource( 130 ), "new_strafe_right", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "finisher", "idle", SubResource( 184 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "caida", SubResource( 202 ), "caida", "idle", SubResource( 203 ), "idle", "caida", SubResource( 204 ), "idle", "new_slash_right", SubResource( 218 ), "new_slash_right", "hit", SubResource( 219 ), "new_slash_right", "idle", SubResource( 221 ), "idle", "new_slash_left", SubResource( 223 ), "new_slash_left", "hit", SubResource( 224 ), "new_slash_right", "new_slash_left", SubResource( 225 ), "new_slash_left", "idle", SubResource( 226 ), "new_kick", "hit", SubResource( 228 ), "new_kick", "finisher", SubResource( 229 ), "new_slash_left", "new_kick", SubResource( 230 ), "new_kick", "idle", SubResource( 231 ), "new_walk_backward", "idle", SubResource( 233 ), "idle", "new_walk_backward", SubResource( 234 ), "idle", "new_strafe_left", SubResource( 236 ), "new_strafe_left", "idle", SubResource( 237 ) ]
 start_node = "idle"
-graph_offset = Vector2( -201.482, -22.39 )
+graph_offset = Vector2( -129.482, 34.807 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
@@ -6746,11 +6844,12 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="TargetPlayer/hitbox_ataque"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.85633 )
 shape = SubResource( 4 )
+disabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/hitbox_ataque"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2 )
 visible = false
 mesh = SubResource( 5 )
 material/0 = null
@@ -6933,7 +7032,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.274077, 0.467659, 0.840344, 0.886355, -0.216227, 0.409415, 0.373171, 0.857054, -0.35525, -0.00129062, 0.0085755, 0.00388134 )
+transform = Transform( -0.268547, 0.485178, 0.832157, 0.881948, -0.22356, 0.414958, 0.387365, 0.845355, -0.367866, -0.00111255, 0.00852546, 0.00404981 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
