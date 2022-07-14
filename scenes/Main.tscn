@@ -78,6 +78,6 @@ shadow_enabled = true
 
 [node name="SpotLight" type="SpotLight" parent="."]
 
-[node name="Control" parent="." instance=ExtResource( 9 )]
+[node name="UI" parent="." instance=ExtResource( 9 )]
 
 [node name="Pause" parent="." instance=ExtResource( 10 )]
