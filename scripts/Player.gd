@@ -69,8 +69,11 @@ func _ready():
 	colision_ref.disabled = true
 	atacando = false
 
-func _physics_process(delta):			# delta es 1/60 seg.
+func _physics_process(delta):			# delta es 1/60 seg.+
 	counter +=1
+	
+	if vida <= 0:
+		get_tree().change_scene("res://scenes/GameOver.tscn")
 	
 	# fixed camara
 	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)	#distancia al jefe
@@ -88,7 +91,8 @@ func _physics_process(delta):			# delta es 1/60 seg.
 		rapidezY -= gravedad*delta			# se aplica la gravedad
 	if Input.is_action_pressed("salto"):	# si se apreta la tecla de salto
 		if is_on_floor():					# si está en el piso salta, si no, no hace nada
-#			take_damage(1)					# para probar
+			print(vida)
+			vida -= 10
 			rapidezY = salto				# salta
 
 	if timerAtq > 0:
@@ -128,7 +132,6 @@ func _physics_process(delta):			# delta es 1/60 seg.
 #			timerAtq = 0
 		pass
 	else:
-#		print("mov")
 		if velocidad.y > 0:
 			Animacion.travel("jump")
 		if !is_on_floor() and velocidad.y < 0:
