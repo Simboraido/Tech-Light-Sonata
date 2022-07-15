@@ -1,10 +1,11 @@
-[gd_scene load_steps=173 format=2]
+[gd_scene load_steps=171 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://color_makoto/azul.tres" type="Material" id=2]
 [ext_resource path="res://assets/Weapons/katana1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://color_makoto/tubo.tres" type="Material" id=4]
 [ext_resource path="res://color_makoto/katana_blade.tres" type="Material" id=5]
+[ext_resource path="res://assets/Characters/Makoto/Dash_pose_Makoto.obj" type="ArrayMesh" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
@@ -24,11 +25,6 @@ glow_bloom = 1.0
 extents = Vector3( 2.5, 1.5, 1.945 )
 
 [sub_resource type="CubeMesh" id=5]
-
-[sub_resource type="CapsuleMesh" id=2]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.956863, 0.564706, 0.133333, 1 )
 
 [sub_resource type="ArrayMesh" id=6]
 blend_shape_mode = 0
@@ -1670,7 +1666,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0011667, 0.0184001, -0.020795, 
 
 [sub_resource type="Animation" id=90]
 resource_name = "death"
-length = 2.6
+length = 3.5
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -1867,6 +1863,20 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0119702, -0.00704271, 0.0061841, 0.999884, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0.0119702, -0.00704247, 0.00618396, 0.999884, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.01197, -0.00704255, 0.00618402, 0.999884, 1, 1, 1, 0.1, 1, 0, 0, 0, 0.0119701, -0.00704253, 0.00618412, 0.999884, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.0119702, -0.00704262, 0.00618417, 0.999884, 1, 1, 1, 0.166667, 1, 0, 0, 0, 0.0119702, -0.00704256, 0.00618413, 0.999884, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.0119701, -0.00704258, 0.00618402, 0.999884, 1, 1, 1, 0.233333, 1, 0, 0, 0, 0.0119702, -0.00704271, 0.00618418, 0.999884, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.0119702, -0.00704265, 0.00618412, 0.999884, 1, 1, 1, 0.3, 1, 0, 0, 0, 0.0123219, -0.00665836, 0.00647594, 0.999881, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.0150874, -0.0036469, 0.00877878, 0.999841, 1, 1, 1, 0.366667, 1, 0, 0, 0, 0.0202319, 0.001905, 0.013098, 0.999708, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.0271629, 0.0092854, 0.0189903, 0.999408, 1, 1, 1, 0.433333, 1, 0, 0, 0, 0.0352849, 0.0177888, 0.0260004, 0.998881, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.0439939, 0.026734, 0.0336431, 0.998107, 1, 1, 1, 0.5, 1, 0, 0, 0, 0.0526774, 0.0354773, 0.0413919, 0.997122, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.0607177, 0.0434165, 0.0486802, 0.996021, 1, 1, 1, 0.566667, 1, 0, 0, 0, 0.0683022, 0.0499504, 0.0530699, 0.994999, 1, 1, 1, 0.6, 1, 0, 0, 0, 0.0805656, 0.0546056, 0.0520149, 0.993892, 1, 1, 1, 0.633333, 1, 0, 0, 0, 0.0964435, 0.0581808, 0.0485008, 0.992452, 1, 1, 1, 0.666667, 1, 0, 0, 0, 0.112438, 0.0617379, 0.0436931, 0.990776, 1, 1, 1, 0.7, 1, 0, 0, 0, 0.125114, 0.0662069, 0.0388304, 0.989169, 1, 1, 1, 0.733333, 1, 0, 0, 0, 0.131117, 0.0723881, 0.0351785, 0.988095, 1, 1, 1, 0.766667, 1, 0, 0, 0, 0.127177, 0.0810418, 0.0338965, 0.987983, 1, 1, 1, 0.8, 1, 0, 0, 0, 0.110082, 0.0930545, 0.0358196, 0.988908, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0.0545673, 0.115721, 0.0428463, 0.990856, 1, 1, 1, 0.866667, 1, 0, 0, 0, 0.0141199, 0.136389, 0.0508213, 0.98925, 1, 1, 1, 0.9, 1, 0, 0, 0, 0.0258162, 0.144967, 0.0617221, 0.987172, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.0371175, 0.135908, 0.0605615, 0.988172, 1, 1, 1, 0.966667, 1, 0, 0, 0, 0.0392664, 0.106924, 0.0445168, 0.992494, 1, 1, 1, 1, 1, 0, 0, 0, 0.0401995, 0.068532, 0.0216919, 0.996603, 1, 1, 1, 1.03333, 1, 0, 0, 0, 0.0412428, 0.0333378, -0.00143585, 0.998592, 1, 1, 1, 1.06667, 1, 0, 0, 0, 0.0421542, 0.0130409, -0.0200478, 0.998825, 1, 1, 1, 1.1, 1, 0, 0, 0, 0.040451, 0.00613015, -0.03857, 0.998418, 1, 1, 1, 1.13333, 1, 0, 0, 0, 0.0370691, 0.00687546, -0.0566452, 0.997682, 1, 1, 1, 1.16667, 1, 0, 0, 0, 0.0349119, 0.012087, -0.0698755, 0.996871, 1, 1, 1, 1.2, 1, 0, 0, 0, 0.0371006, 0.018693, -0.0738012, 0.996407, 1, 1, 1, 1.23333, 1, 0, 0, 0, 0.0485015, 0.0276459, -0.0599986, 0.996636, 1, 1, 1, 1.26667, 1, 0, 0, 0, 0.0681012, 0.0406161, -0.0285458, 0.996443, 1, 1, 1, 1.3, 1, 0, 0, 0, 0.0850646, 0.0507756, 0.00150045, 0.99508, 1, 1, 1, 1.33333, 1, 0, 0, 0, 0.0902649, 0.0536807, 0.0116476, 0.994402, 1, 1, 1, 1.36667, 1, 0, 0, 0, 0.087407, 0.0519847, 0.0115523, 0.994748, 1, 1, 1, 1.4, 1, 0, 0, 0, 0.0812472, 0.0483329, 0.0112871, 0.995457, 1, 1, 1, 1.43333, 1, 0, 0, 0, 0.0724754, 0.0431376, 0.01081, 0.996378, 1, 1, 1, 1.46667, 1, 0, 0, 0, 0.0617839, 0.0368081, 0.0100787, 0.99736, 1, 1, 1, 1.5, 1, 0, 0, 0, 0.0498685, 0.0297451, 0.00903833, 0.998272, 1, 1, 1, 1.53333, 1, 0, 0, 0, 0.0374271, 0.0223456, 0.00760983, 0.999021, 1, 1, 1, 1.56667, 1, 0, 0, 0, 0.0251555, 0.0150006, 0.00568659, 0.999555, 1, 1, 1, 1.6, 1, 0, 0, 0, 0.0120013, 0.00701686, 0.00225889, 0.999901, 1, 1, 1, 1.63333, 1, 0, 0, 0, 0.00155668, 0.000634755, -0.000291798, 0.999999, 1, 1, 1, 1.66667, 1, 0, 0, 0, -0.00419816, -0.00285571, -0.000945377, 0.999987, 1, 1, 1, 1.7, 1, 0, 0, 0, -0.00764104, -0.00500385, -0.0013352, 0.999957, 1, 1, 1, 1.73333, 1, 0, 0, 0, -0.00934487, -0.00613714, -0.00165065, 0.999936, 1, 1, 1, 1.76667, 1, 0, 0, 0, -0.00961256, -0.00640018, -0.00185592, 0.999932, 1, 1, 1, 1.8, 1, 0, 0, 0, -0.00874751, -0.00593882, -0.00190707, 0.999942, 1, 1, 1, 1.83333, 1, 0, 0, 0, -0.00705051, -0.00489894, -0.00175763, 0.999962, 1, 1, 1, 1.86667, 1, 0, 0, 0, -0.00482285, -0.00342877, -0.0013588, 0.999982, 1, 1, 1, 1.9, 1, 0, 0, 0, -0.00236578, -0.00167655, -0.000663338, 0.999996, 1, 1, 1, 1.93333, 1, 0, 0, 0, 1.8891e-05, 0.000208608, 0.000374692, 1, 1, 1, 1, 1.96667, 1, 0, 0, 0, 0.00232853, 0.00232085, 0.00205909, 0.999992, 1, 1, 1, 2, 1, 0, 0, 0, 0.00465588, 0.0046534, 0.00410828, 0.99997, 1, 1, 1, 2.03333, 1, 0, 0, 0, 1.04308e-07, 1.80975e-07, -3.76418e-08, 1, 1, 1, 1, 2.06667, 1, 0, 0, 0, 0.0107887, 0.0109699, 0.00932194, 0.999838, 1, 1, 1, 2.1, 1, 0, 0, 0, 0.0280296, 0.0290045, 0.0237864, 0.998903, 1, 1, 1, 2.13333, 1, 0, 0, 0, 0.0302881, 0.0315503, 0.0257823, 0.99871, 1, 1, 1, 2.16667, 1, 0, 0, 0, 0.0204507, 0.0210984, 0.0176116, 0.999413, 1, 1, 1, 2.2, 1, 0, 0, 0, 0.0120455, 0.012311, 0.0104649, 0.999797, 1, 1, 1, 2.23333, 1, 0, 0, 0, 0.0125356, 0.0128573, 0.0108592, 0.99978, 1, 1, 1, 2.26667, 1, 0, 0, 0, 0.015938, 0.0164655, 0.013723, 0.999643, 1, 1, 1, 2.3, 1, 0, 0, 0, 0.0172524, 0.0178624, 0.0148271, 0.999582, 1, 1, 1, 2.33333, 1, 0, 0, 0, 0.0153825, 0.0158707, 0.0132562, 0.999668, 1, 1, 1, 2.36667, 1, 0, 0, 0, 0.0119066, 0.0122015, 0.0103217, 0.999801, 1, 1, 1, 2.4, 1, 0, 0, 0, 0.00884852, 0.00900875, 0.00771618, 0.999891, 1, 1, 1, 2.43333, 1, 0, 0, 0, 0.00743264, 0.00757041, 0.00648188, 0.999923, 1, 1, 1, 2.46667, 1, 0, 0, 0, 0.00679888, 0.00695017, 0.00591078, 0.999935, 1, 1, 1, 2.5, 1, 0, 0, 0, 0.00621666, 0.00634478, 0.00541317, 0.999946, 1, 1, 1, 2.53333, 1, 0, 0, 0, 0.00587501, 0.00598862, 0.00511941, 0.999952, 1, 1, 1, 2.56667, 1, 0, 0, 0, 0.00594189, 0.00605529, 0.00517398, 0.999951, 1, 1, 1 )
+tracks/28/type = "method"
+tracks/28/path = NodePath("../..")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "scene_changer"
+} ]
+}
 
 [sub_resource type="Animation" id=91]
 resource_name = "death1"
@@ -6761,7 +6771,7 @@ states/caida/position = Vector2( 691, 6 )
 states/dash/node = SubResource( 125 )
 states/dash/position = Vector2( 226, 472 )
 states/death/node = SubResource( 102 )
-states/death/position = Vector2( 1133, 195 )
+states/death/position = Vector2( 1133, 198 )
 states/finisher/node = SubResource( 103 )
 states/finisher/position = Vector2( 613, 159 )
 states/hit/node = SubResource( 104 )
@@ -6786,40 +6796,34 @@ states/new_walk_foward/node = SubResource( 112 )
 states/new_walk_foward/position = Vector2( -58, 247 )
 transitions = [ "idle", "new_walk_foward", SubResource( 126 ), "idle", "new_strafe_right", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "new_walk_foward", "idle", SubResource( 130 ), "new_strafe_right", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "finisher", "idle", SubResource( 184 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "caida", SubResource( 202 ), "caida", "idle", SubResource( 203 ), "idle", "caida", SubResource( 204 ), "idle", "new_slash_right", SubResource( 218 ), "new_slash_right", "hit", SubResource( 219 ), "new_slash_right", "idle", SubResource( 221 ), "idle", "new_slash_left", SubResource( 223 ), "new_slash_left", "hit", SubResource( 224 ), "new_slash_right", "new_slash_left", SubResource( 225 ), "new_slash_left", "idle", SubResource( 226 ), "new_kick", "hit", SubResource( 228 ), "new_kick", "finisher", SubResource( 229 ), "new_slash_left", "new_kick", SubResource( 230 ), "new_kick", "idle", SubResource( 231 ), "new_walk_backward", "idle", SubResource( 233 ), "idle", "new_walk_backward", SubResource( 234 ), "idle", "new_strafe_left", SubResource( 236 ), "new_strafe_left", "idle", SubResource( 237 ) ]
 start_node = "idle"
-graph_offset = Vector2( -129.482, 34.807 )
+graph_offset = Vector2( 268.456, 123.767 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
-[sub_resource type="Curve" id=238]
-min_value = 0.4
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.599773 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="SpatialMaterial" id=241]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_diffuse_mode = 4
+params_depth_draw_mode = 1
+albedo_color = Color( 0, 1, 0.984314, 0.686275 )
 
-[sub_resource type="CurveTexture" id=239]
-curve = SubResource( 238 )
+[sub_resource type="Gradient" id=242]
+offsets = PoolRealArray( 0, 0.993789, 1 )
+colors = PoolColorArray( 0, 0.952941, 1, 1, 0, 0.952941, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=243]
+gradient = SubResource( 242 )
 
 [sub_resource type="ParticlesMaterial" id=240]
-emission_shape = 1
-emission_sphere_radius = 3.0
 direction = Vector3( 0, 1, 0 )
-spread = 180.0
-initial_velocity = 1.0
-scale_curve = SubResource( 239 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+scale = 3.0
 color = Color( 0, 0.952941, 1, 1 )
-
-[sub_resource type="SpatialMaterial" id=242]
-albedo_color = Color( 0, 0.984314, 1, 1 )
-emission_enabled = true
-emission = Color( 0, 0.92549, 1, 1 )
-emission_energy = 2.5
-emission_operator = 0
-emission_on_uv2 = false
-
-[sub_resource type="SphereMesh" id=241]
-material = SubResource( 242 )
-radius = 0.25
-height = 0.5
+color_ramp = SubResource( 243 )
 
 [node name="Player" type="KinematicBody"]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 script = ExtResource( 1 )
 dist_max_camara = 15.0
 dist_min_camara = 6.0
@@ -6853,13 +6857,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2 )
 visible = false
 mesh = SubResource( 5 )
 material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="TargetPlayer"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-visible = false
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
 
 [node name="RootNode" type="Spatial" parent="TargetPlayer"]
 transform = Transform( -300, 0, -4.52987e-05, 0, 300, 0, 4.52987e-05, 0, -300, 0, 0, 0 )
@@ -7032,7 +7029,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.270225, 0.462663, 0.844347, 0.884772, -0.226506, 0.407277, 0.379681, 0.857111, -0.348145, -0.0013337, 0.00856409, 0.00385209 )
+transform = Transform( -0.270977, 0.470586, 0.839715, 0.887755, -0.21505, 0.406996, 0.372106, 0.855748, -0.359492, -0.00125245, 0.00857741, 0.00391411 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
@@ -7431,14 +7428,16 @@ parameters/conditions/no_sgte_atck = false
 parameters/conditions/transition_combo = false
 
 [node name="Particles" type="Particles" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4, 0 )
+transform = Transform( -0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0 )
+material_override = SubResource( 241 )
 emitting = false
-amount = 15
-lifetime = 0.75
+amount = 1
+lifetime = 0.5
 one_shot = true
-explosiveness = 0.75
+preprocess = 0.1
+fract_delta = false
 local_coords = false
 process_material = SubResource( 240 )
-draw_pass_1 = SubResource( 241 )
+draw_pass_1 = ExtResource( 6 )
 
 [connection signal="body_entered" from="TargetPlayer/hitbox_ataque" to="." method="_on_hitbox_ataque_body_entered"]

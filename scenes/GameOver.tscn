@@ -1,9 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/katana.png" type="Texture" id=1]
 [ext_resource path="res://scripts/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://resources/tema1.tres" type="Theme" id=3]
 [ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fade In Game_Over"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("katana:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer2/GameOver_label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer2/VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -16,46 +56,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.45098 )
+
+[node name="CenterConteiner" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 
-[node name="GameOver_label" type="Label" parent="MarginContainer"]
-margin_top = 270.0
-margin_right = 1024.0
-margin_bottom = 329.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterConteiner"]
+margin_left = 340.0
+margin_top = 161.0
+margin_right = 684.0
+margin_bottom = 439.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterConteiner/VBoxContainer2"]
+root_node = NodePath("../..")
+"anims/Fade In Game_Over" = SubResource( 2 )
+
+[node name="GameOver_label" type="Label" parent="CenterConteiner/VBoxContainer2"]
+margin_right = 344.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
 custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
 align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterConteiner/VBoxContainer2"]
+margin_top = 204.0
+margin_right = 344.0
+margin_bottom = 278.0
 alignment = 1
 
-[node name="Next" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 263.0
-margin_right = 1024.0
-margin_bottom = 298.0
+[node name="Next" type="Button" parent="CenterConteiner/VBoxContainer2/VBoxContainer"]
+margin_right = 344.0
+margin_bottom = 35.0
 focus_neighbour_top = NodePath("../Exit")
 text = "Next"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 302.0
-margin_right = 1024.0
-margin_bottom = 337.0
+[node name="Exit" type="Button" parent="CenterConteiner/VBoxContainer2/VBoxContainer"]
+margin_top = 39.0
+margin_right = 344.0
+margin_bottom = 74.0
 focus_neighbour_bottom = NodePath("../Next")
 text = "Exit"
 
-[node name="katana" type="Sprite" parent="MarginContainer"]
+[node name="katana" type="Sprite" parent="CenterConteiner"]
 position = Vector2( 102, 562 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 offset = Vector2( 360, 0 )
 flip_h = true
 
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Next" to="." method="_on_Next_focus_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Next" to="." method="_on_Next_pressed"]
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="focus_entered" from="CenterConteiner/VBoxContainer2/VBoxContainer/Next" to="." method="_on_Next_focus_entered"]
+[connection signal="pressed" from="CenterConteiner/VBoxContainer2/VBoxContainer/Next" to="." method="_on_Next_pressed"]
+[connection signal="focus_entered" from="CenterConteiner/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="pressed" from="CenterConteiner/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

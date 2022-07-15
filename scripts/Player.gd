@@ -70,11 +70,11 @@ func _ready():
 	atacando = false
 
 func _physics_process(delta):			# delta es 1/60 seg.+
-	counter +=1
-	
 	if vida <= 0:
-		get_tree().change_scene("res://scenes/GameOver.tscn")
-	
+		take_damage(1)
+		return
+	counter +=1
+
 	# fixed camara
 	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)	#distancia al jefe
 	rotarCamara.translation.z = dist_max_camara-clamp((distCentro-dist_corte)/(dist_limite-dist_corte), 0, 1)*(dist_max_camara-dist_min_camara)
@@ -91,8 +91,8 @@ func _physics_process(delta):			# delta es 1/60 seg.+
 		rapidezY -= gravedad*delta			# se aplica la gravedad
 	if Input.is_action_pressed("salto"):	# si se apreta la tecla de salto
 		if is_on_floor():					# si está en el piso salta, si no, no hace nada
+			take_damage(75)
 			print(vida)
-			vida -= 10
 			rapidezY = salto				# salta
 
 	if timerAtq > 0:
@@ -180,3 +180,8 @@ func _input(event):
 
 func take_damage(danno):
 	vida -= danno
+	if vida <= 0:
+		Animacion.travel("death")
+	
+func scene_changer():
+	get_tree().change_scene("res://scenes/GameOver.tscn")
