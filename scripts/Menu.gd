@@ -3,6 +3,7 @@ extends Control
 onready var anim = $MarginContainer/AnimationPlayer
 onready var start = $MarginContainer/VBoxContainer/Start
 onready var exit = $MarginContainer/VBoxContainer/Exit
+onready var credits = $MarginContainer/VBoxContainer/Credits
 onready var Katana = $MarginContainer/katana
 onready var song = $AudioStreamPlayer
 onready var sound = $Sonido
@@ -36,3 +37,12 @@ func _on_Start_focus_entered():
 func _on_Timer_timeout():
 	parp.play("parpadeo")
 	timer.start(7+2*rand_range(-2,2))
+
+
+func _on_Credits_focus_entered():
+	Katana.global_position.y = credits.rect_global_position.y + credits.rect_size.y/2
+	Katana.global_position.x = credits.rect_global_position.x + credits.rect_size.x
+
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://scenes/Credits.tscn")
