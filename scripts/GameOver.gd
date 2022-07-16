@@ -12,6 +12,7 @@ func _ready():
 	next.connect("pressed" , self, "_on_start_pressed")
 	exit.connect("pressed", self, "_on_exit_pressed")
 
+
 func _on_Next_pressed():
 	get_tree().change_scene("res://scenes/Menu.tscn")
 
