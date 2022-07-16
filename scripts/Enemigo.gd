@@ -35,7 +35,6 @@ const rapidoState = "_f"			# caminar rápido animación
 var speedState = normalState		# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para
 
 
-
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
 	if vida > 0:
@@ -71,6 +70,8 @@ func take_damage():
 		
 		
 func _physics_process(delta):
+#	if jugador.connect("player_dead", self, ):
+#		Animacion.travel("e_dance")
 
 	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
@@ -118,3 +119,6 @@ func _on_hitbox_c_down_body_entered(body):
 
 func change_scene():
 	get_tree().change_scene("res://scenes/Final.tscn")
+	
+func _on_player_dead():
+	Animacion.travel("e_dance")

@@ -56,9 +56,13 @@ export (float) var dist_min_camara
 export (float) var dist_corte
 export (float) var dist_limite
 
+# declaramos señal
+signal player_dead
+
 func _ready():
 	colision_ref.disabled = true
 	atacando = false
+	connect("player_dead", jefe, "_on_player_dead")
 
 func _physics_process(delta):							# delta es 1/60 seg.+
 	if vida <= 0:
@@ -85,6 +89,7 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 		rapidezY -= gravedad*delta
 	if Input.is_action_pressed("salto"):
 		if is_on_floor():
+			vida -= 20######################################################### PARA PROBAR MATAR AL PJ
 			rapidezY = salto
 
 	if timerAtq > 0:
@@ -171,6 +176,7 @@ func _input(event):
 func take_damage(danno):
 	vida -= danno
 	if vida <= 0:
+		emit_signal("player_dead")
 		Animacion.travel("death")
 	
 func scene_changer():

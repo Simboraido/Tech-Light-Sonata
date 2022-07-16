@@ -1666,7 +1666,7 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0011667, 0.0184001, -0.020795, 
 
 [sub_resource type="Animation" id=90]
 resource_name = "death"
-length = 3.5
+length = 4.5
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -1870,7 +1870,7 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 3.5 ),
+"times": PoolRealArray( 4.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -7029,7 +7029,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.269445, 0.47315, 0.838767, 0.885862, -0.219815, 0.408571, 0.377689, 0.853119, -0.359919, -0.00119463, 0.00855802, 0.00396616 )
+transform = Transform( -0.268966, 0.472889, 0.839068, 0.886955, -0.217992, 0.407174, 0.375458, 0.853731, -0.3608, -0.00120561, 0.0085654, 0.00395554 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
