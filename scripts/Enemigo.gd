@@ -69,6 +69,9 @@ func take_damage():
 	if vida <= 0:
 		puedeCaminar = false
 		Animacion.travel(State+"_death")
+		jugador.rapidezW = 0
+		jugador.rapidezD = 0
+		jugador.rapidez = 0
 
 	print(vida)
 
@@ -81,6 +84,7 @@ func take_damage():
 func _physics_process(delta):
 #	if jugador.connect("player_dead", self, ):
 #		Animacion.travel("e_dance")
+
 
 	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	

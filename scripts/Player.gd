@@ -116,16 +116,6 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 	if pegando:
 		return
 	if atacando:
-#		if timerAtq > 0:
-#			combo += 1
-#		else:
-#			combo = 4
-#		if combo < 4:
-#			Animacion.travel(arr_ataques[combo])
-#		else:
-#			Animacion.travel("idle")
-#			combo = 0
-#			timerAtq = 0
 		pass
 	else:
 		if velocidad.y > 0:
