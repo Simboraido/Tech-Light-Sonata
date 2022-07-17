@@ -101,10 +101,10 @@ func _physics_process(delta):
 	distancia = distanciaV.length()
 	direccion = distanciaV/distancia
 	 
-	if distancia <7:
-		Animacion.travel("c_punch_left")
+	if distancia <15:
+		Animacion.travel("c_kick")
 #	print(distancia)
-	
+
 	#print(direccion)
 
 	if !puedeCaminar:
@@ -117,17 +117,21 @@ func _physics_process(delta):
 		Animacion.travel(State+"_idle")
 		
 
+var lol = 0
+
 func _on_hitbox_c_punch_right_body_entered(body):
 	body.take_damage(10)
 
 func _on_hitbox_c_punch_left_body_entered(body):
-	body.take_damage()
+	body.take_damage(10)
 
 func _on_hitbox_c_punch_down_body_entered(body):
 	body.take_damage(10)
 
-func _on_hitbox_c_down_body_entered(body):
-	body.take_damage(20)
+func _on_hitbox_c_kick_body_entered(body):
+	body.take_damage(10)
+
+
 
 
 
@@ -165,6 +169,12 @@ func _on_hitbox_c_down_body_entered(body):
 
 
 	
+
+
+
+
+
+
 
 
 
