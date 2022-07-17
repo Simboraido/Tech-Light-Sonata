@@ -6,7 +6,7 @@
 [ext_resource path="res://textures/Isometric Floor - Brick 1 - 256x128.png" type="Texture" id=4]
 [ext_resource path="res://musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Beatmaps/beat_map.tres" type="Resource" id=6]
-[ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=7]
+[ext_resource path="res://musica/mixkit-samurai-sword-impact-2789.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/Coliseo_con_color.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Pause.tscn" type="PackedScene" id=10]

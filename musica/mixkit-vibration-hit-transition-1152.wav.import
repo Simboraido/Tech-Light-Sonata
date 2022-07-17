@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-vibration-hit-transition-1152.wav-25aa69de56b7f40366859a926a54186c.sample"
+
+[deps]
+
+source_file="res://musica/mixkit-vibration-hit-transition-1152.wav"
+dest_files=[ "res://.import/mixkit-vibration-hit-transition-1152.wav-25aa69de56b7f40366859a926a54186c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
