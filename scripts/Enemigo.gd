@@ -10,7 +10,7 @@ onready var vision = $RootNode
 onready var angulo = $angulo
 
 export var vidaMax = 40
-var vida = vidaMax				# vida del enemigo
+var vida = vidaMax					# vida del enemigo
 onready var malla = $MeshInstance
 #export var fov = 90             	# mitad del fov del enemigo
 export var izq = 270
@@ -29,15 +29,14 @@ onready var Animacion = $RootNode/AnimationPlayer/AnimationTree.get("parameters/
 onready var anim_tree = $RootNode/AnimationPlayer/AnimationTree
 const combatState = "c"				# estado de combate 
 const rifleState = "r"				# estado de rifle
-var State = combatState  				# le dice que estado tiene, combate or rifle
-const normalState = ""						# caminar lento	animación
-const rapidoState = "_f"						# caminar rápido animación
-var speedState = normalState					# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para 
+var State = combatState  			# le dice que estado tiene, combate or rifle
+const normalState = ""				# caminar lento	animación
+const rapidoState = "_f"			# caminar rápido animación
+var speedState = normalState		# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para
 
 
-
-func rotateEnemy(Derecha:bool):					# ayuda con la animación de rotación, derecha=true, izquierda=false
-	rotation.y += -(PI/2) if Derecha else +(PI/2)						# radianes 	
+func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
+	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
 	if vida > 0:
 		puedeCaminar = true
 
@@ -61,8 +60,7 @@ func take_damage():
 	if vida <= 0:
 		puedeCaminar = false
 		Animacion.travel(State+"_death")
-		#get_tree().change_scene("res://scenes/Final.tscn")
-		
+
 	print(vida)
 
 	if vida <= vidaMax/4:
@@ -72,40 +70,39 @@ func take_damage():
 		
 		
 func _physics_process(delta):
-	
-	
-	var puntoMirar = jugador.global_transform.origin		# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
+#	if jugador.connect("player_dead", self, ):
+#		Animacion.travel("e_dance")
+
+	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
-	#look_at(puntoMirar, Vector3.UP)
 
 	angulo.look_at(puntoMirar,Vector3.UP)
-		
+
 	var anguloP = angulo.rotation_degrees.y			# ángulo del player respecto al frente del enemigo 
 	var anguloP360 = int(anguloP+180)				# ángulo del player entre 0 y 360
-#	print(anguloP360)
-	
+
 	if (anguloP360>225 and anguloP360<315): 		# grados
 		Animacion.travel(State+"_rotate_left")
 		puedeCaminar = false
 
-
 	if (anguloP360<135 and anguloP360 > 45):
 		Animacion.travel(State+"_rotate_right")
 		puedeCaminar = false
-		
-	
-
-
 
 	distanciaV = puntoMirar - global_transform.origin
 	distancia = distanciaV.length()
 	direccion = distanciaV/distancia
 	 
+<<<<<<< HEAD
 	if distancia <15:
 		Animacion.travel("c_kick")
 #	print(distancia)
 
 	#print(direccion)
+=======
+	if distancia <7:
+		Animacion.travel("c_punch_left")
+>>>>>>> 96a7df5b8b22b73cef5632652340a631c4d4ce2c
 
 	if !puedeCaminar:
 		return
@@ -115,7 +112,6 @@ func _physics_process(delta):
 		Animacion.travel(State+"_walk"+speedState)
 	else:
 		Animacion.travel(State+"_idle")
-		
 
 var lol = 0
 
@@ -133,30 +129,10 @@ func _on_hitbox_c_kick_body_entered(body):
 
 
 
-
-
-
-			
-
-		
-		
-
-
-		
-		
-
-
-
-
-
-
-
-
-
-		
-		
-
+func change_scene():
+	get_tree().change_scene("res://scenes/Final.tscn")
 	
+<<<<<<< HEAD
 	
 	
 	
@@ -186,3 +162,7 @@ func _on_hitbox_c_kick_body_entered(body):
 
 
 
+=======
+func _on_player_dead():
+	Animacion.travel("e_dance")
+>>>>>>> 96a7df5b8b22b73cef5632652340a631c4d4ce2c
