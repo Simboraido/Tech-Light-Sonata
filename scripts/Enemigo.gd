@@ -4,12 +4,12 @@ extends KinematicBody
 onready var jugador = get_parent().get_node("Player")  
 
 export(float) var rapidez = 8		# rapidez del enemigo
-export(float) var rapidez2 = 14 	# rapidez del enemigo en la segunda fase
+export(float) var rapidez2 = 16 	# rapidez del enemigo en la segunda fase
 
 onready var vision = $RootNode
 onready var angulo = $angulo
 
-export var vidaMax = 40
+export var vidaMax = 40				# vida máxima del enemigo
 var vida = vidaMax					# vida del enemigo
 onready var malla = $MeshInstance
 #export var fov = 90             	# mitad del fov del enemigo
@@ -33,7 +33,8 @@ var State = combatState  			# le dice que estado tiene, combate or rifle
 const normalState = ""				# caminar lento	animación
 const rapidoState = "_f"			# caminar rápido animación
 var speedState = normalState		# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para
-
+var	anguloP360 						# ángulo del player entre 0 y 360
+var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
@@ -43,9 +44,17 @@ func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha
 func take_damage():
 	if Globales.enritmo:
 		vida-=10
-		Animacion.travel("c_hit_right")
+		vidaDelta = 10
+		if not ((vida+vidaDelta)>(vidaMax/2) and vida<(vidaMax/2)):
+			if anguloP360>180 and anguloP360<360:
+				Animacion.travel("c_hit_right")
+			else:
+				Animacion.travel("c_hit_left")
+		else:
+			Animacion.travel("c_hit_strong")
 	else:
 		vida-=1
+		vidaDelta = 1
 	
 	if Globales.enritmo:
 		if Globales.combo == 1:
@@ -79,7 +88,8 @@ func _physics_process(delta):
 	angulo.look_at(puntoMirar,Vector3.UP)
 
 	var anguloP = angulo.rotation_degrees.y			# ángulo del player respecto al frente del enemigo 
-	var anguloP360 = int(anguloP+180)				# ángulo del player entre 0 y 360
+	anguloP360 = int(anguloP+180)				# ángulo del player entre 0 y 360
+#	print(anguloP360)
 
 	if (anguloP360>225 and anguloP360<315): 		# grados
 		Animacion.travel(State+"_rotate_left")
@@ -93,16 +103,13 @@ func _physics_process(delta):
 	distancia = distanciaV.length()
 	direccion = distanciaV/distancia
 	 
-<<<<<<< HEAD
-	if distancia <15:
-		Animacion.travel("c_kick")
+
+#	print(direccion)
+
+#	if distancia <7:
+#		Animacion.travel("c_kick")
 #	print(distancia)
 
-	#print(direccion)
-=======
-	if distancia <7:
-		Animacion.travel("c_punch_left")
->>>>>>> 96a7df5b8b22b73cef5632652340a631c4d4ce2c
 
 	if !puedeCaminar:
 		return
@@ -113,7 +120,6 @@ func _physics_process(delta):
 	else:
 		Animacion.travel(State+"_idle")
 
-var lol = 0
 
 func _on_hitbox_c_punch_right_body_entered(body):
 	body.take_damage(10)
@@ -125,44 +131,45 @@ func _on_hitbox_c_punch_down_body_entered(body):
 	body.take_damage(10)
 
 func _on_hitbox_c_kick_body_entered(body):
-	body.take_damage(10)
+	body.take_damage(20)
 
 
 
 func change_scene():
 	get_tree().change_scene("res://scenes/Final.tscn")
 	
-<<<<<<< HEAD
-	
-	
-	
-	
-	
-
-	
-	
-	
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 func _on_player_dead():
 	Animacion.travel("e_dance")
->>>>>>> 96a7df5b8b22b73cef5632652340a631c4d4ce2c
+
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
