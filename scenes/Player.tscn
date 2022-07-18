@@ -6848,9 +6848,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="TargetPlayer/hitbox_ataque"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.85633 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2.8 )
 shape = SubResource( 4 )
-disabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/hitbox_ataque"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2 )
@@ -6956,7 +6955,7 @@ bones/18/name = "mixamorigRightHand"
 bones/18/parent = 17
 bones/18/rest = Transform( 0.983923, -0.176405, 0.0278667, 0.178593, 0.971872, -0.153526, -9.31323e-10, 0.156035, 0.987752, 0, 0.00258516, 0 )
 bones/18/enabled = true
-bones/18/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 bones/19/name = "mixamorigRightHandIndex1"
 bones/19/parent = 18
 bones/19/rest = Transform( 0.853857, -0.336394, -0.397199, 0, 0.763099, -0.646281, 0.520508, 0.551832, 0.651578, 0, 0.000954356, 0 )
@@ -7029,7 +7028,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.2743, 0.467314, 0.840463, 0.8862, -0.216503, 0.409607, 0.373377, 0.857173, -0.354747, -0.00129443, 0.00857488, 0.00387802 )
+transform = Transform( -0.269869, 0.472767, 0.838846, 0.887046, -0.216846, 0.407588, 0.374594, 0.85409, -0.360847, -0.0012748, 0.00858261, 0.00392114 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]

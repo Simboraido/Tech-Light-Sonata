@@ -74,6 +74,7 @@ func take_damage():
 #		malla.get("material/0").albedo_color = Color.red
 #		return
 
+
 	if vida <= 0:
 		vivo = false
 		puedeCaminar = false
@@ -94,6 +95,7 @@ func take_damage():
 		
 func _physics_process(delta):
 
+	print(inmune)
 
 	tiempoTranscurrido+=delta			# tiempo transcurrido
 #	print(int(tiempoTranscurrido))
@@ -121,9 +123,9 @@ func _physics_process(delta):
 		puedeCaminar = false
 
 
-	if int(distancia) <=16 and vivo:
+	if int(distancia) <=12 and vivo:
 		Animacion.travel("c_punch_down_p")
-#	print(int(distancia))
+	print(int(distancia))
 
 	if !puedeCaminar:
 		return
