@@ -9,7 +9,7 @@ export(float) var rapidez2 = 16 	# rapidez del enemigo en la segunda fase
 onready var vision = $RootNode
 onready var angulo = $angulo
 
-export (int) var vidaMax = 40		# vida máxima del enemigo
+export (int) var vidaMax = 400		# vida máxima del enemigo
 var vida = vidaMax					# vida del enemigo
 onready var malla = $MeshInstance
 
@@ -19,8 +19,8 @@ var puedeCaminar = true				# dice si puede caminar
 var distanciaV 						# vector distancia entre enemigo y jugador 
 var direccion						# dirreción (unitario) entre enemigo y jugador
 var distancia						# distnacia (número) etre enemigo y jugador
-export var distanciaPersecucion = 30  # dice la distancia en la que el enemigo se mueve hacia el juagdor 
-export var distanciaPersecucion2 = 15
+export var distanciaPersecucion = 25  # dice la distancia en la que el enemigo se mueve hacia el juagdor 
+export var distanciaPersecucion2 = 17	# DEBE SER MAYOR QUE LA DISTANCIA DE LOS GOLPES CORTOS Y LARGOS!!!
 # maquina de estado del animation tree
 onready var Animacion = $RootNode/AnimationPlayer/AnimationTree.get("parameters/playback")
 # advance condition
@@ -37,7 +37,12 @@ var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
 var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cuando está en pausa no cuenta)
 var vivo = true						# dice si el enemigo está vivo o no
 export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
-var atacando = false				# dice si está atacando o no
+var segundoActual = 0				# dice el segundo EN EL TICK actual
+var puedeAtacar = false
+var porcentajeDeAtaque = 80			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
+var distanciaAtaqueCorto = 20			# distancia en la que el enemigo golpea 
+var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
+var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
@@ -95,10 +100,11 @@ func take_damage():
 		
 func _physics_process(delta):
 
-	print(inmune)
+#	print(inmune)
 
 	tiempoTranscurrido+=delta			# tiempo transcurrido
-#	print(int(tiempoTranscurrido))
+	segundoActual = int(tiempoTranscurrido)			# dice el segundo del tick actual
+#	print(tiempoTranscurrido)
 
 	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
@@ -121,11 +127,26 @@ func _physics_process(delta):
 	if (anguloP360<135 and anguloP360 > 45) and vivo:
 		Animacion.travel(State+"_rotate_right")
 		puedeCaminar = false
+	
+	if tiempoTranscurrido-segundoActual <0.01:
+		puedeAtacar = true
+	else:
+		puedeAtacar = false
 
+	if int(distancia) <=distanciaAtaqueCorto and vivo and puedeAtacar:
+		var numero = randi() % 100 + 1			# entero entre 1 y 100
+		if numero <= porcentajeDeAtaque and !(anguloP360<45) and !(anguloP360>315):		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
+			if anguloP360<=175:			# si se está a su derecha
+				Animacion.travel("c_punch_right_p")
+			elif anguloP360>=200:		# si se está a su izquierda
+				Animacion.travel("c_punch_left_p")
+			else:						# si se está al medio
+				Animacion.travel("c_punch_down_p")
 
-	if int(distancia) <=12 and vivo:
-		Animacion.travel("c_punch_down_p")
-	print(int(distancia))
+	print(anguloP360)
+#	print(distancia)
+
+#	print(int(distancia))
 
 	if !puedeCaminar:
 		return
@@ -134,7 +155,7 @@ func _physics_process(delta):
 		move_and_slide(direccion * rapidez, Vector3.UP)
 		Animacion.travel(State+"_walk"+speedState)
 	else:
-		if distancia >16:					# máxima distancia de ataque 
+		if distancia >=distanciaIdle:					# máxima distancia de ataque 
 			Animacion.travel(State+"_idle")
 
 
@@ -158,7 +179,6 @@ func change_scene():
 func _on_player_dead():
 	Animacion.travel("e_dance")
 
-	
 	
 	
 	
