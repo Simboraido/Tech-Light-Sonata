@@ -36,7 +36,7 @@ var	anguloP360 						# ángulo del player entre 0 y 360
 var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
 var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cuando está en pausa no cuenta)
 var vivo = true						# dice si el enemigo está vivo o no
-var inmune = false					# dice si el enemigo es inmune al daño o no
+export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
 var atacando = false				# dice si está atacando o no
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
@@ -64,15 +64,15 @@ func take_damage():
 		vida-=1
 		vidaDelta = 1
 	
-	if Globales.enritmo:
-		if Globales.combo == 1:
-			malla.get("material/0").albedo_color = Color.purple
-		else:
-			malla.get("material/0").albedo_color = Color.yellow
-
-	else:
-		malla.get("material/0").albedo_color = Color.red
-		return
+#	if Globales.enritmo:
+#		if Globales.combo == 1:
+#			malla.get("material/0").albedo_color = Color.purple
+#		else:
+#			malla.get("material/0").albedo_color = Color.yellow
+#
+#	else:
+#		malla.get("material/0").albedo_color = Color.red
+#		return
 
 	if vida <= 0:
 		vivo = false
@@ -122,8 +122,8 @@ func _physics_process(delta):
 
 
 	if int(distancia) <=16 and vivo:
-		Animacion.travel("c_punch_down_p")
-	print(int(distancia))
+		Animacion.travel("c_punch_left_p")
+#	print(int(distancia))
 
 	if !puedeCaminar:
 		return
