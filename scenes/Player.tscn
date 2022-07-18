@@ -2292,7 +2292,7 @@ tracks/28/keys = {
 
 [sub_resource type="Animation" id=89]
 resource_name = "hit"
-length = 0.566667
+length = 0.283
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:mixamorigHips")
 tracks/0/interp = 1
@@ -6796,7 +6796,7 @@ states/new_walk_foward/node = SubResource( 112 )
 states/new_walk_foward/position = Vector2( -58, 247 )
 transitions = [ "idle", "new_walk_foward", SubResource( 126 ), "idle", "new_strafe_right", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "new_walk_foward", "idle", SubResource( 130 ), "new_strafe_right", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "finisher", "idle", SubResource( 184 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "caida", SubResource( 202 ), "caida", "idle", SubResource( 203 ), "idle", "caida", SubResource( 204 ), "idle", "new_slash_right", SubResource( 218 ), "new_slash_right", "hit", SubResource( 219 ), "new_slash_right", "idle", SubResource( 221 ), "idle", "new_slash_left", SubResource( 223 ), "new_slash_left", "hit", SubResource( 224 ), "new_slash_right", "new_slash_left", SubResource( 225 ), "new_slash_left", "idle", SubResource( 226 ), "new_kick", "hit", SubResource( 228 ), "new_kick", "finisher", SubResource( 229 ), "new_slash_left", "new_kick", SubResource( 230 ), "new_kick", "idle", SubResource( 231 ), "new_walk_backward", "idle", SubResource( 233 ), "idle", "new_walk_backward", SubResource( 234 ), "idle", "new_strafe_left", SubResource( 236 ), "new_strafe_left", "idle", SubResource( 237 ) ]
 start_node = "idle"
-graph_offset = Vector2( -232.169, 123.767 )
+graph_offset = Vector2( 64.831, -22.233 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
@@ -7028,7 +7028,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.269869, 0.472767, 0.838846, 0.887046, -0.216846, 0.407588, 0.374594, 0.85409, -0.360847, -0.0012748, 0.00858261, 0.00392114 )
+transform = Transform( -0.269585, 0.473227, 0.838678, 0.88554, -0.220352, 0.408982, 0.378345, 0.852937, -0.359659, -0.00119139, 0.00855585, 0.00396928 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]

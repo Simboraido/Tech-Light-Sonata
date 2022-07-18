@@ -167,6 +167,8 @@ func take_damage(danno):
 	if vida <= 0:
 		emit_signal("player_dead")
 		Animacion.travel("death")
+	else:
+		Animacion.travel("hit")
 	
 func scene_changer():
 	get_tree().change_scene("res://scenes/GameOver.tscn")
