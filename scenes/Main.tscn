@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Node.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Enemigo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://textures/Isometric Floor - Brick 1 - 256x128.png" type="Texture" id=4]
+[ext_resource path="res://textures/shell_floor_01_diff_4k.jpg" type="Texture" id=4]
 [ext_resource path="res://musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Beatmaps/beat_map.tres" type="Resource" id=6]
 [ext_resource path="res://musica/mixkit-samurai-sword-impact-2789.wav" type="AudioStream" id=7]
@@ -18,7 +18,7 @@
 top_radius = 60.0
 bottom_radius = 60.0
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 4 )
 
 [sub_resource type="ConcavePolygonShape" id=4]
@@ -37,7 +37,7 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Piso"]
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 5 )
 
 [node name="Enemigo" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0 )
