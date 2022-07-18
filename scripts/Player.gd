@@ -12,7 +12,6 @@ export var salto = 60									# valor de magnitud del salto
 export var gravedad = 200								# valor de magnitude de la gravedad
 onready var jefe = get_parent().get_node("Enemigo")		# se obtiene el nodo "Enemigo"
 onready var targetCamera = $TargetPlayer				# se obtiene el nodo "TargetPlayer"
-onready var mesh = $TargetPlayer/MeshInstance			# se obtiene el nodo "Player"
 export var offsetC = Vector3(0,6,15)					# offset entre la cámara y el jugador 
 onready var rotarCamara = $TargetPlayer/Camera 			# se obtiene el nodo "Camera"
 var rapidez = rapidezW									# rapidez del personaje

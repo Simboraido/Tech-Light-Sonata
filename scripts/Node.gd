@@ -27,11 +27,20 @@ func _process(delta):
 		t_sig = beatmap.notes[indiceNota].time
 		
 func _unhandled_input(event): # procedencia de las cosas interfaz > controles
-	if event.is_action_pressed("ataque") or event.is_action_pressed("dash") :
+	if event.is_action_pressed("ataque"):
 		if abs(t_actual - t_sig) < tiempGracia:
 			Globales.enritmo = true
 			Globales.combo += 1
-			$sonido.play()
+			$sonido_golpe.play()
+		else:
+			Globales.enritmo = false
+			Globales.combo = 0
+			
+	elif event.is_action_pressed("dash"):
+		if abs(t_actual - t_sig) < tiempGracia:
+			Globales.enritmo = true
+			Globales.combo += 1
+			$sonido_dash.play()
 		else:
 			Globales.enritmo = false
 			Globales.combo = 0

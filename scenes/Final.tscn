@@ -1,17 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/katana.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Final.gd" type="Script" id=2]
+[ext_resource path="res://assets/Characters/Makoto/Dash_pose_Makoto.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/Weapons/katana1.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://color_makoto/azul.tres" type="Material" id=5]
+[ext_resource path="res://color_makoto/tubo.tres" type="Material" id=6]
+[ext_resource path="res://color_makoto/katana_blade.tres" type="Material" id=7]
+[ext_resource path="res://resources/tema1.tres" type="Theme" id=8]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="Theme" id=2]
-
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer"]
 margin_right = 1023.0
@@ -23,28 +23,146 @@ script = ExtResource( 2 )
 margin_right = 1023.0
 margin_bottom = 599.0
 theme = SubResource( 2 )
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 36.0
+margin_left = 222.0
+margin_right = 567.0
 margin_bottom = 599.0
-alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 290.0
-margin_right = 36.0
-margin_bottom = 309.0
-theme = SubResource( 4 )
-text = "FIN"
-align = 1
+margin_right = 345.0
+margin_bottom = 35.0
+theme = ExtResource( 8 )
+text = "ENEMY DEFEATED!"
+
+[node name="Modelo" type="Node" parent="HBoxContainer/VBoxContainer"]
+
+[node name="Makoto" type="MeshInstance" parent="HBoxContainer/VBoxContainer/Modelo"]
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 5 )
+material/1 = ExtResource( 5 )
+material/2 = ExtResource( 5 )
+material/3 = ExtResource( 5 )
+material/4 = ExtResource( 5 )
+material/5 = ExtResource( 5 )
+material/6 = ExtResource( 5 )
+material/7 = ExtResource( 5 )
+material/8 = ExtResource( 5 )
+material/9 = ExtResource( 5 )
+material/10 = ExtResource( 5 )
+material/11 = ExtResource( 5 )
+material/12 = ExtResource( 5 )
+material/13 = ExtResource( 5 )
+material/14 = ExtResource( 5 )
+material/15 = ExtResource( 5 )
+material/16 = ExtResource( 5 )
+material/17 = ExtResource( 5 )
+material/18 = ExtResource( 5 )
+material/19 = ExtResource( 5 )
+material/20 = ExtResource( 5 )
+material/21 = ExtResource( 5 )
+material/22 = ExtResource( 5 )
+material/23 = ExtResource( 5 )
+material/24 = ExtResource( 5 )
+material/25 = ExtResource( 5 )
+material/26 = ExtResource( 5 )
+material/27 = ExtResource( 5 )
+material/28 = ExtResource( 5 )
+material/29 = ExtResource( 5 )
+material/30 = ExtResource( 5 )
+material/31 = ExtResource( 5 )
+material/32 = ExtResource( 5 )
+material/33 = ExtResource( 5 )
+material/34 = ExtResource( 5 )
+material/35 = ExtResource( 5 )
+material/36 = ExtResource( 5 )
+material/37 = ExtResource( 5 )
+material/38 = ExtResource( 6 )
+material/39 = ExtResource( 5 )
+material/40 = ExtResource( 5 )
+
+[node name="Katana" type="MeshInstance" parent="HBoxContainer/VBoxContainer/Modelo/Makoto"]
+transform = Transform( -0.202261, -0.0526364, -0.977916, 0.677562, -0.728507, -0.100927, -0.707107, -0.683013, 0.183013, -0.0329261, 0.973238, 0.58839 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 7 )
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = ExtResource( 7 )
+
+[node name="Camera" type="Camera" parent="HBoxContainer/VBoxContainer/Modelo"]
+transform = Transform( 1, 0, 0, 0, 0.944221, 0.329312, 0, -0.329312, 0.944221, 0, 1.8476, 1.43663 )
+keep_aspect = 0
+fov = 110.0
+
+[node name="SpotLight" type="SpotLight" parent="HBoxContainer/VBoxContainer/Modelo"]
+transform = Transform( 0.965926, -1.13133e-08, 0.258819, -0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 0.659423, 2.64904, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 345.0
+margin_bottom = 74.0
+
+[node name="Score" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 138.0
+margin_bottom = 35.0
+theme = ExtResource( 8 )
+text = "Score:"
+
+[node name="Points" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 142.0
+margin_right = 211.0
+margin_bottom = 35.0
+theme = ExtResource( 8 )
+text = "420"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 40.0
-margin_right = 55.0
+margin_left = 571.0
+margin_right = 801.0
 margin_bottom = 599.0
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 292.0
-margin_right = 15.0
-margin_bottom = 306.0
+[node name="Grade" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 243.0
+margin_right = 230.0
+margin_bottom = 278.0
+theme = ExtResource( 8 )
 text = "S+"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 282.0
+margin_right = 230.0
+margin_bottom = 356.0
+
+[node name="Play_again" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 35.0
+focus_neighbour_top = NodePath("../Exit")
+focus_neighbour_bottom = NodePath("../Exit")
+theme = ExtResource( 8 )
+text = "Play Again"
+
+[node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 39.0
+margin_right = 230.0
+margin_bottom = 74.0
+focus_neighbour_top = NodePath("../Play_again")
+focus_neighbour_bottom = NodePath(".")
+theme = ExtResource( 8 )
+text = "Exit"
+
+[node name="katana" type="Sprite" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+position = Vector2( 102, 204 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+offset = Vector2( 360, 0 )
+flip_h = true
+
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer2/VBoxContainer/Play_again" to="." method="_on_Play_again_focus_entered"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/Play_again" to="." method="_on_Play_again_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

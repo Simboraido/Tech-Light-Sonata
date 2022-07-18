@@ -6796,7 +6796,7 @@ states/new_walk_foward/node = SubResource( 112 )
 states/new_walk_foward/position = Vector2( -58, 247 )
 transitions = [ "idle", "new_walk_foward", SubResource( 126 ), "idle", "new_strafe_right", SubResource( 127 ), "idle", "dash", SubResource( 129 ), "new_walk_foward", "idle", SubResource( 130 ), "new_strafe_right", "idle", SubResource( 145 ), "idle", "hit", SubResource( 153 ), "hit", "idle", SubResource( 159 ), "finisher", "idle", SubResource( 184 ), "finisher", "hit", SubResource( 190 ), "hit", "death", SubResource( 191 ), "dash", "idle", SubResource( 196 ), "idle", "jump", SubResource( 197 ), "jump", "caida", SubResource( 202 ), "caida", "idle", SubResource( 203 ), "idle", "caida", SubResource( 204 ), "idle", "new_slash_right", SubResource( 218 ), "new_slash_right", "hit", SubResource( 219 ), "new_slash_right", "idle", SubResource( 221 ), "idle", "new_slash_left", SubResource( 223 ), "new_slash_left", "hit", SubResource( 224 ), "new_slash_right", "new_slash_left", SubResource( 225 ), "new_slash_left", "idle", SubResource( 226 ), "new_kick", "hit", SubResource( 228 ), "new_kick", "finisher", SubResource( 229 ), "new_slash_left", "new_kick", SubResource( 230 ), "new_kick", "idle", SubResource( 231 ), "new_walk_backward", "idle", SubResource( 233 ), "idle", "new_walk_backward", SubResource( 234 ), "idle", "new_strafe_left", SubResource( 236 ), "new_strafe_left", "idle", SubResource( 237 ) ]
 start_node = "idle"
-graph_offset = Vector2( 268.456, 123.767 )
+graph_offset = Vector2( -232.169, 123.767 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=123]
 
@@ -6823,7 +6823,6 @@ color = Color( 0, 0.952941, 1, 1 )
 color_ramp = SubResource( 243 )
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 script = ExtResource( 1 )
 dist_max_camara = 15.0
 dist_min_camara = 6.0
@@ -6859,7 +6858,7 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="RootNode" type="Spatial" parent="TargetPlayer"]
-transform = Transform( -300, 0, -4.52987e-05, 0, 300, 0, 4.52987e-05, 0, -300, 0, 0, 0 )
+transform = Transform( -300, 0, -2.62268e-05, 0, 300, 0, 2.62268e-05, 0, -300, 0, 0, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="TargetPlayer/RootNode"]
 bones/0/name = "mixamorigHips"
@@ -6956,7 +6955,7 @@ bones/18/name = "mixamorigRightHand"
 bones/18/parent = 17
 bones/18/rest = Transform( 0.983923, -0.176405, 0.0278667, 0.178593, 0.971872, -0.153526, -9.31323e-10, 0.156035, 0.987752, 0, 0.00258516, 0 )
 bones/18/enabled = true
-bones/18/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 bones/19/name = "mixamorigRightHandIndex1"
 bones/19/parent = 18
 bones/19/rest = Transform( 0.853857, -0.336394, -0.397199, 0, 0.763099, -0.646281, 0.520508, 0.551832, 0.651578, 0, 0.000954356, 0 )
@@ -7029,7 +7028,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.268476, 0.485067, 0.832245, 0.882405, -0.222694, 0.414452, 0.386372, 0.845647, -0.368238, -0.00111552, 0.00852668, 0.00404602 )
+transform = Transform( -0.269045, 0.484876, 0.832172, 0.880031, -0.22733, 0.416975, 0.391359, 0.844522, -0.365545, -0.00110332, 0.00851972, 0.00406307 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]

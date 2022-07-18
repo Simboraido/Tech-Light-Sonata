@@ -4,16 +4,11 @@ onready var resume = $MarginContainer/VBoxContainer2/VBoxContainer/Resume
 onready var exit = $MarginContainer/VBoxContainer2/VBoxContainer/Exit
 onready var main_menu = $MarginContainer/VBoxContainer2/VBoxContainer/Main_menu
 onready var anim = $MarginContainer/AnimationPlayer
-onready var timer = $Timer
 onready var katana = $MarginContainer/katana
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	anim.play("FadeIn")
-	resume.connect("pressed" , self, "_on_Resume_pressed")
-	exit.connect("pressed", self, "_on_Exit_pressed")
-	main_menu.connect("pressed", self, "_on_Main_menu_pressed")
-	
 	visible = false
 	
 func _on_Resume_pressed():

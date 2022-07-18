@@ -9,7 +9,7 @@ export(float) var rapidez2 = 16 	# rapidez del enemigo en la segunda fase
 onready var vision = $RootNode
 onready var angulo = $angulo
 
-export var vidaMax = 40				# vida máxima del enemigo
+export (int) var vidaMax = 40		# vida máxima del enemigo
 var vida = vidaMax					# vida del enemigo
 onready var malla = $MeshInstance
 #export var fov = 90             	# mitad del fov del enemigo

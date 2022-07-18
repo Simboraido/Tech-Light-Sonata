@@ -14,9 +14,6 @@ func _ready():
 	anim.play("FadeIn")
 	song.play()
 	start.grab_focus()
-	start.connect("pressed" , self, "_on_start_pressed")
-	exit.connect("pressed", self, "_on_exit_pressed")
-	
 	yield(anim, "animation_finished")
 	timer.start(7+2*rand_range(-2,2))
 

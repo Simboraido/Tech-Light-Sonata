@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/Pixel Health Bar/Health/no health.png" type="Texture" id=1]
 [ext_resource path="res://resources/Pixel Health Bar/Health/health.png" type="Texture" id=2]
 [ext_resource path="res://resources/Sprite-0001.png" type="Texture" id=3]
 [ext_resource path="res://scripts/hud.gd" type="Script" id=4]
+[ext_resource path="res://resources/tema1.tres" type="Theme" id=5]
+[ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://resources/Pixel Health Bar/Bar/health bar.png" type="Texture" id=7]
+[ext_resource path="res://resources/Pixel Health Bar/Bar/no health bar.png" type="Texture" id=8]
+[ext_resource path="res://resources/Pixel Health Bar/Bar/empty health bar.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -23,3 +34,35 @@ texture_progress = ExtResource( 2 )
 position = Vector2( 60, 45 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
+
+[node name="EnemyConteiner" type="CenterContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 512.0
+margin_top = 500.0
+margin_right = 520.0
+margin_bottom = 556.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EnemyConteiner"]
+margin_top = 6.0
+margin_right = 128.0
+margin_bottom = 50.0
+theme = ExtResource( 5 )
+alignment = 1
+
+[node name="Boss_name" type="Label" parent="EnemyConteiner/VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Dizzle"
+align = 1
+
+[node name="Enemy_Health_bar" type="TextureProgress" parent="EnemyConteiner/VBoxContainer"]
+margin_top = 28.0
+margin_right = 128.0
+margin_bottom = 44.0
+size_flags_horizontal = 9
+texture_under = ExtResource( 8 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 7 )
