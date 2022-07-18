@@ -39,7 +39,7 @@ var vivo = true						# dice si el enemigo está vivo o no
 export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
 var segundoActual = 0				# dice el segundo EN EL TICK actual
 var puedeAtacar = false
-var porcentajeDeAtaque = 90			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
+var porcentajeDeAtaque = 100			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
 var distanciaAtaqueCorto = 20			# distancia en la que el enemigo golpea 
 var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
@@ -95,7 +95,7 @@ func take_damage():
 
 	print(vida)
 
-	if vida <= vidaMax/4:
+	if vida <= vidaMax/2:
 		rapidez = rapidez2
 		distanciaPersecucion = distanciaPersecucion2
 		speedState = rapidoState
