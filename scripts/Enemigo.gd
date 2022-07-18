@@ -12,9 +12,7 @@ onready var angulo = $angulo
 export (int) var vidaMax = 40		# vida máxima del enemigo
 var vida = vidaMax					# vida del enemigo
 onready var malla = $MeshInstance
-#export var fov = 90             	# mitad del fov del enemigo
-export var izq = 270
-export var der = 90
+
 var girar = true					# le dice si puede "hacer look at"
 var puedeCaminar = true				# dice si puede caminar
 
@@ -33,8 +31,13 @@ var State = combatState  			# le dice que estado tiene, combate or rifle
 const normalState = ""				# caminar lento	animación
 const rapidoState = "_f"			# caminar rápido animación
 var speedState = normalState		# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para
+
 var	anguloP360 						# ángulo del player entre 0 y 360
 var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
+var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cuando está en pausa no cuenta)
+var vivo = true						# dice si el enemigo está vivo o no
+
+# arreglar árbol y agregar animaciones P
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
@@ -45,7 +48,7 @@ func take_damage():
 	if Globales.enritmo:
 		vida-=10
 		vidaDelta = 10
-		if not ((vida+vidaDelta)>(vidaMax/2) and vida<(vidaMax/2)):
+		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)):
 			if anguloP360>180 and anguloP360<360:
 				Animacion.travel("c_hit_right")
 			else:
@@ -67,6 +70,7 @@ func take_damage():
 		return
 
 	if vida <= 0:
+		vivo = false
 		puedeCaminar = false
 		Animacion.travel(State+"_death")
 		jugador.rapidezW = 0
@@ -82,9 +86,10 @@ func take_damage():
 		
 		
 func _physics_process(delta):
-#	if jugador.connect("player_dead", self, ):
-#		Animacion.travel("e_dance")
 
+
+	tiempoTranscurrido+=delta
+	print(int(tiempoTranscurrido))
 
 	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
@@ -93,13 +98,12 @@ func _physics_process(delta):
 
 	var anguloP = angulo.rotation_degrees.y			# ángulo del player respecto al frente del enemigo 
 	anguloP360 = int(anguloP+180)				# ángulo del player entre 0 y 360
-#	print(anguloP360)
 
-	if (anguloP360>225 and anguloP360<315): 		# grados
+	if (anguloP360>225 and anguloP360<315) and vivo: 		# grados
 		Animacion.travel(State+"_rotate_left")
 		puedeCaminar = false
 
-	if (anguloP360<135 and anguloP360 > 45):
+	if (anguloP360<135 and anguloP360 > 45) and vivo:
 		Animacion.travel(State+"_rotate_right")
 		puedeCaminar = false
 
@@ -108,11 +112,10 @@ func _physics_process(delta):
 	direccion = distanciaV/distancia
 	 
 
-#	print(direccion)
 
-	if distancia <7:
+	if distancia <7 and vivo:
 		Animacion.travel("c_kick")
-	print(distancia)
+
 
 
 	if !puedeCaminar:
