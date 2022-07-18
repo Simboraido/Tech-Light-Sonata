@@ -39,10 +39,13 @@ var vivo = true						# dice si el enemigo está vivo o no
 export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
 var segundoActual = 0				# dice el segundo EN EL TICK actual
 var puedeAtacar = false
-var porcentajeDeAtaque = 80			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
+var porcentajeDeAtaque = 90			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
 var distanciaAtaqueCorto = 20			# distancia en la que el enemigo golpea 
 var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
+var atras = false						# dice si se está detras del enemigo
+
+
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
@@ -50,7 +53,7 @@ func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha
 		puedeCaminar = true
 
 func take_damage():
-	if inmune:			# pregunta si es inmune, si lo es no se hace nada
+	if inmune or atras:			# pregunta si es inmune o se está atrás del enemigo, si es true no se hace nada
 		return
 		
 	if Globales.enritmo:
@@ -100,7 +103,11 @@ func take_damage():
 		
 func _physics_process(delta):
 
-#	print(inmune)
+	print(atras)
+	
+
+
+
 
 	tiempoTranscurrido+=delta			# tiempo transcurrido
 	segundoActual = int(tiempoTranscurrido)			# dice el segundo del tick actual
@@ -120,6 +127,13 @@ func _physics_process(delta):
 	var anguloP = angulo.rotation_degrees.y			# ángulo del player respecto al frente del enemigo 
 	anguloP360 = int(anguloP+180)				# ángulo del player entre 0 y 360
 
+	if (anguloP360<45) or (anguloP360>315):		#  se está atrás del enemigo
+		atras = true
+	else: 
+		atras = false
+
+	print(anguloP360)	
+
 	if (anguloP360>225 and anguloP360<315) and vivo: 		# grados
 		Animacion.travel(State+"_rotate_left")
 		puedeCaminar = false
@@ -135,7 +149,7 @@ func _physics_process(delta):
 
 	if int(distancia) <=distanciaAtaqueCorto and vivo and puedeAtacar:
 		var numero = randi() % 100 + 1			# entero entre 1 y 100
-		if numero <= porcentajeDeAtaque and !(anguloP360<45) and !(anguloP360>315):		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
+		if numero <= porcentajeDeAtaque and not atras:		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
 			if anguloP360<=175:			# si se está a su derecha
 				Animacion.travel("c_punch_right_p")
 			elif anguloP360>=200:		# si se está a su izquierda
@@ -143,7 +157,7 @@ func _physics_process(delta):
 			else:						# si se está al medio
 				Animacion.travel("c_punch_down_p")
 
-	print(anguloP360)
+#	print(anguloP360)
 #	print(distancia)
 
 #	print(int(distancia))
