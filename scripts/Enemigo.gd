@@ -37,8 +37,7 @@ var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
 var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cuando está en pausa no cuenta)
 var vivo = true						# dice si el enemigo está vivo o no
 var inmune = false					# dice si el enemigo es inmune al daño o no
-
-# arreglar árbol y agregar animaciones P
+var atacando = false				# dice si está atacando o no
 
 func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha=true, izquierda=false
 	rotation.y += -(PI/2) if Derecha else +(PI/2)	# radianes
@@ -53,7 +52,9 @@ func take_damage():
 		vida-=10
 		vidaDelta = 10
 		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)):
-			if anguloP360>180 and anguloP360<360:
+			if	jugador.global_transform.origin.y>0:
+				Animacion.travel("c_hit_h")
+			elif anguloP360>180 and anguloP360<360:
 				Animacion.travel("c_hit_right")
 			else:
 				Animacion.travel("c_hit_left")
@@ -94,11 +95,17 @@ func take_damage():
 func _physics_process(delta):
 
 
-	tiempoTranscurrido+=delta
-	print(int(tiempoTranscurrido))
+	tiempoTranscurrido+=delta			# tiempo transcurrido
+#	print(int(tiempoTranscurrido))
 
 	var puntoMirar = jugador.global_transform.origin	# con global transform se obtiene "el 0,0,0 del jefe" y .origin dice la posción en el mundo
 	puntoMirar.y = global_transform.origin.y			# coordenada y de la pos en el mundo	
+
+	distanciaV = puntoMirar - global_transform.origin
+	distancia = distanciaV.length()
+	direccion = distanciaV/distancia
+	 
+
 
 	angulo.look_at(puntoMirar,Vector3.UP)
 
@@ -113,24 +120,20 @@ func _physics_process(delta):
 		Animacion.travel(State+"_rotate_right")
 		puedeCaminar = false
 
-	distanciaV = puntoMirar - global_transform.origin
-	distancia = distanciaV.length()
-	direccion = distanciaV/distancia
-	 
 
-	if distancia <7 and vivo:
-		Animacion.travel("c_kick_p")
-
-
+	if int(distancia) <=16 and vivo:
+		Animacion.travel("c_punch_down_p")
+	print(int(distancia))
 
 	if !puedeCaminar:
 		return
-	if distancia > distanciaPersecucion:
+	if distancia >= distanciaPersecucion:
 		look_at(puntoMirar, Vector3.UP)	
 		move_and_slide(direccion * rapidez, Vector3.UP)
 		Animacion.travel(State+"_walk"+speedState)
 	else:
-		Animacion.travel(State+"_idle")
+		if distancia >16:					# máxima distancia de ataque 
+			Animacion.travel(State+"_idle")
 
 
 func _on_hitbox_c_punch_right_body_entered(body):
