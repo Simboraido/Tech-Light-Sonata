@@ -122,7 +122,7 @@ func _physics_process(delta):
 
 
 	if int(distancia) <=16 and vivo:
-		Animacion.travel("c_punch_left_p")
+		Animacion.travel("c_punch_down_p")
 #	print(int(distancia))
 
 	if !puedeCaminar:
