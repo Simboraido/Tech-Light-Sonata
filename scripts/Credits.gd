@@ -1,5 +1,9 @@
 extends Control
 
+onready var anim = $AnimationPlayer
+
+func _ready():
+	anim.play("fadeIn")
 
 func _input(event):
 	if event is InputEventKey:

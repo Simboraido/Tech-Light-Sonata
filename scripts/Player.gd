@@ -173,3 +173,5 @@ func take_damage(danno):
 	
 func scene_changer():
 	get_tree().change_scene("res://scenes/GameOver.tscn")
+	
+# hacer un metodo para llamar en el dash, que desactive la colision shape del ataque del boss
