@@ -67,6 +67,8 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 	if vida <= 0:
 		take_damage(1)
 		return
+	if Globales.combo >= 8:								# si el combo es >= 5 se cura
+		vida += 2
 	counter +=1
 
 	# fixed camara
