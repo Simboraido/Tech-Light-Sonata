@@ -58,19 +58,28 @@ export (float) var dist_limite
 # declaramos señal
 signal player_dead
 
+# curar
+var comboAnterior
+
+
 func _ready():
 	colision_ref.disabled = true
 	atacando = false
 	connect("player_dead", jefe, "_on_player_dead")
 
+
+
 func _physics_process(delta):							# delta es 1/60 seg.+
 	if vida <= 0:
 		take_damage(1)
 		return
-	if Globales.combo >= 8:								# si el combo es >= 5 se cura
-		vida += 2
-	counter +=1
 
+	if Globales.combo >= 8 and Globales.combo!=comboAnterior:								# si el combo es >= 5 se cura
+		vida += 2
+	comboAnterior = Globales.combo		# OJO, es importante que combo anterior esté después de está función, si no lo está nunca será diferente al anterior
+
+	counter +=1
+		
 	# fixed camara
 	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)			#distancia al jefe
 	rotarCamara.translation.z = dist_max_camara - clamp((distCentro - dist_corte)/(dist_limite - dist_corte), 0, 1)*(dist_max_camara - dist_min_camara)
@@ -118,25 +127,26 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 	if atacando:
 		pass
 	else:
-		if velocidad.y > 0:
+		if velocidad.y > 0.01:
 			Animacion.travel("jump")
-		if !is_on_floor() and velocidad.y < 0:
+		elif !is_on_floor() and velocidad.y < -0.01:
 			Animacion.travel("caida")
 		# para correr
-		if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
-			if dashing:
-				dash_particles.emitting = true
-				Animacion.travel("dash")
-			elif adelante:
-				Animacion.travel("new_walk_foward") 
-			elif atras:
-				Animacion.travel("new_walk_backward")
-			elif derecha:
-				Animacion.travel("new_strafe_right")
-			else:
-				Animacion.travel("new_strafe_left")
 		else:
-			Animacion.travel("idle")
+			if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
+				if dashing:
+					dash_particles.emitting = true
+					Animacion.travel("dash")
+				elif adelante:
+					Animacion.travel("new_walk_foward") 
+				elif atras:
+					Animacion.travel("new_walk_backward")
+				elif derecha:
+					Animacion.travel("new_strafe_right")
+				else:
+					Animacion.travel("new_strafe_left")
+			else:
+				Animacion.travel("idle")
 
 
 func _on_hitbox_ataque_body_entered(body):  
