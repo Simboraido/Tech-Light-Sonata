@@ -6,7 +6,6 @@ onready var exit = $MarginContainer/VBoxContainer/Exit
 onready var credits = $MarginContainer/VBoxContainer/Credits
 onready var Katana = $MarginContainer/katana
 onready var song = $AudioStreamPlayer
-onready var sound = $Sonido
 onready var parp = $AP2
 onready var timer = $Timer
 

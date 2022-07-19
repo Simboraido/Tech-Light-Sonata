@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/jase-bloor-oCZHIa1D4EU-unsplash.png" type="Texture" id=1]
 [ext_resource path="res://resources/katana.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://resources/tema1.tres" type="Theme" id=5]
 [ext_resource path="res://musica/Beethoven Virus.mp3" type="AudioStream" id=6]
-[ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=7]
 [ext_resource path="res://default_env.tres" type="Environment" id=8]
 
 [sub_resource type="Animation" id=2]
@@ -189,9 +188,6 @@ expand = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-
-[node name="Sonido" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0

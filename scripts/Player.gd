@@ -88,7 +88,6 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 		rapidezY -= gravedad*delta
 	if Input.is_action_pressed("salto"):
 		if is_on_floor():
-	#		vida -= 20######################################################### PARA PROBAR MATAR AL PJ
 			rapidezY = salto
 
 	if timerAtq > 0:
