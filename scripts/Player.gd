@@ -127,26 +127,27 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 	if atacando:
 		pass
 	else:
-		if velocidad.y > 0:
+		if velocidad.y > 0.01:
 			Animacion.travel("jump")
-		if !is_on_floor() and velocidad.y < 0:
+		elif !is_on_floor() and velocidad.y < -0.01:
 			Animacion.travel("caida")
 		# para correr
-		if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
-			if dashing:
-				dash_particles.emitting = true
-				Animacion.travel("dash")
-			elif adelante:
-				Animacion.travel("new_walk_foward") 
-			elif atras:
-				Animacion.travel("new_walk_backward")
-			elif derecha:
-				Animacion.travel("new_strafe_right")
-			else:
-				Animacion.travel("new_strafe_left")
 		else:
-			Animacion.travel("idle")
-	
+			if abs(velocidad.x) > eps or abs(velocidad.z) > eps:
+				if dashing:
+					dash_particles.emitting = true
+					Animacion.travel("dash")
+				elif adelante:
+					Animacion.travel("new_walk_foward") 
+				elif atras:
+					Animacion.travel("new_walk_backward")
+				elif derecha:
+					Animacion.travel("new_strafe_right")
+				else:
+					Animacion.travel("new_strafe_left")
+			else:
+				Animacion.travel("idle")
+
 
 func _on_hitbox_ataque_body_entered(body):  
 	body.take_damage()
