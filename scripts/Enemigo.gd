@@ -44,7 +44,7 @@ var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el compl
 var dado1							# dado que dice si patea
 var dado2							# dado que dice si golpea 
 var distanciaAtaqueCorto = 8			# distancia en la que el enemigo golpea 
-var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
+var distanciaAtaqueLargo = 15			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
 var atras = false						# dice si se está detras del enemigo
 
