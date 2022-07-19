@@ -66,3 +66,10 @@ size_flags_horizontal = 9
 texture_under = ExtResource( 8 )
 texture_over = ExtResource( 9 )
 texture_progress = ExtResource( 7 )
+
+[node name="Combo" type="Label" parent="."]
+margin_left = 52.0
+margin_top = 538.0
+margin_right = 87.0
+margin_bottom = 552.0
+theme = ExtResource( 5 )
