@@ -9,9 +9,6 @@ onready var animacion = $CenterConteiner/VBoxContainer2/AnimationPlayer
 func _ready():
 	animacion.play("Fade In Game_Over")
 	next.grab_focus()
-	next.connect("pressed" , self, "_on_start_pressed")
-	exit.connect("pressed", self, "_on_exit_pressed")
-
 
 func _on_Next_pressed():
 	get_tree().change_scene("res://scenes/Menu.tscn")

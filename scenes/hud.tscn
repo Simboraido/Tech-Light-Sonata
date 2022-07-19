@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3, 8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0, 500.0 ]
+"values": [ 0.0, 1.0, 100.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EnemyConteiner/VBoxContainer/Boss_name:self_modulate")
@@ -124,7 +124,6 @@ theme = ExtResource( 5 )
 alignment = 1
 
 [node name="Boss_name" type="Label" parent="EnemyConteiner/VBoxContainer"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 128.0
 margin_bottom = 24.0
 custom_fonts/font = SubResource( 1 )
@@ -132,11 +131,11 @@ text = "Dizzle"
 align = 1
 
 [node name="Enemy_Health_bar" type="TextureProgress" parent="EnemyConteiner/VBoxContainer"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 28.0
 margin_right = 128.0
 margin_bottom = 44.0
 size_flags_horizontal = 9
+value = 100.0
 texture_under = ExtResource( 8 )
 texture_over = ExtResource( 9 )
 texture_progress = ExtResource( 7 )
