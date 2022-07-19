@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bit Bit Loop.mp3-354ba00467e038541e9ba5d84278af27.mp3str"
+
+[deps]
+
+source_file="res://musica/Bit Bit Loop.mp3"
+dest_files=[ "res://.import/Bit Bit Loop.mp3-354ba00467e038541e9ba5d84278af27.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
