@@ -41,8 +41,17 @@ var segundoActual = 0				# dice el segundo EN EL TICK actual
 var puedeAtacar = false				# dice si puede atacar 
 var PunoPorcentaje = 75				# porcentaje de probabilidad de pege un puñetazo
 var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el complemento es las veces que pegará con los puños, es independiednte de porcentajeDeAtaque, este decide si es que pega o no (patada o puño)
+var StompPorcentajeLejos = 30		# probabilidad de que haga el ataque salto/backflip al estár más lejos que el idle
+var StompPorcentajeCerca = 10
+var StompPorcentaje	= StompPorcentajeCerca		# probabilidad de que haga el ataque salto/backflip, toma prioridad sobre tanto la patada como el puño
+const numeroDeStompsFase1 = 3
+const numeroDeStompsFase2 = 5
+var numeroDeStomps = numeroDeStompsFase1			# numero de veces que salta/hace backflip
+var stompsRestantes = 0
 var dado1							# dado que dice si patea
 var dado2							# dado que dice si golpea 
+var dado3							# dado que dice si salta
+var hacerStomp						# dice si se debe hacer stomp
 var distanciaAtaqueCorto = 8			# distancia en la que el enemigo golpea 
 var distanciaAtaqueLargo = 15			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
@@ -75,17 +84,6 @@ func take_damage():
 		vida-=2
 		vidaDelta = 2
 	
-#	if Globales.enritmo:
-#		if Globales.combo == 1:
-#			malla.get("material/0").albedo_color = Color.purple
-#		else:
-#			malla.get("material/0").albedo_color = Color.yellow
-#
-#	else:
-#		malla.get("material/0").albedo_color = Color.red
-#		return
-
-
 	if vida <= 0:
 		vivo = false
 		puedeCaminar = false
@@ -96,14 +94,14 @@ func take_damage():
 		jugador.salto = 0
 		jugador.puede_atacar = false
 
-	print(vida)
+#	print(vida)
 
 	if vida <= vidaMax/2:
 		rapidez = rapidez2
 		distanciaPersecucion = distanciaPersecucion2
 		speedState = rapidoState
-		
-		
+		numeroDeStomps = numeroDeStompsFase2
+				
 func _physics_process(delta):
 
 #	print(atras)
@@ -131,14 +129,14 @@ func _physics_process(delta):
 	else: 
 		atras = false
 
-	print(distancia)
+#	print(distancia)
 #	print(anguloP360)	
 
-	if (anguloP360>225 and anguloP360<315) and vivo: 		# grados
+	if (anguloP360>225 and anguloP360<315) and vivo and stompsRestantes==0: 		# grados
 		Animacion.travel(State+"_rotate_left")
 		puedeCaminar = false
 
-	if (anguloP360<135 and anguloP360 > 45) and vivo:
+	if (anguloP360<135 and anguloP360 >45) and vivo and stompsRestantes==0:
 		Animacion.travel(State+"_rotate_right")
 		puedeCaminar = false
 	
@@ -147,34 +145,54 @@ func _physics_process(delta):
 	else:
 		puedeAtacar = false
 
-	if int(distancia) <=distanciaAtaqueLargo and vivo and puedeAtacar and not atras and State == combatState:
-		dado1 = randi() % 100 + 1			# entero entre 1 y 100
-		dado2 = randi() % 100 + 1			# entero entre 1 y 100		
-		
-		if dado1 <= PatadaPorcentaje:						# la patada toma prioridad al puño pues hace más daño, pero es menos probable que salga
-			Animacion.travel("c_kick_p")			
-		else:		# si eleige pegar con el puño, para que se cumpla debe estar a la distancia del puño
-			if dado2 <= PunoPorcentaje and int(distancia)<=distanciaAtaqueCorto:		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
-				if anguloP360<=175:			# si se está a su derecha
-					Animacion.travel("c_punch_right_p")
-				elif anguloP360>=200:		# si se está a su izquierda
-					Animacion.travel("c_punch_left_p")
-				else:						# si se está al medio
-					Animacion.travel("c_punch_down_p")
+	if State == combatState and puedeAtacar:
+		if distancia>=distanciaIdle:				# dice que probabilidad usar
+			StompPorcentaje = StompPorcentajeLejos
+		else:
+			StompPorcentaje = StompPorcentajeCerca
+
+		if stompsRestantes == 0:
+			dado3 = randi() % 100 + 1			# entero entre 1 y 100
+			hacerStomp = dado3<StompPorcentaje	# booleano de hacer stomps
+			if hacerStomp:
+				stompsRestantes = numeroDeStomps
+
+		if !hacerStomp: 			# si es que no debe hacer un salto
+			if int(distancia) <=distanciaAtaqueLargo and vivo and not atras:
+				dado1 = randi() % 100 + 1			# entero entre 1 y 100
+				dado2 = randi() % 100 + 1			# entero entre 1 y 100		
+				
+				if dado1 <= PatadaPorcentaje:						# la patada toma prioridad al puño pues hace más daño, pero es menos probable que salga
+					Animacion.travel("c_kick_p")			
+				else:		# si eleige pegar con el puño, para que se cumpla debe estar a la distancia del puño
+					if dado2 <= PunoPorcentaje and int(distancia)<=distanciaAtaqueCorto:		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
+						if anguloP360<=175:			# si se está a su derecha
+							Animacion.travel("c_punch_right_p")
+						elif anguloP360>=200:		# si se está a su izquierda
+							Animacion.travel("c_punch_left_p")
+						else:						# si se está al medio
+							Animacion.travel("c_punch_down_p")
+		else:	# debe hacer un salto
+			Animacion.travel("c_backflip")
+			stompsRestantes -= 1
 
 #	print(anguloP360)
 #	print(distancia)
-
+#	print(inmune)
 #	print(int(distancia))
+#	print(stompsRestantes)
+	print(StompPorcentaje)
+	print(hacerStomp)
+
 
 	if !puedeCaminar:
 		return
-	if distancia >= distanciaPersecucion:
+	if distancia >= distanciaPersecucion and !hacerStomp:
 		look_at(puntoMirar, Vector3.UP)	
 		move_and_slide(direccion * rapidez, Vector3.UP)
 		Animacion.travel(State+"_walk"+speedState)
 	else:
-		if distancia >=distanciaIdle:					# máxima distancia de ataque 
+		if distancia >=distanciaIdle and !hacerStomp:					# máxima distancia de ataque 
 			Animacion.travel(State+"_idle")
 
 
@@ -190,8 +208,13 @@ func _on_hitbox_c_punch_down_body_entered(body):
 func _on_hitbox_c_kick_body_entered(body):
 	body.take_damage(20)
 
+func _on_hitbox_c_backflip_body_entered(body):
+	body.take_damage(20)
+
 func change_scene():
 	get_tree().change_scene("res://scenes/Final.tscn")
 	
 func _on_player_dead():
 	Animacion.travel("e_dance")
+
+

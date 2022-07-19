@@ -137,7 +137,7 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 				Animacion.travel("new_strafe_left")
 		else:
 			Animacion.travel("idle")
-
+	
 
 func _on_hitbox_ataque_body_entered(body):  
 	body.take_damage()
