@@ -38,9 +38,12 @@ var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cu
 var vivo = true						# dice si el enemigo está vivo o no
 export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
 var segundoActual = 0				# dice el segundo EN EL TICK actual
-var puedeAtacar = false
-var porcentajeDeAtaque = 100			# porcentaje de probabilidad de que ataque en un segundo si las condiciones se cumplen (distancia)
-var distanciaAtaqueCorto = 20			# distancia en la que el enemigo golpea 
+var puedeAtacar = false				# dice si puede atacar 
+var PunoPorcentaje = 90			# porcentaje de probabilidad de pege un puñetazo
+var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el complemento es las veces que pegará con los puños, es independiednte de porcentajeDeAtaque, este decide si es que pega o no (patada o puño)
+var dado1							# dado que dice si patea
+var dado2							# dado que dice si golpea 
+var distanciaAtaqueCorto = 8			# distancia en la que el enemigo golpea 
 var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
 var atras = false						# dice si se está detras del enemigo
@@ -103,12 +106,8 @@ func take_damage():
 		
 func _physics_process(delta):
 
-	print(atras)
+#	print(atras)
 	
-
-
-
-
 	tiempoTranscurrido+=delta			# tiempo transcurrido
 	segundoActual = int(tiempoTranscurrido)			# dice el segundo del tick actual
 #	print(tiempoTranscurrido)
@@ -132,7 +131,8 @@ func _physics_process(delta):
 	else: 
 		atras = false
 
-	print(anguloP360)	
+	print(distancia)
+#	print(anguloP360)	
 
 	if (anguloP360>225 and anguloP360<315) and vivo: 		# grados
 		Animacion.travel(State+"_rotate_left")
@@ -147,15 +147,20 @@ func _physics_process(delta):
 	else:
 		puedeAtacar = false
 
-	if int(distancia) <=distanciaAtaqueCorto and vivo and puedeAtacar:
-		var numero = randi() % 100 + 1			# entero entre 1 y 100
-		if numero <= porcentajeDeAtaque and not atras:		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
-			if anguloP360<=175:			# si se está a su derecha
-				Animacion.travel("c_punch_right_p")
-			elif anguloP360>=200:		# si se está a su izquierda
-				Animacion.travel("c_punch_left_p")
-			else:						# si se está al medio
-				Animacion.travel("c_punch_down_p")
+	if int(distancia) <=distanciaAtaqueLargo and vivo and puedeAtacar and not atras:
+		dado1 = randi() % 100 + 1			# entero entre 1 y 100
+		dado2 = randi() % 100 + 1			# entero entre 1 y 100		
+		
+		if dado1 <= PatadaPorcentaje:						# la patada toma prioridad al puño pues hace más daño, pero es menos probable que salga
+			Animacion.travel("c_kick_p")			
+		else:		# si eleige pegar con el puño, para que se cumpla debe estar a la distancia del puño
+			if dado2 <= PunoPorcentaje and int(distancia)<=distanciaAtaqueCorto:		# su el resultado del dado es favorable y no se está en la espalda del enemigo					#
+				if anguloP360<=175:			# si se está a su derecha
+					Animacion.travel("c_punch_right_p")
+				elif anguloP360>=200:		# si se está a su izquierda
+					Animacion.travel("c_punch_left_p")
+				else:						# si se está al medio
+					Animacion.travel("c_punch_down_p")
 
 #	print(anguloP360)
 #	print(distancia)
