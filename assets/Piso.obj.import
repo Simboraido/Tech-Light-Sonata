@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Piso.obj-845391bb2f1ae130928882ecd053c094.mesh"
+
+[deps]
+
+files=[ "res://.import/Piso.obj-845391bb2f1ae130928882ecd053c094.mesh" ]
+
+source_file="res://assets/Piso.obj"
+dest_files=[ "res://.import/Piso.obj-845391bb2f1ae130928882ecd053c094.mesh", "res://.import/Piso.obj-845391bb2f1ae130928882ecd053c094.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

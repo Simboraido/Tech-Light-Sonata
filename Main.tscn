@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Node.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Enemigo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/Normal Metal/Metal032_1K_NormalDX.jpg" type="Texture" id=4]
+[ext_resource path="res://musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Beatmaps/beat_map.tres" type="Resource" id=6]
+[ext_resource path="res://musica/mario_rpg.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/Piso.obj" type="ArrayMesh" id=8]
+
+[sub_resource type="CylinderShape" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Piso" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Piso"]
+transform = Transform( 60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Piso"]
+transform = Transform( 1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.116857, -0.232185, 0.0806985 )
+mesh = ExtResource( 8 )
+material/0 = SubResource( 2 )
+
+[node name="Enemigo" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 2 )
+bpm = 90
+beatmap = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 5 )
+
+[node name="sonido" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43286, 26.5192 )
