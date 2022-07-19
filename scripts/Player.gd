@@ -58,19 +58,28 @@ export (float) var dist_limite
 # declaramos señal
 signal player_dead
 
+# curar
+var comboAnterior
+
+
 func _ready():
 	colision_ref.disabled = true
 	atacando = false
 	connect("player_dead", jefe, "_on_player_dead")
 
+
+
 func _physics_process(delta):							# delta es 1/60 seg.+
 	if vida <= 0:
 		take_damage(1)
 		return
-	if Globales.combo >= 8:								# si el combo es >= 5 se cura
-		vida += 2
-	counter +=1
 
+	if Globales.combo >= 8 and Globales.combo!=comboAnterior:								# si el combo es >= 5 se cura
+		vida += 2
+	comboAnterior = Globales.combo		# OJO, es importante que combo anterior esté después de está función, si no lo está nunca será diferente al anterior
+
+	counter +=1
+		
 	# fixed camara
 	var distCentro = global_transform.origin.distance_to(Vector3.ZERO)			#distancia al jefe
 	rotarCamara.translation.z = dist_max_camara - clamp((distCentro - dist_corte)/(dist_limite - dist_corte), 0, 1)*(dist_max_camara - dist_min_camara)

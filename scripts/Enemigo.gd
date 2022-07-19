@@ -181,8 +181,8 @@ func _physics_process(delta):
 #	print(inmune)
 #	print(int(distancia))
 #	print(stompsRestantes)
-	print(StompPorcentaje)
-	print(hacerStomp)
+#	print(StompPorcentaje)
+#	print(hacerStomp)
 
 
 	if !puedeCaminar:
