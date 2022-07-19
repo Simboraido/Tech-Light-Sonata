@@ -4,7 +4,7 @@ extends KinematicBody
 onready var jugador = get_parent().get_node("Player")  
 
 export(float) var rapidez = 8		# rapidez del enemigo
-export(float) var rapidez2 = 16 	# rapidez del enemigo en la segunda fase
+export(float) var rapidez2 = 20 	# rapidez del enemigo en la segunda fase
 
 onready var vision = $RootNode
 onready var angulo = $angulo
@@ -39,7 +39,7 @@ var vivo = true						# dice si el enemigo está vivo o no
 export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
 var segundoActual = 0				# dice el segundo EN EL TICK actual
 var puedeAtacar = false				# dice si puede atacar 
-var PunoPorcentaje = 90			# porcentaje de probabilidad de pege un puñetazo
+var PunoPorcentaje = 75			# porcentaje de probabilidad de pege un puñetazo
 var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el complemento es las veces que pegará con los puños, es independiednte de porcentajeDeAtaque, este decide si es que pega o no (patada o puño)
 var dado1							# dado que dice si patea
 var dado2							# dado que dice si golpea 
@@ -62,7 +62,7 @@ func take_damage():
 	if Globales.enritmo:
 		vida-=10
 		vidaDelta = 10
-		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)):
+		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)) and State == combatState:
 			if	jugador.global_transform.origin.y>0:
 				Animacion.travel("c_hit_h")
 			elif anguloP360>180 and anguloP360<360:
@@ -147,7 +147,7 @@ func _physics_process(delta):
 	else:
 		puedeAtacar = false
 
-	if int(distancia) <=distanciaAtaqueLargo and vivo and puedeAtacar and not atras:
+	if int(distancia) <=distanciaAtaqueLargo and vivo and puedeAtacar and not atras and State == combatState:
 		dado1 = randi() % 100 + 1			# entero entre 1 y 100
 		dado2 = randi() % 100 + 1			# entero entre 1 y 100		
 		
