@@ -36,17 +36,17 @@ var	anguloP360 						# ángulo del player entre 0 y 360
 var vidaDelta 						# cambio de vida entre el golpe actual y el anterior
 var tiempoTranscurrido = 0			# tiempo transucrrido desde que se apreta start (cuando está en pausa no cuenta)
 var vivo = true						# dice si el enemigo está vivo o no
-export (bool) var inmune = false					# dice si el enemigo es inmune al daño o no
+export (bool) var inmune = false	# dice si el enemigo es inmune al daño o no
 var segundoActual = 0				# dice el segundo EN EL TICK actual
 var puedeAtacar = false				# dice si puede atacar 
-var PunoPorcentaje = 75			# porcentaje de probabilidad de pege un puñetazo
+var PunoPorcentaje = 75				# porcentaje de probabilidad de pege un puñetazo
 var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el complemento es las veces que pegará con los puños, es independiednte de porcentajeDeAtaque, este decide si es que pega o no (patada o puño)
 var dado1							# dado que dice si patea
 var dado2							# dado que dice si golpea 
-var distanciaAtaqueCorto = 8			# distancia en la que el enemigo golpea 
-var distanciaAtaqueLargo = 16			# distancia en la que el enemigo patea
+var distanciaAtaqueCorto = 8		# distancia en la que el enemigo golpea 
+var distanciaAtaqueLargo = 16		# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
-var atras = false						# dice si se está detras del enemigo
+var atras = false					# dice si se está detras del enemigo
 
 
 
@@ -56,12 +56,12 @@ func rotateEnemy(Derecha:bool):		# ayuda con la animación de rotación, derecha
 		puedeCaminar = true
 
 func take_damage():
-	if inmune or atras:			# pregunta si es inmune o se está atrás del enemigo, si es true no se hace nada
+	if inmune or atras:				# pregunta si es inmune o se está atrás del enemigo, si es true no se hace nada
 		return
 		
 	if Globales.enritmo:
-		vida-=10
-		vidaDelta = 10
+		vida-= (5 + (Globales.combo*2))
+		vidaDelta = 5 + (Globales.combo*2)
 		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)) and State == combatState:
 			if	jugador.global_transform.origin.y>0:
 				Animacion.travel("c_hit_h")
@@ -72,8 +72,8 @@ func take_damage():
 		else:
 			Animacion.travel("c_hit_strong")
 	else:
-		vida-=1
-		vidaDelta = 1
+		vida-=2
+		vidaDelta = 2
 	
 #	if Globales.enritmo:
 #		if Globales.combo == 1:
@@ -190,46 +190,8 @@ func _on_hitbox_c_punch_down_body_entered(body):
 func _on_hitbox_c_kick_body_entered(body):
 	body.take_damage(20)
 
-
-
 func change_scene():
 	get_tree().change_scene("res://scenes/Final.tscn")
 	
 func _on_player_dead():
 	Animacion.travel("e_dance")
-
-	
-	
-	
-	
-
-	
-	
-	
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
