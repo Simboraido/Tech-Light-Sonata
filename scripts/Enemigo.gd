@@ -43,8 +43,8 @@ var PunoPorcentaje = 75				# porcentaje de probabilidad de pege un puñetazo
 var PatadaPorcentaje = 30 			# porcentaje de veces que hace una patada, el complemento es las veces que pegará con los puños, es independiednte de porcentajeDeAtaque, este decide si es que pega o no (patada o puño)
 var dado1							# dado que dice si patea
 var dado2							# dado que dice si golpea 
-var distanciaAtaqueCorto = 8		# distancia en la que el enemigo golpea 
-var distanciaAtaqueLargo = 16		# distancia en la que el enemigo patea
+var distanciaAtaqueCorto = 8			# distancia en la que el enemigo golpea 
+var distanciaAtaqueLargo = 15			# distancia en la que el enemigo patea
 var distanciaIdle = max(distanciaAtaqueCorto,distanciaAtaqueLargo)		# distancia en la que el enemigo se queda en idle
 var atras = false					# dice si se está detras del enemigo
 
