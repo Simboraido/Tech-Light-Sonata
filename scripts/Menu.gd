@@ -8,6 +8,9 @@ onready var Katana = $MarginContainer/katana
 onready var song = $AudioStreamPlayer
 onready var parp = $AP2
 onready var timer = $Timer
+onready var vol_slider = $VSlider
+
+var master_bus = AudioServer.get_bus_index("Master")
 
 func _ready():
 	anim.play("FadeIn")
@@ -42,3 +45,10 @@ func _on_Credits_focus_entered():
 
 func _on_Credits_pressed():
 	get_tree().change_scene("res://scenes/Credits.tscn")
+
+func _on_VSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(master_bus, value)
+	if value == -60:
+		AudioServer.set_bus_mute(master_bus, true)
+	else:
+		AudioServer.set_bus_mute(master_bus, false)

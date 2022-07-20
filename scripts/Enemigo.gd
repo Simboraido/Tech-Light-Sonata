@@ -69,7 +69,7 @@ func take_damage():
 		return
 		
 	if Globales.enritmo:
-		Globales.puntaje += 50
+		Globales.puntaje += 50 + (Globales.combo+1)*2
 		vida-= (5 + (Globales.combo*2))
 		vidaDelta = 5 + (Globales.combo*2)
 		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)) and State == combatState:

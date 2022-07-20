@@ -266,6 +266,23 @@ anims/parpadeo = SubResource( 7 )
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Volumen" type="Label" parent="."]
+margin_left = 845.0
+margin_top = 476.0
+margin_right = 1006.0
+margin_bottom = 511.0
+theme = ExtResource( 5 )
+text = "Volumen"
+
+[node name="VSlider" type="VSlider" parent="."]
+margin_left = 930.0
+margin_top = 225.0
+margin_right = 946.0
+margin_bottom = 454.0
+theme = ExtResource( 5 )
+min_value = -60.0
+max_value = 0.0
+
 [connection signal="focus_entered" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_focus_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="focus_entered" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_Credits_focus_entered"]
@@ -273,3 +290,4 @@ one_shot = true
 [connection signal="focus_entered" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
