@@ -1,11 +1,11 @@
-extends MarginContainer
+extends Control
 
-onready var katana = $HBoxContainer/VBoxContainer2/VBoxContainer/katana
-onready var play_again = $HBoxContainer/VBoxContainer2/VBoxContainer/Play_again
-onready var exit = $HBoxContainer/VBoxContainer2/VBoxContainer/Exit
-onready var score = $HBoxContainer/VBoxContainer/HBoxContainer/Score
-onready var points = $HBoxContainer/VBoxContainer/HBoxContainer/Points
-onready var grade = $HBoxContainer/VBoxContainer2/Grade
+onready var katana = $MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/katana
+onready var play_again = $MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/Play_again
+onready var exit = $MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/Exit
+onready var score = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Score
+onready var points = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Points
+onready var grade = $MarginContainer/HBoxContainer/VBoxContainer2/Grade
 
 func _ready():
 	play_again.grab_focus()

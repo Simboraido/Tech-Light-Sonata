@@ -1,7 +1,7 @@
 extends KinematicBody
 
 # vidaMax y vida
-export (int) var vidaMax = 200
+export (int) var vidaMax = 20000
 var vida = vidaMax
 
 export (float) var eps = 0.1

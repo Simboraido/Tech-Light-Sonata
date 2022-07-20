@@ -22,6 +22,8 @@ func _process(delta):
 	t_actual = musica.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency() # ajustar latencia
 	if t_actual > largoCancion:
 		t_actual -= largoCancion
+		indiceNota = 0
+		t_sig = beatmap.notes[indiceNota].time
 	if t_actual >= t_sig + tiempGracia:
 		indiceNota = (indiceNota + 1)%beatmap.notes.size()
 		t_sig = beatmap.notes[indiceNota].time
