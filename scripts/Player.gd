@@ -6,7 +6,7 @@ var vida = vidaMax
 
 export (float) var eps = 0.1
 
-export var rapidezW = 15								# rapidez normal
+export var rapidezW = 20								# rapidez normal
 export var rapidezD = 60								# rapidez de dasheo
 export var salto = 60									# valor de magnitud del salto
 export var gravedad = 200								# valor de magnitude de la gravedad
