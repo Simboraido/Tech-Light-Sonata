@@ -69,6 +69,7 @@ func take_damage():
 		return
 		
 	if Globales.enritmo:
+		Globales.puntaje += 50
 		vida-= (5 + (Globales.combo*2))
 		vidaDelta = 5 + (Globales.combo*2)
 		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)) and State == combatState:
@@ -81,6 +82,7 @@ func take_damage():
 		else:
 			Animacion.travel("c_hit_strong")
 	else:
+		Globales.puntaje += 10
 		vida-=2
 		vidaDelta = 2
 	
@@ -103,6 +105,9 @@ func take_damage():
 		numeroDeStomps = numeroDeStompsFase2
 				
 func _physics_process(delta):
+	if vida < 0:
+		take_damage()
+		return
 
 #	print(atras)
 	

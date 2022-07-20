@@ -7029,7 +7029,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.278835, 0.536008, 0.796836, 0.870432, -0.209477, 0.445497, 0.405709, 0.817812, -0.40815, -0.00107029, 0.00838302, 0.00418176 )
+transform = Transform( -0.268617, 0.48026, 0.834983, 0.887363, -0.21386, 0.408474, 0.374743, 0.850655, -0.36872, -0.00122627, 0.00857985, 0.00395577 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]

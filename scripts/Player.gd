@@ -1,7 +1,7 @@
 extends KinematicBody
 
 # vidaMax y vida
-export (int) var vidaMax = 20000
+export (int) var vidaMax = 200
 var vida = vidaMax
 
 export (float) var eps = 0.1
@@ -149,7 +149,7 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 				Animacion.travel("idle")
 
 
-func _on_hitbox_ataque_body_entered(body):  
+func _on_hitbox_ataque_body_entered(body):
 	body.take_damage()
 	
 func _input(event):
@@ -179,9 +179,8 @@ func take_damage(danno):
 		emit_signal("player_dead")
 		Animacion.travel("death")
 	else:
+		Globales.puntaje -= 25
 		Animacion.travel("hit")
 	
 func scene_changer():
 	get_tree().change_scene("res://scenes/GameOver.tscn")
-	
-# hacer un metodo para llamar en el dash, que desactive la colision shape del ataque del boss
