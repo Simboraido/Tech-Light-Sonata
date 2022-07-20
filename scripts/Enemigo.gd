@@ -4,7 +4,7 @@ extends KinematicBody
 onready var jugador = get_parent().get_node("Player")  
 
 export(float) var rapidez = 8		# rapidez del enemigo
-export(float) var rapidez2 = 20 	# rapidez del enemigo en la segunda fase
+export(float) var rapidez2 = 12 	# rapidez del enemigo en la segunda fase
 
 onready var vision = $RootNode
 onready var angulo = $angulo
@@ -25,9 +25,6 @@ export var distanciaPersecucion2 = 17	# DEBE SER MAYOR QUE LA DISTANCIA DE LOS G
 onready var Animacion = $RootNode/AnimationPlayer/AnimationTree.get("parameters/playback")
 # advance condition
 onready var anim_tree = $RootNode/AnimationPlayer/AnimationTree
-const combatState = "c"				# estado de combate 
-const rifleState = "r"				# estado de rifle
-var State = combatState  			# le dice que estado tiene, combate or rifle
 const normalState = ""				# caminar lento	animación
 const rapidoState = "_f"			# caminar rápido animación
 var speedState = normalState		# le dice si caminar rápido o lento en la animación, es nulo para animación normal y rápido para
@@ -72,7 +69,7 @@ func take_damage():
 		Globales.puntaje += 50
 		vida-= (5 + (Globales.combo*2))
 		vidaDelta = 5 + (Globales.combo*2)
-		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)) and State == combatState:
+		if not ((vida+vidaDelta)>=(vidaMax/2) and vida<=(vidaMax/2)):
 			if	jugador.global_transform.origin.y>0:
 				Animacion.travel("c_hit_h")
 			elif anguloP360>180 and anguloP360<360:
@@ -89,7 +86,7 @@ func take_damage():
 	if vida <= 0:
 		vivo = false
 		puedeCaminar = false
-		Animacion.travel(State+"_death")
+		Animacion.travel("c_death")
 		jugador.rapidezW = 0
 		jugador.rapidezD = 0
 		jugador.rapidez = 0
@@ -138,11 +135,11 @@ func _physics_process(delta):
 #	print(anguloP360)	
 
 	if (anguloP360>225 and anguloP360<315) and vivo and stompsRestantes==0: 		# grados
-		Animacion.travel(State+"_rotate_left")
+		Animacion.travel("c_rotate_left")
 		puedeCaminar = false
 
 	if (anguloP360<135 and anguloP360 >45) and vivo and stompsRestantes==0:
-		Animacion.travel(State+"_rotate_right")
+		Animacion.travel("c_rotate_right")
 		puedeCaminar = false
 	
 	if tiempoTranscurrido-segundoActual <0.01:
@@ -150,7 +147,7 @@ func _physics_process(delta):
 	else:
 		puedeAtacar = false
 
-	if State == combatState and puedeAtacar:
+	if puedeAtacar and vivo:
 		if distancia>=distanciaIdle:				# dice que probabilidad usar
 			StompPorcentaje = StompPorcentajeLejos
 		else:
@@ -181,24 +178,15 @@ func _physics_process(delta):
 			Animacion.travel("c_backflip")
 			stompsRestantes -= 1
 
-#	print(anguloP360)
-#	print(distancia)
-#	print(inmune)
-#	print(int(distancia))
-#	print(stompsRestantes)
-#	print(StompPorcentaje)
-#	print(hacerStomp)
-
-
 	if !puedeCaminar:
 		return
 	if distancia >= distanciaPersecucion and !hacerStomp:
 		look_at(puntoMirar, Vector3.UP)	
 		move_and_slide(direccion * rapidez, Vector3.UP)
-		Animacion.travel(State+"_walk"+speedState)
+		Animacion.travel("c_walk"+speedState)
 	else:
 		if distancia >=distanciaIdle and !hacerStomp:					# máxima distancia de ataque 
-			Animacion.travel(State+"_idle")
+			Animacion.travel("c_idle")
 
 
 func _on_hitbox_c_punch_right_body_entered(body):
