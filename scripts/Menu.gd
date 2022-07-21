@@ -4,6 +4,7 @@ onready var anim = $MarginContainer/AnimationPlayer
 onready var start = $MarginContainer/VBoxContainer/Start
 onready var exit = $MarginContainer/VBoxContainer/Exit
 onready var credits = $MarginContainer/VBoxContainer/Credits
+onready var tutorial = $MarginContainer/VBoxContainer/Tutorial
 onready var Katana = $MarginContainer/katana
 onready var song = $AudioStreamPlayer
 onready var parp = $AP2
@@ -20,7 +21,7 @@ func _ready():
 	timer.start(7+2*rand_range(-2,2))
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://scenes/CajaDeTexto.tscn")
+	get_tree().change_scene("res://scenes/Main.tscn")
 
 func _on_Exit_pressed():
 	get_tree().quit()
@@ -32,6 +33,10 @@ func _on_Exit_focus_entered():
 func _on_Start_focus_entered():
 	Katana.global_position.y = start.rect_global_position.y + start.rect_size.y/2
 	Katana.global_position.x = start.rect_global_position.x + start.rect_size.x
+	
+func _on_Tutorial_focus_entered():
+	Katana.global_position.y = tutorial.rect_global_position.y + tutorial.rect_size.y/2
+	Katana.global_position.x = tutorial.rect_global_position.x + tutorial.rect_size.x
 
 func _on_Timer_timeout():
 	parp.play("parpadeo")
@@ -52,3 +57,6 @@ func _on_VSlider_value_changed(value):
 		AudioServer.set_bus_mute(master_bus, true)
 	else:
 		AudioServer.set_bus_mute(master_bus, false)
+
+func _on_Tutorial_pressed():
+	get_tree().change_scene("res://scenes/CajaDeTexto.tscn")
