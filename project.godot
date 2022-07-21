@@ -46,7 +46,8 @@ _global_script_class_icons={
 
 config/name="Taller De Los Jueguitos"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/gato_pixel_art2.PNG"
+config/windows_native_icon="res://gato_pixel_art2.ico"
 
 [autoload]
 
