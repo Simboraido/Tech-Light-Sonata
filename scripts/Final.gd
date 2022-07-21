@@ -7,29 +7,21 @@ onready var points = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/
 onready var grade = $MarginContainer/HBoxContainer/VBoxContainer2/Grade
 
 func grade_points(points):
-	if points > 1000:
-		return "S+"
-	elif points > 900:
-		return "A+"
-	elif points > 800:
+	if points > 16500:
+		return "S"
+	elif points > 14000:
 		return "A"
-	elif points > 700:
-		return "B+"
-	elif points > 600:
+	elif points > 12000:
 		return "B"
-	elif points > 450:
-		return "C+"
-	elif points > 250:
+	elif points > 10000:
 		return "C"
-	elif points > 150:
-		return "D+"
 	else:
 		return "D"
 
 func _ready():
 	play_again.grab_focus()
 	points.text = str(Globales.puntaje)
-	grade.text = grade_points(Globales.puntaje/100)
+	grade.text = grade_points(Globales.puntaje)
 
 func _on_Play_again_focus_entered():
 	katana.global_position.y = play_again.rect_global_position.y + play_again.rect_size.y/2
