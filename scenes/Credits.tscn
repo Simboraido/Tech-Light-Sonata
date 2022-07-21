@@ -53,11 +53,11 @@ theme = ExtResource( 2 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 1081.0
-margin_bottom = 1489.0
+margin_right = 1058.0
+margin_bottom = 1527.0
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2"]
-margin_right = 1081.0
+margin_right = 1058.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 1 )
 text = "Creditos"
@@ -65,12 +65,12 @@ align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
 margin_top = 86.0
-margin_right = 1081.0
-margin_bottom = 1489.0
+margin_right = 1058.0
+margin_bottom = 1527.0
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/VBoxContainer"]
-margin_right = 1081.0
-margin_bottom = 1403.0
+margin_right = 1058.0
+margin_bottom = 1441.0
 text = "Developers: Diego Opazo, Reik0, Kosmonaut y 
 Simboraido
 
@@ -106,5 +106,6 @@ Efectos de sonido: Mixkit License
 ?page=5
 
 Animaciones: Mixamo https://www.mixamo.com/#/
-Gato Ciego: Licencia Unplash
-Raoul Droog https://unsplash.com/es/@raouldroog"
+
+Gato Ciego: Licencia Unplash Raoul Droog 
+https://unsplash.com/es/@raouldroog"
