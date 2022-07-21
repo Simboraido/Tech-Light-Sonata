@@ -20,7 +20,7 @@ func _ready():
 	timer.start(7+2*rand_range(-2,2))
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().change_scene("res://scenes/CajaDeTexto.tscn")
 
 func _on_Exit_pressed():
 	get_tree().quit()

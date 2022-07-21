@@ -8,11 +8,11 @@ func _ready():
 	
 
 func _input(event):
-	if event.is_action_pressed("salto"):
+	if event.is_action_pressed("ataque"):
 		indice+=1
 		if indice<dialogos.size():
 			texto.parse_bbcode(dialogos[indice])	
 		else:
-			hide()												# aquí pasar a la batalla
+			get_tree().change_scene("res://scenes/Main.tscn")
 				
 
