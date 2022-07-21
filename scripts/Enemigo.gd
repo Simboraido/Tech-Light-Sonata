@@ -131,9 +131,6 @@ func _physics_process(delta):
 	else: 
 		atras = false
 
-#	print(distancia)
-#	print(anguloP360)	
-
 	if (anguloP360>225 and anguloP360<315) and vivo and stompsRestantes==0: 		# grados
 		Animacion.travel("c_rotate_left")
 		puedeCaminar = false

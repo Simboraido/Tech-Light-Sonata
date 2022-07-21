@@ -6845,6 +6845,7 @@ near = 5.0
 far = 200.0
 
 [node name="hitbox_ataque" type="Area" parent="TargetPlayer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.73366 )
 collision_layer = 0
 collision_mask = 2
 
@@ -6956,7 +6957,7 @@ bones/18/name = "mixamorigRightHand"
 bones/18/parent = 17
 bones/18/rest = Transform( 0.983923, -0.176405, 0.0278667, 0.178593, 0.971872, -0.153526, -9.31323e-10, 0.156035, 0.987752, 0, 0.00258516, 0 )
 bones/18/enabled = true
-bones/18/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 bones/19/name = "mixamorigRightHandIndex1"
 bones/19/parent = 18
 bones/19/rest = Transform( 0.853857, -0.336394, -0.397199, 0, 0.763099, -0.646281, 0.520508, 0.551832, 0.651578, 0, 0.000954356, 0 )
@@ -7029,7 +7030,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.268617, 0.48026, 0.834983, 0.887363, -0.21386, 0.408474, 0.374743, 0.850655, -0.36872, -0.00122627, 0.00857985, 0.00395577 )
+transform = Transform( -0.270374, 0.479779, 0.834692, 0.879903, -0.228718, 0.416485, 0.390729, 0.847055, -0.360321, -0.00111507, 0.00850822, 0.00405035 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]
