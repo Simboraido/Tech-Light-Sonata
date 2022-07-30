@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Beethoven Virus.mp3-2f02daed61059e8ab85a2b67c3e445d5.mp3str"
+
+[deps]
+
+source_file="res://resources/musica/Beethoven Virus.mp3"
+dest_files=[ "res://.import/Beethoven Virus.mp3-2f02daed61059e8ab85a2b67c3e445d5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
-[ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/fonts/maker-mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/Vslider/grabbed.png" type="Texture" id=2]
+[ext_resource path="res://resources/Vslider/normal.png" type="Texture" id=3]
+[ext_resource path="res://resources/Vslider/disabled.png" type="Texture" id=4]
+[ext_resource path="res://resources/Vslider/area.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -9,6 +13,18 @@
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 14, 150 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 14, 150 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 14, 150 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -29,7 +45,9 @@ Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
-VSlider/icons/grabber = null
-VSlider/icons/grabber_disabled = null
-VSlider/icons/grabber_highlight = null
-VSlider/icons/tick = null
+VSlider/icons/grabber = ExtResource( 3 )
+VSlider/icons/grabber_disabled = ExtResource( 4 )
+VSlider/icons/grabber_highlight = ExtResource( 2 )
+VSlider/styles/grabber_area = SubResource( 6 )
+VSlider/styles/grabber_area_highlight = SubResource( 7 )
+VSlider/styles/slider = SubResource( 8 )

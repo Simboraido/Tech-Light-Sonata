@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://resources/maker_mono/maker-mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/fonts/maker-mono.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/tema1.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=3]
+[ext_resource path="res://resources/fonts/arialbd.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=2]
 resource_name = "fadeIn"
-length = 8.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ScrollContainer/VBoxContainer2/VBoxContainer:modulate")
 tracks/0/interp = 1
@@ -14,10 +15,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 8 ),
+"times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 516 ]
 }
 
 [sub_resource type="DynamicFont" id=1]
@@ -25,6 +38,10 @@ size = 70
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -44,66 +61,59 @@ anims/fadeIn = SubResource( 2 )
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = -8.0
-margin_right = 84.0
-margin_bottom = -8.0
 rect_clip_content = false
 theme = ExtResource( 2 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 1058.0
-margin_bottom = 1527.0
+margin_right = 904.0
+margin_bottom = 1106.0
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2"]
-margin_right = 1058.0
+margin_right = 904.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 1 )
 text = "Creditos"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+modulate = Color( 1, 1, 1, 0.54 )
 margin_top = 86.0
-margin_right = 1058.0
-margin_bottom = 1527.0
+margin_right = 904.0
+margin_bottom = 1106.0
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/VBoxContainer"]
-margin_right = 1058.0
-margin_bottom = 1441.0
-text = "Developers: Diego Opazo, Reik0, Kosmonaut y 
-Simboraido
+margin_right = 904.0
+margin_bottom = 1020.0
+custom_fonts/font = SubResource( 3 )
+text = "Developers: Diego Opazo, Reik0, Kosmonaut y Simboraido
 
 Ayudante del proyecto: Gago
 
-Imagen de inicio: Licencia unplash Jase 
-Bloor https://unsplash.com/es/@jasebloor
+Imagen de inicio: Licencia unplash Jase Bloor 
+https://unsplash.com/es/@jasebloor
 
 Fuente: Free for comercial uses frongile
- https://fontstruct.com/fontstructors
-/2033004/frongile
+https://fontstruct.com/fontstructors/2033004/frongile
 
-Barra de vida: Free for comercial uses 
-wolf_viciox  https://wolf-viciox.itch.io
+Barra de vida: Free for comercial uses wolf_viciox  
+https://wolf-viciox.itch.io
 
-Modelos del personaje:For commercial projects 
-Pierre Fontaine from TORTOR 
+Modelos del personaje:For commercial projects Pierre Fontaine from TORTOR 
 gifsungiven7@gmail.com
 
-Materiales: Created using assets from 
-ambientCG.com (CC0).
+Materiales: Created using assets from ambientCG.com (CC0).
 
 Musica del boss: Tomas \"Ludovico\"
 
-Musica de inicio: Royalty Free, White bat 
-Audio https://www.youtube.com/c/WhiteBatAudio
+Musica de inicio: Royalty Free, White bat Audio 
+https://www.youtube.com/c/WhiteBatAudio
 
 Aréna: Loyalty free KangaroOz3D 
 https://www.cgtrader.com/kangarooz3d
 
 Efectos de sonido: Mixkit License
- https://mixkit.co/free-sound-effects/hit/
-?page=5
+https://mixkit.co/free-sound-effects/hit/?page=5
 
 Animaciones: Mixamo https://www.mixamo.com/#/
 

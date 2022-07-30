@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/Node.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Enemigo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/Normal Metal/Metal032_1K_NormalDX.jpg" type="Texture" id=4]
-[ext_resource path="res://musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
+[ext_resource path="res://resources/musica/disco_battle_in_the_hellishly_underworld.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Beatmaps/beat_map.tres" type="Resource" id=6]
 [ext_resource path="res://assets/Piso.obj" type="ArrayMesh" id=8]
 

@@ -19,7 +19,8 @@ func _ready():
 	musica.play()
 	
 func _process(delta):
-	t_actual = musica.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency() # ajustar latencia
+	# ajustar latencia
+	t_actual = musica.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 	if t_actual > largoCancion:
 		t_actual -= largoCancion
 		indiceNota = 0
