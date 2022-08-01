@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/color_makoto/katana_blade.tres" type="Material" id=5]
 [ext_resource path="res://assets/Characters/Makoto/Dash_pose_Makoto.obj" type="ArrayMesh" id=6]
 
-
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
 
@@ -7031,7 +7030,7 @@ bones/32/enabled = true
 bones/32/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="TargetPlayer/RootNode/Skeleton"]
-transform = Transform( -0.270374, 0.479779, 0.834692, 0.879903, -0.228718, 0.416485, 0.390729, 0.847055, -0.360321, -0.00111507, 0.00850822, 0.00405035 )
+transform = Transform( -0.267902, 0.4684, 0.841921, 0.886968, -0.221302, 0.405357, 0.376188, 0.855353, -0.356169, -0.00130539, 0.00857915, 0.00389256 )
 bone_name = "mixamorigRightHand"
 
 [node name="MeshInstance" type="MeshInstance" parent="TargetPlayer/RootNode/Skeleton/BoneAttachment"]

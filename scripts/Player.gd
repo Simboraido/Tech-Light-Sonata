@@ -61,6 +61,8 @@ signal player_dead
 # curar
 var comboAnterior
 
+# katana
+onready var katana = $TargetPlayer/RootNode/Skeleton/BoneAttachment/MeshInstance
 
 func _ready():
 	colision_ref.disabled = true
@@ -73,6 +75,19 @@ func _physics_process(delta):							# delta es 1/60 seg.+
 	if vida <= 0:
 		take_damage(1)
 		return
+
+	if Globales.combo == 1:
+		katana.material_override.emission = Color.blue
+	if Globales.combo == 2:
+		katana.material_override.emission = Color.cyan
+	if Globales.combo == 3:
+		katana.material_override.emission = Color.green
+	if Globales.combo == 4:
+		katana.material_override.emission = Color.yellow
+	if Globales.combo == 5:
+		katana.material_override.emission = Color.orange
+	if Globales.combo >= 6:
+		katana.material_override.emission = Color.red
 
 	if Globales.combo >= 8 and Globales.combo!=comboAnterior:								# si el combo es >= 5 se cura
 		vida += 2
